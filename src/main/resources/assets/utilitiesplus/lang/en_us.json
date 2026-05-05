@@ -1,0 +1,36 @@
+{
+  "creativetab.utilitiesplus": "Utilities Plus",
+
+  "item.utilitiesplus.obsidian_boat": "Obsidian Boat",
+  "item.utilitiesplus.obsidian_chest_boat": "Obsidian Chest Boat",
+  "item.utilitiesplus.villager_catcher": "Villager Catcher",
+  "item.utilitiesplus.copper_upgrade": "Copper Upgrade",
+  "item.utilitiesplus.iron_upgrade": "Iron Upgrade",
+  "item.utilitiesplus.gold_upgrade": "Gold Upgrade",
+  "item.utilitiesplus.diamond_upgrade": "Diamond Upgrade",
+
+  "block.utilitiesplus.acacia_barrel": "Acacia Barrel",
+  "block.utilitiesplus.birch_barrel": "Birch Barrel",
+  "block.utilitiesplus.cherry_barrel": "Cherry Barrel",
+  "block.utilitiesplus.crimson_barrel": "Crimson Barrel",
+  "block.utilitiesplus.dark_oak_barrel": "Dark Oak Barrel",
+  "block.utilitiesplus.jungle_barrel": "Jungle Barrel",
+  "block.utilitiesplus.mangrove_barrel": "Mangrove Barrel",
+  "block.utilitiesplus.oak_barrel": "Oak Barrel",
+  "block.utilitiesplus.pale_oak_barrel": "Pale Oak Barrel",
+  "block.utilitiesplus.spruce_barrel": "Spruce Barrel",
+  "block.utilitiesplus.warped_barrel": "Warped Barrel",
+  "block.utilitiesplus.harvester": "Harvester",
+  "block.utilitiesplus.kiln": "Kiln",
+  "block.utilitiesplus.redstone_clock": "Redstone Clock",
+  "block.utilitiesplus.hopper_duct": "Hopper Duct",
+
+  "entity.utilitiesplus.obsidian_boat": "Obsidian Boat",
+  "entity.utilitiesplus.obsidian_chest_boat": "Obsidian Chest Boat",
+
+  "text.autoconfig.utilitiesplus.title": "Compact Villagers Config",
+  "text.autoconfig.utilitiesplus.option.convincerMaxUses": "Convincer Max Uses",
+  "text.autoconfig.utilitiesplus.option.maxDisplayedTrades": "Max Displayed Trades",
+  "text.autoconfig.utilitiesplus.option.convincerMaxUses.@Tooltip": "How many villagers the Convincer can capture before it is spent.",
+  "text.autoconfig.utilitiesplus.option.maxDisplayedTrades.@Tooltip": "How many trades to show in the token tooltip."
+}

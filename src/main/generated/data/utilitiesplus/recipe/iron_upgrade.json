@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#utilitiesplus:barrel_block_items",
+    "B": "minecraft:iron_block",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "IBI",
+    "B#B",
+    "III"
+  ],
+  "result": {
+    "id": "utilitiesplus:iron_upgrade"
+  }
+}

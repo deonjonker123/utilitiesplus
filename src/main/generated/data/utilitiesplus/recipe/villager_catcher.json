@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "minecraft:emerald_block",
+    "I": "minecraft:iron_bars",
+    "L": "#minecraft:logs"
+  },
+  "pattern": [
+    "LIL",
+    "IEI",
+    "LIL"
+  ],
+  "result": {
+    "id": "utilitiesplus:villager_catcher"
+  }
+}

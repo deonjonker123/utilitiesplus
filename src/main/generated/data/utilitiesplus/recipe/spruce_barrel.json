@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:barrel",
+    "D": "minecraft:spruce_slab",
+    "P": "minecraft:spruce_planks"
+  },
+  "pattern": [
+    "PDP",
+    "PBP",
+    "PDP"
+  ],
+  "result": {
+    "id": "utilitiesplus:spruce_barrel"
+  }
+}

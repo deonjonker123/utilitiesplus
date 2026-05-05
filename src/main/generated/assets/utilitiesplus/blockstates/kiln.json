@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "utilitiesplus:block/kiln",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "utilitiesplus:block/kiln"
+    },
+    "facing=south": {
+      "model": "utilitiesplus:block/kiln",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "utilitiesplus:block/kiln",
+      "y": 270
+    }
+  }
+}

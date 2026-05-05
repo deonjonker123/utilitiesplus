@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": "minecraft:observer",
+    "P": "#minecraft:planks",
+    "S": "minecraft:stone"
+  },
+  "pattern": [
+    "PPP",
+    "PFP",
+    "SSS"
+  ],
+  "result": {
+    "id": "utilitiesplus:redstone_clock"
+  }
+}

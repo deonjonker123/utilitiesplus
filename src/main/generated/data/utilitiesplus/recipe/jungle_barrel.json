@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:barrel",
+    "D": "minecraft:jungle_slab",
+    "P": "minecraft:jungle_planks"
+  },
+  "pattern": [
+    "PDP",
+    "PBP",
+    "PDP"
+  ],
+  "result": {
+    "id": "utilitiesplus:jungle_barrel"
+  }
+}

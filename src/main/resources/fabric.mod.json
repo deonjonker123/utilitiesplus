@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "utilitiesplus",
+	"version": "${version}",
+	"name": "UtilitiesPlus",
+	"description": "Attempts to hit some vanilla misses in interesting ways. ",
+	"authors": [
+		"MisterD Modding"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/utilitiesplus/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.misterd.utilitiesplus.UtilitiesPlus"
+		],
+		"fabric-datagen": [
+			"com.misterd.utilitiesplus.UtilitiesPlusDataGenerator"
+		],
+		"client": [
+			"com.misterd.utilitiesplus.UtilitiesPlusClient"
+		]
+	},
+	"mixins": [
+		"utilitiesplus.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

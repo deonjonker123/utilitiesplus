@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "utilitiesplus:block/redstone_clock_bottom",
+    "side": "utilitiesplus:block/redstone_clock_side",
+    "top": "utilitiesplus:block/redstone_clock_top"
+  }
+}

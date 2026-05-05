@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:barrel",
+    "D": "minecraft:birch_slab",
+    "P": "minecraft:birch_planks"
+  },
+  "pattern": [
+    "PDP",
+    "PBP",
+    "PDP"
+  ],
+  "result": {
+    "id": "utilitiesplus:birch_barrel"
+  }
+}

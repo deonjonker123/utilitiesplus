@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:barrel",
+    "D": "minecraft:oak_slab",
+    "P": "minecraft:oak_planks"
+  },
+  "pattern": [
+    "PDP",
+    "PBP",
+    "PDP"
+  ],
+  "result": {
+    "id": "utilitiesplus:oak_barrel"
+  }
+}

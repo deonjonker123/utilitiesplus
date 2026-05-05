@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": "minecraft:diamond_hoe",
+    "P": "#minecraft:planks",
+    "S": "minecraft:cobblestone"
+  },
+  "pattern": [
+    "PPP",
+    "PHP",
+    "SSS"
+  ],
+  "result": {
+    "id": "utilitiesplus:harvester"
+  }
+}

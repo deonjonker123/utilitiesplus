@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "utilitiesplus:block/oak_barrel",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "utilitiesplus:block/oak_barrel"
+    },
+    "facing=south": {
+      "model": "utilitiesplus:block/oak_barrel",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "utilitiesplus:block/oak_barrel",
+      "y": 270
+    }
+  }
+}

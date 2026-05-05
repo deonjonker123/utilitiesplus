@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#utilitiesplus:barrel_block_items",
+    "B": "minecraft:gold_block",
+    "I": "minecraft:gold_ingot"
+  },
+  "pattern": [
+    "IBI",
+    "B#B",
+    "III"
+  ],
+  "result": {
+    "id": "utilitiesplus:gold_upgrade"
+  }
+}
