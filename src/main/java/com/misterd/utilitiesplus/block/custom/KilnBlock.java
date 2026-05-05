@@ -13,6 +13,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Inventory;
@@ -117,7 +118,7 @@ public class KilnBlock extends BaseEntityBlock {
             if (level instanceof ServerLevel serverLevel) {
                 kiln.awardExperience(serverLevel, Vec3.atCenterOf(pos));
             }
-            net.minecraft.world.Containers.dropContents(level, pos, kiln);
+            Containers.dropContents(level, pos, kiln);
         }
         super.playerDestroy(level, player, pos, state, blockEntity, destroyedWith);
     }

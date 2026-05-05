@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:mangrove_wood",
+  "result": {
+    "id": "utilitiesplus:mangrove_barrel"
+  }
+}

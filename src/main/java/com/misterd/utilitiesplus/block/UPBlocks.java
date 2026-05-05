@@ -4,6 +4,7 @@ import com.misterd.utilitiesplus.UtilitiesPlus;
 import com.misterd.utilitiesplus.block.custom.BarrelBlock;
 import com.misterd.utilitiesplus.block.custom.HarvesterBlock;
 import com.misterd.utilitiesplus.block.custom.KilnBlock;
+import com.misterd.utilitiesplus.block.custom.SawbenchBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -56,6 +57,9 @@ public class UPBlocks {
 
     public static final Block KILN = registerBlock("kiln",
             p -> new KilnBlock(p.strength(2F, 6F).sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion()));
+
+    public static final Block SAWBENCH = registerBlock("sawbench",
+            p -> new SawbenchBlock(p.strength(2F, 6F).sound(SoundType.STONE).noOcclusion()));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block block = function.apply(BlockBehaviour.Properties.of()

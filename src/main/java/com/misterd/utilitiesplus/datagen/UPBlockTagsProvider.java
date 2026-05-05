@@ -26,7 +26,8 @@ public class UPBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(UPBlocks.OAK_BARREL)
                 .add(UPBlocks.PALE_OAK_BARREL)
                 .add(UPBlocks.SPRUCE_BARREL)
-                .add(UPBlocks.WARPED_BARREL);
+                .add(UPBlocks.WARPED_BARREL)
+                .add(UPBlocks.SAWBENCH);
 
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(UPBlocks.HARVESTER)

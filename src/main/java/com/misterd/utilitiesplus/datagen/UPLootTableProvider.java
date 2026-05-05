@@ -25,6 +25,7 @@ public class UPLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(UPBlocks.PALE_OAK_BARREL);
         dropSelf(UPBlocks.SPRUCE_BARREL);
         dropSelf(UPBlocks.WARPED_BARREL);
+        dropSelf(UPBlocks.SAWBENCH);
 
         dropSelf(UPBlocks.HARVESTER);
         dropSelf(UPBlocks.KILN);

@@ -33,7 +33,6 @@ public class UPItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
         valueLookupBuilder(UPTags.Items.KILN_SMELTABLES)
                 .add(Items.CLAY)
                 .add(Items.CLAY_BALL)
-                .add(Items.TERRACOTTA)
                 .add(Items.WHITE_TERRACOTTA)
                 .add(Items.ORANGE_TERRACOTTA)
                 .add(Items.MAGENTA_TERRACOTTA)

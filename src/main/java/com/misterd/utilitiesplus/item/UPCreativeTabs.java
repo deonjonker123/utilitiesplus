@@ -18,6 +18,7 @@ public class UPCreativeTabs {
                     .displayItems((parameters, output) -> {
                         output.accept(UPBlocks.HARVESTER);
                         output.accept(UPBlocks.KILN);
+                        output.accept(UPBlocks.SAWBENCH);
                         output.accept(UPBlocks.ACACIA_BARREL);
                         output.accept(UPBlocks.BIRCH_BARREL);
                         output.accept(UPBlocks.CHERRY_BARREL);

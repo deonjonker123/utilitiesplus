@@ -91,8 +91,6 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
 
     public ContainerData getData() { return data; }
 
-    // --- Tick ---
-
     public static void tick(Level level, BlockPos pos, BlockState state, KilnBlockEntity be) {
         if (!(level instanceof ServerLevel serverLevel)) return;
 
@@ -149,8 +147,6 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
         if (dirty) be.setChanged();
     }
 
-    // --- Smelting logic ---
-
     private boolean isLit() { return litTime > 0; }
 
     private Optional<RecipeHolder<SmeltingRecipe>> getRecipe(ServerLevel level) {
@@ -191,8 +187,6 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
                 .orElse(200);
     }
 
-    // --- Experience ---
-
     public void awardExperience(ServerLevel level, Vec3 pos) {
         int reward = (int) experience;
         float remainder = experience - reward;
@@ -205,8 +199,6 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
         experience = 0f;
         setChanged();
     }
-
-    // --- WorldlyContainer ---
 
     @Override
     public int[] getSlotsForFace(Direction dir) {
@@ -226,8 +218,6 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
     public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction dir) {
         return dir == Direction.DOWN && slot == SLOT_OUTPUT;
     }
-
-    // --- Container ---
 
     @Override
     public int getContainerSize() { return SIZE; }
@@ -265,8 +255,6 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
     @Override
     public void clearContent() { inventory.clear(); }
 
-    // --- Serialization ---
-
     @Override
     protected void saveAdditional(ValueOutput output) {
         super.saveAdditional(output);
@@ -299,8 +287,6 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         return saveWithoutMetadata(registries);
     }
-
-    // --- MenuProvider ---
 
     @Override
     public Component getDisplayName() {
