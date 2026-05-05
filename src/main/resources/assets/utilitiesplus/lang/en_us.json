@@ -28,9 +28,13 @@
   "entity.utilitiesplus.obsidian_boat": "Obsidian Boat",
   "entity.utilitiesplus.obsidian_chest_boat": "Obsidian Chest Boat",
 
-  "text.autoconfig.utilitiesplus.title": "Compact Villagers Config",
-  "text.autoconfig.utilitiesplus.option.convincerMaxUses": "Convincer Max Uses",
-  "text.autoconfig.utilitiesplus.option.maxDisplayedTrades": "Max Displayed Trades",
-  "text.autoconfig.utilitiesplus.option.convincerMaxUses.@Tooltip": "How many villagers the Convincer can capture before it is spent.",
-  "text.autoconfig.utilitiesplus.option.maxDisplayedTrades.@Tooltip": "How many trades to show in the token tooltip."
+  "text.autoconfig.utilitiesplus.title": "Utilities Plus Config",
+  "text.autoconfig.utilitiesplus.option.storageBarrelBaseCapacity": "Storage Barrel base capacity",
+  "text.autoconfig.utilitiesplus.option.storageBarrelBaseCapacity.@Tooltip": "Base capacity of an unupgraded Storage Barrel. Upgrade tiers scale from this value",
+  "text.autoconfig.utilitiesplus.option.harvesterWorkArea": "Harvester work area",
+  "text.autoconfig.utilitiesplus.option.harvesterWorkArea.@Tooltip": "Size of the Harvester's work area in front of the block. 9 = 9x9, 3 = 3x3, etc.",
+  "text.autoconfig.utilitiesplus.option.harvesterHoeTakesDamage": "Hoe takes durability damage",
+  "text.autoconfig.utilitiesplus.option.harvesterHoeTakesDamage.@Tooltip": "Whether the hoe inside the Harvester loses durability while working",
+  "text.autoconfig.utilitiesplus.option.villagerResetOnRelease": "Villager resets on release",
+  "text.autoconfig.utilitiesplus.option.villagerResetOnRelease.@Tooltip": "Whether a villager released from a Villager Catcher resets to an unemployed novice"
 }
