@@ -30,7 +30,7 @@ public class UPModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         blockModelGenerators.createHorizontallyRotatedBlock(UPBlocks.HARVESTER, TexturedModel.ORIENTABLE);
-        blockModelGenerators.createHorizontallyRotatedBlock(UPBlocks.KILN, TexturedModel.ORIENTABLE);
+        blockModelGenerators.createFurnace(UPBlocks.KILN, TexturedModel.ORIENTABLE);
 
         blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(UPBlocks.ACACIA_BARREL,
                         BlockModelGenerators.plainVariant(Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "block/acacia_barrel")))

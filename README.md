@@ -38,6 +38,9 @@ Tired of running back and forth harvesting and replanting crops like some kind o
 
 ---
 
+### Saw Bench
+Tired of manually stripping one log at a time? Use the saw bench to strip a bunch in a fraction of the time. You could also craft a whole bunch of other block from wood.
+
 ## Items
 
 ### Villager Catcher

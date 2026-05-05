@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,lit=false": {
       "model": "utilitiesplus:block/kiln",
       "y": 90
     },
-    "facing=north": {
+    "facing=east,lit=true": {
+      "model": "utilitiesplus:block/kiln_on",
+      "y": 90
+    },
+    "facing=north,lit=false": {
       "model": "utilitiesplus:block/kiln"
     },
-    "facing=south": {
+    "facing=north,lit=true": {
+      "model": "utilitiesplus:block/kiln_on"
+    },
+    "facing=south,lit=false": {
       "model": "utilitiesplus:block/kiln",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,lit=true": {
+      "model": "utilitiesplus:block/kiln_on",
+      "y": 180
+    },
+    "facing=west,lit=false": {
       "model": "utilitiesplus:block/kiln",
+      "y": 270
+    },
+    "facing=west,lit=true": {
+      "model": "utilitiesplus:block/kiln_on",
       "y": 270
     }
   }

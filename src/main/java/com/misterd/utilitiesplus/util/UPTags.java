@@ -8,9 +8,10 @@ import net.minecraft.world.item.Item;
 
 public class UPTags {
     public static class Items {
-        public static final TagKey<Item> BARREL_BLOCK_ITEMS  = createTag("barrel_block_items");
+        public static final TagKey<Item> BARREL_BLOCK_ITEMS = createTag("barrel_block_items");
+        public static final TagKey<Item> KILN_SMELTABLES = createTag("kiln_smeltables");
 
-        private static TagKey<Item> createTag (String name) {
+        private static TagKey<Item> createTag(String name) {
             return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, name));
         }
     }
