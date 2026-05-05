@@ -2,7 +2,6 @@
   "values": [
     "utilitiesplus:harvester",
     "utilitiesplus:kiln",
-    "utilitiesplus:redstone_clock",
-    "utilitiesplus:hopper_duct"
+    "utilitiesplus:redstone_clock"
   ]
 }

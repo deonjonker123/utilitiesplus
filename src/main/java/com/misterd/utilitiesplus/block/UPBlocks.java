@@ -3,7 +3,6 @@ package com.misterd.utilitiesplus.block;
 import com.misterd.utilitiesplus.UtilitiesPlus;
 import com.misterd.utilitiesplus.block.custom.BarrelBlock;
 import com.misterd.utilitiesplus.block.custom.HarvesterBlock;
-import com.misterd.utilitiesplus.block.custom.HopperDuctBlock;
 import com.misterd.utilitiesplus.block.custom.KilnBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -60,9 +59,6 @@ public class UPBlocks {
 
     public static final Block REDSTONE_CLOCK = registerBlock("redstone_clock",
             p -> new Block(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
-
-    public static final Block HOPPER_DUCT = registerBlock("hopper_duct",
-            p -> new HopperDuctBlock(p.noOcclusion().strength(2F, 6F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block block = function.apply(BlockBehaviour.Properties.of()

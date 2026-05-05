@@ -13,10 +13,9 @@ import net.minecraft.world.item.ItemStack;
 public class UPCreativeTabs {
     public static final CreativeModeTab UTILITIES_PLUS = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
             Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "utilitiesplus_creativetab"),
-            FabricCreativeModeTab.builder().icon(() -> new ItemStack(UPBlocks.HOPPER_DUCT))
+            FabricCreativeModeTab.builder().icon(() -> new ItemStack(UPBlocks.KILN))
                     .title(Component.translatable("creativetab.utilitiesplus"))
                     .displayItems((parameters, output) -> {
-                        output.accept(UPBlocks.HOPPER_DUCT);
                         output.accept(UPBlocks.HARVESTER);
                         output.accept(UPBlocks.KILN);
                         output.accept(UPBlocks.REDSTONE_CLOCK);
