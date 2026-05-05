@@ -29,8 +29,6 @@ public class UPModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-        blockModelGenerators.createTrivialBlock(UPBlocks.REDSTONE_CLOCK, TexturedModel.CUBE_TOP_BOTTOM);
-
         blockModelGenerators.createHorizontallyRotatedBlock(UPBlocks.HARVESTER, TexturedModel.ORIENTABLE);
         blockModelGenerators.createHorizontallyRotatedBlock(UPBlocks.KILN, TexturedModel.ORIENTABLE);
 

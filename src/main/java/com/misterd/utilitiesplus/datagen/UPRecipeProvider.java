@@ -109,12 +109,6 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                         .define('S', Items.SMOOTH_STONE)
                         .unlockedBy("has_brick", has(Items.BRICK)).save(output);
 
-                shaped(RecipeCategory.MISC, UPBlocks.REDSTONE_CLOCK)
-                        .pattern("PPP").pattern("PFP").pattern("SSS")
-                        .define('P', ItemTags.PLANKS).define('F', Items.OBSERVER)
-                        .define('S', Items.STONE)
-                        .unlockedBy("has_redstone", has(Items.REDSTONE)).save(output);
-
                 shaped(RecipeCategory.MISC, UPItems.COPPER_UPGRADE)
                         .pattern("IBI").pattern("B#B").pattern("III")
                         .define('#', UPTags.Items.BARREL_BLOCK_ITEMS).define('I', Items.COPPER_INGOT)

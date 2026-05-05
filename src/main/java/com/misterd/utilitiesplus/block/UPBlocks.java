@@ -57,9 +57,6 @@ public class UPBlocks {
     public static final Block KILN = registerBlock("kiln",
             p -> new KilnBlock(p.strength(2F, 6F).sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion()));
 
-    public static final Block REDSTONE_CLOCK = registerBlock("redstone_clock",
-            p -> new Block(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
-
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block block = function.apply(BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK,

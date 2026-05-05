@@ -1,7 +1,6 @@
 {
   "values": [
     "utilitiesplus:harvester",
-    "utilitiesplus:kiln",
-    "utilitiesplus:redstone_clock"
+    "utilitiesplus:kiln"
   ]
 }

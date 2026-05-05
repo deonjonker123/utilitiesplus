@@ -28,6 +28,5 @@ public class UPLootTableProvider extends FabricBlockLootSubProvider {
 
         dropSelf(UPBlocks.HARVESTER);
         dropSelf(UPBlocks.KILN);
-        dropSelf(UPBlocks.REDSTONE_CLOCK);;
     }
 }
