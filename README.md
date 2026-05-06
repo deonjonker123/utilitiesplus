@@ -38,8 +38,56 @@ Tired of running back and forth harvesting and replanting crops like some kind o
 
 ---
 
+### Feeding Trough
+Animals are hungry. You have food. The Feeding Trough bridges that gap automatically — place it, fill it manually, and it'll feed any animal in a 9×3×9 area around it that finds the contents appetising. If the local animal population exceeds the configured limit, the trough stops working until you do something about the overcrowding. Not its problem. Also, no hopper support. Fill it yourself.
+
+*(Configurable — see Config section)*
+
+---
+
+### Chicken Nest Box
+Chickens are going to lay eggs whether you like it or not. The Nest Box at least makes sure those eggs end up somewhere useful. Place one down and nearby chickens that are about to lay will wander over to do their business properly. The Nest Box collects eggs in a 3×3 area around it and stores them in its 9-slot inventory. Civilization.
+
+*(Configurable — see Config section)*
+
+---
+
 ### Saw Bench
-Tired of manually stripping one log at a time? Use the saw bench to strip a bunch in a fraction of the time. You could also craft a whole bunch of other block from wood.
+A whole log's worth of planks, stairs, slabs, fences, doors, and whatever else you need — without the crafting grid busywork. Strips logs too. It's a saw. It cuts wood. You get it.
+
+---
+
+### Filtered Hopper
+A hopper with a single filter slot. Only items matching the filter pass through. Everything else gets ignored. That's the whole thing.
+
+---
+
+### Fast Hopper
+Moves 8 items per tick instead of the vanilla 1. Also filterable, because speed without precision is just chaos. Combine with the filtered hopper and pretend you're an engineer.
+
+---
+
+### Redstone Clock
+A redstone clock in a single block. Right-click to increase the pulse interval by 10 ticks, shift-right-click to decrease it. No more spaghetti repeater loops taking up half your base.
+
+*(Configurable — see Config section)*
+
+---
+
+### Mine Cart Dock
+Loading and unloading minecarts normally means hopper chains, comparator circuits, and a rats nest of redstone that takes up half a room. The Mine Cart Dock replaces all of that. Place it adjacent to a rail — not on it, next to it, like a comparator — and it'll detect the cart's inventory through the block face, transfer up to 8 items per tick into or out of its 9-slot buffer, and output a comparator signal based on the detected cart's fullness. Toggle between load and unload mode with a right-click. Hook a chest or hopper up to the buffer, wire the comparator output to a powered rail, and you're done. Park cart, wait, cart leaves.
+
+---
+
+### Fan
+A redstone-powered fan that pushes items, mobs, and players in the direction it's facing. Shift-right-click to reverse the flow and pull things toward it instead. Redstone signal strength controls the range. Useful for sorting systems, mob farms, or just annoying your friends.
+
+---
+
+### Charcoal Block
+9 charcoal in a crafting grid, one block out. Same burn properties as a coal block. No gimmicks, no tricks — just a storage solution that should have been in the game already.
+
+---
 
 ## Items
 
@@ -61,6 +109,11 @@ Long minecart rail systems snaking across your entire world just to move one vil
 
 ---
 
+### Tiny Coal and Charcoal
+One tiny coal or charcoal smelts exactly one item. For when you need to smelt one thing and don't want to burn through an entire piece of coal like a maniac.
+
+---
+
 ### Obsidian Boat
 A boat. For lava. Crafted from obsidian. Navigate lava lakes like a reasonable person instead of bridge-pillaring across them like a noob.
 
@@ -72,6 +125,9 @@ Don't try it on water. It sinks. Immediately. Don't ask why. It's obsidian.
 | Option | Min | Max | Default |
 |---|---|---|---|
 | Storage Barrel base capacity | 512 | 16,384 | 4,096 |
+| Feeding trough animal limit | 8 | 128 | 32 |
+| Feeding trough feeding radius | 3×3 | 15×15 | 9×9 |
+| Nest Box collection radius | 3×3 | 9×9 | 3×3 |
 | Harvester work area | 3×3 | 15×15 | 9×9 |
 | Hoe loses durability in Harvester | — | — | `true` |
 | Villager resets to unemployed on release | — | — | `true` |
