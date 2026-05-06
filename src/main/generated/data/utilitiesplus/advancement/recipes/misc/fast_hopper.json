@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_filtered_hopper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "utilitiesplus:filtered_hopper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "utilitiesplus:fast_hopper"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_filtered_hopper"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "utilitiesplus:fast_hopper"
+    ]
+  }
+}

@@ -121,12 +121,20 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                         .define('#', UPTags.Items.BARREL_BLOCK_ITEMS).define('I', Items.DIAMOND).define('B', Items.DIAMOND_BLOCK)
                         .unlockedBy("has_diamond", has(Items.DIAMOND)).save(output);
 
+                shaped(RecipeCategory.MISC, UPBlocks.FILTERED_HOPPER)
+                        .pattern("ICI").pattern("IHI").pattern("QIQ")
+                        .define('I', Items.IRON_INGOT).define('C', Items.COMPARATOR).define('H', Items.HOPPER).define('Q', Items.QUARTZ)
+                        .unlockedBy("has_hopper", has(Items.HOPPER)).save(output);
+
+                shaped(RecipeCategory.MISC, UPBlocks.FAST_HOPPER)
+                        .pattern("ICI").pattern("IHI").pattern("CIC")
+                        .define('I', Items.COPPER_INGOT).define('C', Items.DIAMOND).define('H', UPBlocks.FILTERED_HOPPER)
+                        .unlockedBy("has_filtered_hopper", has(UPBlocks.FILTERED_HOPPER)).save(output);
+
                 shaped(RecipeCategory.MISC, UPItems.VILLAGER_CATCHER)
                         .pattern("LIL").pattern("IEI").pattern("LIL")
                         .define('L', ItemTags.LOGS).define('I', Items.IRON_BARS).define('E', Items.EMERALD_BLOCK)
                         .unlockedBy("has_emerald", has(Items.EMERALD)).save(output);
-
-                // Vertical Slabs — add after the Villager Catcher recipe
 
                 shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.OAK_VERTICAL_SLAB, 3)
                         .pattern("#").pattern("#").pattern("#")

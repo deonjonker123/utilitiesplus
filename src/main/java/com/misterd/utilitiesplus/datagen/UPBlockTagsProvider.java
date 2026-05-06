@@ -55,6 +55,8 @@ public class UPBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(UPBlocks.HARVESTER)
-                .add(UPBlocks.KILN);
+                .add(UPBlocks.KILN)
+                .add(UPBlocks.FILTERED_HOPPER)
+                .add(UPBlocks.FAST_HOPPER);
     }
 }

@@ -1,6 +1,8 @@
 {
   "values": [
     "utilitiesplus:harvester",
-    "utilitiesplus:kiln"
+    "utilitiesplus:kiln",
+    "utilitiesplus:filtered_hopper",
+    "utilitiesplus:fast_hopper"
   ]
 }
