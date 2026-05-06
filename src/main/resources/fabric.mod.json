@@ -11,7 +11,7 @@
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/utilitiesplus/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -23,6 +23,9 @@
 		],
 		"client": [
 			"com.misterd.utilitiesplus.UtilitiesPlusClient"
+		],
+		"modmenu": [
+			"com.misterd.utilitiesplus.compat.UPModMenuCompat"
 		]
 	},
 	"mixins": [

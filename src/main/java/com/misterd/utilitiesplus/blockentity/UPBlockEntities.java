@@ -2,8 +2,9 @@ package com.misterd.utilitiesplus.blockentity;
 
 import com.misterd.utilitiesplus.UtilitiesPlus;
 import com.misterd.utilitiesplus.block.UPBlocks;
-import com.misterd.utilitiesplus.blockentity.custom.FilteredHopperBlockEntity;
 import com.misterd.utilitiesplus.blockentity.custom.FastHopperBlockEntity;
+import com.misterd.utilitiesplus.blockentity.custom.FilteredHopperBlockEntity;
+import com.misterd.utilitiesplus.blockentity.custom.HarvesterBlockEntity;
 import com.misterd.utilitiesplus.blockentity.custom.KilnBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.core.Registry;
@@ -17,6 +18,11 @@ public class UPBlockEntities {
             Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "kiln_be"),
                     FabricBlockEntityTypeBuilder.create(KilnBlockEntity::new, UPBlocks.KILN).build());
+
+    public static final BlockEntityType<HarvesterBlockEntity> HARVESTER_BE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "harvester_be"),
+                    FabricBlockEntityTypeBuilder.create(HarvesterBlockEntity::new, UPBlocks.HARVESTER).build());
 
     public static final BlockEntityType<FilteredHopperBlockEntity> FILTERED_HOPPER_BE =
             Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,

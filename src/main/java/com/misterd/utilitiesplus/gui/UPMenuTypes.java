@@ -3,6 +3,7 @@ package com.misterd.utilitiesplus.gui;
 import com.misterd.utilitiesplus.UtilitiesPlus;
 import com.misterd.utilitiesplus.gui.custom.FastHopperMenu;
 import com.misterd.utilitiesplus.gui.custom.FilteredHopperMenu;
+import com.misterd.utilitiesplus.gui.custom.HarvesterMenu;
 import com.misterd.utilitiesplus.gui.custom.KilnMenu;
 import com.misterd.utilitiesplus.gui.custom.SawbenchMenu;
 import net.fabricmc.fabric.api.menu.v1.ExtendedMenuType;
@@ -24,6 +25,11 @@ public class UPMenuTypes {
             Registry.register(BuiltInRegistries.MENU,
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "kiln_menu"),
                     new ExtendedMenuType<>(KilnMenu::new, BLOCK_POS_CODEC));
+
+    public static final MenuType<HarvesterMenu> HARVESTER_MENU =
+            Registry.register(BuiltInRegistries.MENU,
+                    Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "harvester_menu"),
+                    new ExtendedMenuType<>(HarvesterMenu::new, BLOCK_POS_CODEC));
 
     public static final MenuType<SawbenchMenu> SAWBENCH_MENU =
             Registry.register(BuiltInRegistries.MENU,

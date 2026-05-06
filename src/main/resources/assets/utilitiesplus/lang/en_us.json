@@ -64,5 +64,7 @@
   "text.autoconfig.utilitiesplus.option.harvesterHoeTakesDamage": "Hoe takes durability damage",
   "text.autoconfig.utilitiesplus.option.harvesterHoeTakesDamage.@Tooltip": "Whether the hoe inside the Harvester loses durability while working",
   "text.autoconfig.utilitiesplus.option.villagerResetOnRelease": "Villager resets on release",
-  "text.autoconfig.utilitiesplus.option.villagerResetOnRelease.@Tooltip": "Whether a villager released from a Villager Catcher resets to an unemployed novice"
+  "text.autoconfig.utilitiesplus.option.villagerResetOnRelease.@Tooltip": "Whether a villager released from a Villager Catcher resets to an unemployed novice",
+  "text.autoconfig.utilitiesplus.option.harvesterCheckInterval": "Harvester check interval",
+  "text.autoconfig.utilitiesplus.option.harvesterCheckInterval.@Tooltip": "How often the Harvester scans for mature crops, in ticks. 200 = 10 seconds, 20 = 1 second"
 }

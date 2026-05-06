@@ -14,8 +14,8 @@ public class FilteredHopperScreen extends AbstractContainerScreen<FilteredHopper
 
 
     public FilteredHopperScreen(FilteredHopperMenu menu, Inventory playerInventory, Component title) {
-        super(menu, playerInventory, title, 176, 166);
-        this.inventoryLabelY = this.imageHeight - 125;
+        super(menu, playerInventory, title, 176, 133);
+        this.inventoryLabelY = this.imageHeight - 94;
         this.titleLabelX = (this.imageWidth - this.font.width(this.title)) / 2;
     }
 

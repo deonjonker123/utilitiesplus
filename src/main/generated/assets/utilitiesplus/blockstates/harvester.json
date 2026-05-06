@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,lit=false": {
       "model": "utilitiesplus:block/harvester",
       "y": 90
     },
-    "facing=north": {
+    "facing=east,lit=true": {
+      "model": "utilitiesplus:block/harvester_on",
+      "y": 90
+    },
+    "facing=north,lit=false": {
       "model": "utilitiesplus:block/harvester"
     },
-    "facing=south": {
+    "facing=north,lit=true": {
+      "model": "utilitiesplus:block/harvester_on"
+    },
+    "facing=south,lit=false": {
       "model": "utilitiesplus:block/harvester",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,lit=true": {
+      "model": "utilitiesplus:block/harvester_on",
+      "y": 180
+    },
+    "facing=west,lit=false": {
       "model": "utilitiesplus:block/harvester",
+      "y": 270
+    },
+    "facing=west,lit=true": {
+      "model": "utilitiesplus:block/harvester_on",
       "y": 270
     }
   }

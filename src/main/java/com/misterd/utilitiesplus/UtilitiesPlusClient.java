@@ -3,10 +3,7 @@ package com.misterd.utilitiesplus;
 import com.misterd.utilitiesplus.entity.UPEntities;
 import com.misterd.utilitiesplus.entity.client.UPModelLayerLocations;
 import com.misterd.utilitiesplus.gui.UPMenuTypes;
-import com.misterd.utilitiesplus.gui.custom.FastHopperScreen;
-import com.misterd.utilitiesplus.gui.custom.FilteredHopperScreen;
-import com.misterd.utilitiesplus.gui.custom.KilnScreen;
-import com.misterd.utilitiesplus.gui.custom.SawbenchScreen;
+import com.misterd.utilitiesplus.gui.custom.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -21,6 +18,7 @@ public class UtilitiesPlusClient implements ClientModInitializer {
         MenuScreens.register(UPMenuTypes.SAWBENCH_MENU, SawbenchScreen::new);
         MenuScreens.register(UPMenuTypes.FILTERED_HOPPER_MENU, FilteredHopperScreen::new);
         MenuScreens.register(UPMenuTypes.FAST_HOPPER_MENU, FastHopperScreen::new);
+        MenuScreens.register(UPMenuTypes.HARVESTER_MENU, HarvesterScreen::new);
 
         ModelLayerRegistry.registerModelLayer(UPModelLayerLocations.OBSIDIAN_BOAT, BoatModel::createBoatModel);
         ModelLayerRegistry.registerModelLayer(UPModelLayerLocations.OBSIDIAN_CHEST_BOAT, BoatModel::createChestBoatModel);

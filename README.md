@@ -132,12 +132,13 @@ Don't try it on water. It sinks. Immediately. Don't ask why. It's obsidian.
 ---
 
 ## Config
-| Option | Min | Max | Default |
-|---|---|---|---|
-| Storage Barrel base capacity | 512 | 16,384 | 4,096 |
-| Feeding trough animal limit | 8 | 128 | 32 |
-| Feeding trough feeding radius | 3×3 | 15×15 | 9×9 |
-| Nest Box collection radius | 3×3 | 9×9 | 3×3 |
-| Harvester work area | 3×3 | 15×15 | 9×9 |
-| Hoe loses durability in Harvester | — | — | `true` |
-| Villager resets to unemployed on release | — | — | `true` |
+| Option                                      | Min | Max    | Default |
+|---------------------------------------------|-----|--------|---------|
+| Storage Barrel base capacity                | 512 | 16,384 | 4,096   |
+| Feeding trough animal limit                 | 8   | 128    | 32      |
+| Feeding trough feeding radius               | 3×3 | 15×15  | 9×9     |
+| Nest Box collection radius                  | 3×3 | 9×9    | 3×3     |
+| Harvester harvest check interval (in ticks) | 20  | 1200   | 200     |
+| Harvester work area                         | 3×3 | 15×15  | 9×9     |
+| Hoe loses durability in Harvester           | —   | —      | `true`  |
+| Villager resets to unemployed on release    | —   | —      | `true`  |

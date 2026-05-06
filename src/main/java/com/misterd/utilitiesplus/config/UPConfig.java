@@ -14,7 +14,12 @@ public class UPConfig implements ConfigData {
     public int storageBarrelBaseCapacity = 4096;
 
     @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.BoundedDiscrete(min = 3, max = 15)
     public int harvesterWorkArea = 9;
+
+    @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.BoundedDiscrete(min = 20, max = 1200)
+    public int harvesterCheckInterval = 200;
 
     @ConfigEntry.Gui.Tooltip
     public boolean harvesterHoeTakesDamage = true;
