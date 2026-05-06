@@ -73,21 +73,6 @@ public class UPModelProvider extends FabricModelProvider {
         gen.registerSimpleItemModel(slabBlock, modelId);
     }
 
-    private void createCustomHopper(BlockModelGenerators gen, Block block, String modelName) {
-        Identifier downModel = Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "block/" + modelName);
-        Identifier sideModel = Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "block/" + modelName + "_side");
-        MultiVariant downBlock = BlockModelGenerators.plainVariant(downModel);
-        MultiVariant sideBlock = BlockModelGenerators.plainVariant(sideModel);
-        gen.blockStateOutput.accept(MultiVariantGenerator.dispatch(block)
-                .with(PropertyDispatch.initial(BlockStateProperties.FACING_HOPPER)
-                        .select(Direction.DOWN, downBlock)
-                        .select(Direction.NORTH, sideBlock)
-                        .select(Direction.EAST, sideBlock.with(BlockModelGenerators.Y_ROT_90))
-                        .select(Direction.SOUTH, sideBlock.with(BlockModelGenerators.Y_ROT_180))
-                        .select(Direction.WEST, sideBlock.with(BlockModelGenerators.Y_ROT_270))));
-        gen.registerSimpleItemModel(block, downModel);
-    }
-
     @Override
     public void generateBlockStateModels(BlockModelGenerators gen) {
         gen.createHorizontallyRotatedBlock(UPBlocks.HARVESTER, TexturedModel.ORIENTABLE);
@@ -152,9 +137,6 @@ public class UPModelProvider extends FabricModelProvider {
         createBeam(gen, UPBlocks.PALE_OAK_BEAM, net.minecraft.world.level.block.Blocks.PALE_OAK_PLANKS);
         createBeam(gen, UPBlocks.SPRUCE_BEAM, net.minecraft.world.level.block.Blocks.SPRUCE_PLANKS);
         createBeam(gen, UPBlocks.WARPED_BEAM, net.minecraft.world.level.block.Blocks.WARPED_PLANKS);
-
-        createCustomHopper(gen, UPBlocks.FILTERED_HOPPER, "filtered_hopper");
-        createCustomHopper(gen, UPBlocks.FAST_HOPPER, "fast_hopper");
     }
 
     @Override

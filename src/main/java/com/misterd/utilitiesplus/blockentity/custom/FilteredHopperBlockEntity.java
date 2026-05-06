@@ -39,7 +39,7 @@ public class FilteredHopperBlockEntity extends BlockEntity implements WorldlyCon
 
     public static final int SLOT_FILTER = 0;
     public static final int SLOT_INV_START = 1;
-    public static final int SIZE = 6; // 1 filter + 5 inventory
+    public static final int SIZE = 6;
     public static final int MOVE_ITEM_SPEED = 8;
 
     private static final int[] SLOTS_TOP = {1, 2, 3, 4, 5};
@@ -61,8 +61,6 @@ public class FilteredHopperBlockEntity extends BlockEntity implements WorldlyCon
         super.setBlockState(state);
         this.facing = state.getValue(BlockStateProperties.FACING_HOPPER);
     }
-
-    // --- Tick ---
 
     public static void pushItemsTick(Level level, BlockPos pos, BlockState state, FilteredHopperBlockEntity be) {
         --be.cooldownTime;
@@ -182,8 +180,6 @@ public class FilteredHopperBlockEntity extends BlockEntity implements WorldlyCon
         }
     }
 
-    // --- Item transfer helpers ---
-
     private static ItemStack addItem(@Nullable Container from, Container to, ItemStack stack, @Nullable Direction dir) {
         if (to instanceof WorldlyContainer wc && dir != null) {
             int[] slots = wc.getSlotsForFace(dir);
@@ -282,12 +278,8 @@ public class FilteredHopperBlockEntity extends BlockEntity implements WorldlyCon
         return entities.isEmpty() ? null : (Container) entities.get(level.getRandom().nextInt(entities.size()));
     }
 
-    // --- Cooldown ---
-
     private void setCooldown(int time) { this.cooldownTime = time; }
     private boolean isOnCooldown() { return this.cooldownTime > 0; }
-
-    // --- WorldlyContainer ---
 
     @Override
     public int[] getSlotsForFace(Direction dir) {
@@ -307,29 +299,46 @@ public class FilteredHopperBlockEntity extends BlockEntity implements WorldlyCon
         return slot != SLOT_FILTER;
     }
 
-    // --- Container ---
-
     @Override public int getContainerSize() { return SIZE; }
-    @Override public boolean isEmpty() {
+
+    @Override
+    public boolean isEmpty() {
         for (int i = SLOT_INV_START; i < SIZE; i++) if (!items.get(i).isEmpty()) return false;
         return true;
     }
-    @Override public ItemStack getItem(int slot) { return items.get(slot); }
-    @Override public ItemStack removeItem(int slot, int amount) {
+
+    @Override public ItemStack getItem(int slot) {
+        return items.get(slot);
+    }
+
+    @Override
+    public ItemStack removeItem(int slot, int amount) {
         ItemStack result = ContainerHelper.removeItem(items, slot, amount);
         if (!result.isEmpty()) setChanged();
         return result;
     }
-    @Override public ItemStack removeItemNoUpdate(int slot) { return ContainerHelper.takeItem(items, slot); }
-    @Override public void setItem(int slot, ItemStack stack) {
+
+    @Override
+    public ItemStack removeItemNoUpdate(int slot) {
+        return ContainerHelper.takeItem(items, slot);
+    }
+
+    @Override
+    public void setItem(int slot, ItemStack stack) {
         if (slot == SLOT_FILTER && stack.getCount() > 1) stack.setCount(1);
         items.set(slot, stack);
         setChanged();
     }
-    @Override public boolean stillValid(Player player) { return Container.stillValidBlockEntity(this, player); }
-    @Override public void clearContent() { items.clear(); }
 
-    // --- Serialization ---
+    @Override
+    public boolean stillValid(Player player) {
+        return Container.stillValidBlockEntity(this, player);
+    }
+
+    @Override
+    public void clearContent() {
+        items.clear();
+    }
 
     @Override
     protected void saveAdditional(ValueOutput output) {
@@ -355,8 +364,6 @@ public class FilteredHopperBlockEntity extends BlockEntity implements WorldlyCon
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         return saveWithoutMetadata(registries);
     }
-
-    // --- MenuProvider ---
 
     @Override
     public Component getDisplayName() {

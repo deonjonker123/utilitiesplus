@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "utilitiesplus:item/filtered_hopper"
+  }
+}

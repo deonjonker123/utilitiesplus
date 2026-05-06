@@ -1,8 +1,9 @@
 package com.misterd.utilitiesplus.gui.custom;
 
 import com.misterd.utilitiesplus.blockentity.custom.FastHopperBlockEntity;
-import com.misterd.utilitiesplus.blockentity.custom.FilteredHopperBlockEntity;
 import com.misterd.utilitiesplus.gui.UPMenuTypes;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -16,26 +17,26 @@ public class FastHopperMenu extends AbstractContainerMenu {
     private static final int SLOT_INV_START = 1;
     private static final int SLOT_INV_END = 6;
     private static final int PLAYER_INV_START = 6;
-    private static final int PLAYER_INV_END = 33;
-    private static final int PLAYER_HB_START = 33;
     private static final int PLAYER_HB_END = 42;
 
-    private final FastHopperBlockEntity blockEntity;
+    private final Container container;
 
-    public FastHopperMenu(int id, Inventory inv, FastHopperBlockEntity be) {
+    public FastHopperMenu(int id, Inventory inv) {
+        this(id, inv, new SimpleContainer(FastHopperBlockEntity.SIZE));
+    }
+
+    public FastHopperMenu(int id, Inventory inv, Container container) {
         super(UPMenuTypes.FAST_HOPPER_MENU, id);
-        this.blockEntity = be;
-        checkContainerSize(be, FastHopperBlockEntity.SIZE);
+        this.container = container;
+        checkContainerSize(container, FastHopperBlockEntity.SIZE);
 
-        // Filter slot — only accepts 1 item, no stack
-        addSlot(new Slot(be, SLOT_FILTER, 26, 20) {
+        addSlot(new Slot(container, SLOT_FILTER, 26, 20) {
             @Override
             public int getMaxStackSize() { return 1; }
         });
 
-        // 5 inventory slots
         for (int i = 0; i < 5; i++) {
-            addSlot(new Slot(be, SLOT_INV_START + i, 62 + i * 18, 20));
+            addSlot(new Slot(container, SLOT_INV_START + i, 62 + i * 18, 20));
         }
 
         addPlayerInventory(inv);
@@ -64,7 +65,10 @@ public class FastHopperMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        return stillValid(ContainerLevelAccess.create(blockEntity.getLevel(), blockEntity.getBlockPos()), player, blockEntity.getBlockState().getBlock());
+        if (container instanceof FastHopperBlockEntity be) {
+            return stillValid(ContainerLevelAccess.create(be.getLevel(), be.getBlockPos()), player, be.getBlockState().getBlock());
+        }
+        return true;
     }
 
     private void addPlayerInventory(Inventory inv) {

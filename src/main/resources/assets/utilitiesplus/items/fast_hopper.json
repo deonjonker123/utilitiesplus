@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "utilitiesplus:block/filtered_hopper"
+    "model": "utilitiesplus:item/fast_hopper"
   }
 }

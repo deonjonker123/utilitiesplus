@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -29,9 +30,15 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jspecify.annotations.Nullable;
+
+import java.util.Map;
+import java.util.function.Function;
 
 public class FastHopperBlock extends BaseEntityBlock {
 
@@ -39,13 +46,33 @@ public class FastHopperBlock extends BaseEntityBlock {
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING_HOPPER;
     public static final BooleanProperty ENABLED = BlockStateProperties.ENABLED;
 
-    private static final VoxelShape SHAPE_DOWN = Block.column(12.0, 11.0, 16.0);
+    private final Function<BlockState, VoxelShape> shapes;
 
-    public FastHopperBlock(Properties properties) {
+    public FastHopperBlock(BlockBehaviour.Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.DOWN)
                 .setValue(ENABLED, true));
+        VoxelShape inside = Block.column(12.0, 11.0, 16.0);
+        this.shapes = makeShapes(inside);
+    }
+
+    private Function<BlockState, VoxelShape> makeShapes(VoxelShape inside) {
+        VoxelShape spoutlessOutline = Shapes.or(
+                Block.column(16.0, 10.0, 16.0),
+                Block.column(8.0, 4.0, 10.0));
+        VoxelShape spoutless = Shapes.join(spoutlessOutline, inside, BooleanOp.ONLY_FIRST);
+        Map<Direction, VoxelShape> allSpouts = Shapes.rotateAll(
+                Block.boxZ(4.0, 4.0, 8.0, 0.0, 8.0),
+                new Vec3(8.0, 6.0, 8.0).scale(0.0625));
+        return this.getShapeForEachState(
+                state -> Shapes.or(spoutless, Shapes.join(allSpouts.get(state.getValue(FACING)), Shapes.block(), BooleanOp.AND)),
+                ENABLED);
+    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return shapes.apply(state);
     }
 
     @Override
@@ -56,11 +83,6 @@ public class FastHopperBlock extends BaseEntityBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, ENABLED);
-    }
-
-    @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE_DOWN;
     }
 
     @Override

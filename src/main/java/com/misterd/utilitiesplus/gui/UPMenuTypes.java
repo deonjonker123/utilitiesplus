@@ -1,8 +1,8 @@
 package com.misterd.utilitiesplus.gui;
 
 import com.misterd.utilitiesplus.UtilitiesPlus;
-import com.misterd.utilitiesplus.gui.custom.FilteredHopperMenu;
 import com.misterd.utilitiesplus.gui.custom.FastHopperMenu;
+import com.misterd.utilitiesplus.gui.custom.FilteredHopperMenu;
 import com.misterd.utilitiesplus.gui.custom.KilnMenu;
 import com.misterd.utilitiesplus.gui.custom.SawbenchMenu;
 import net.fabricmc.fabric.api.menu.v1.ExtendedMenuType;
@@ -23,22 +23,22 @@ public class UPMenuTypes {
     public static final MenuType<KilnMenu> KILN_MENU =
             Registry.register(BuiltInRegistries.MENU,
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "kiln_menu"),
-                    new ExtendedMenuType<>((id, inv, pos) -> new KilnMenu(id, inv, pos), BLOCK_POS_CODEC));
+                    new ExtendedMenuType<>(KilnMenu::new, BLOCK_POS_CODEC));
 
     public static final MenuType<SawbenchMenu> SAWBENCH_MENU =
             Registry.register(BuiltInRegistries.MENU,
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "sawbench_menu"),
-                    new MenuType<>((id, inv) -> new SawbenchMenu(id, inv), FeatureFlags.DEFAULT_FLAGS));
+                    new MenuType<>(SawbenchMenu::new, FeatureFlags.DEFAULT_FLAGS));
 
     public static final MenuType<FilteredHopperMenu> FILTERED_HOPPER_MENU =
             Registry.register(BuiltInRegistries.MENU,
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "filtered_hopper_menu"),
-                    new MenuType<>((id, inv) -> new FilteredHopperMenu(id, inv, null), FeatureFlags.DEFAULT_FLAGS));
+                    new MenuType<>(FilteredHopperMenu::new, FeatureFlags.DEFAULT_FLAGS));
 
     public static final MenuType<FastHopperMenu> FAST_HOPPER_MENU =
             Registry.register(BuiltInRegistries.MENU,
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "fast_hopper_menu"),
-                    new MenuType<>((id, inv) -> new FastHopperMenu(id, inv, null), FeatureFlags.DEFAULT_FLAGS));
+                    new MenuType<>(FastHopperMenu::new, FeatureFlags.DEFAULT_FLAGS));
 
     public static void register() {}
 }

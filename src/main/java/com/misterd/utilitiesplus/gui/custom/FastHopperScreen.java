@@ -12,21 +12,17 @@ public class FastHopperScreen extends AbstractContainerScreen<FastHopperMenu> {
     private static final Identifier GUI_TEXTURE =
             Identifier.fromNamespaceAndPath("utilitiesplus", "textures/gui/hopper_gui.png");
 
-    private static final int GUI_HEIGHT = 166;
-
     public FastHopperScreen(FastHopperMenu menu, Inventory playerInventory, Component title) {
-        super(menu, playerInventory, title, 176, GUI_HEIGHT);
-        this.inventoryLabelY = GUI_HEIGHT - 96;
+        super(menu, playerInventory, title, 176, 166);
+        this.inventoryLabelY = this.imageHeight - 125;
+        this.titleLabelX = (this.imageWidth - this.font.width(this.title)) / 2;
     }
 
     @Override
-    public void extractContents(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+        super.extractBackground(graphics, mouseX, mouseY, partialTick);
         graphics.blit(RenderPipelines.GUI_TEXTURED, GUI_TEXTURE,
-                leftPos, topPos, 0.0F, 0.0F,
-                imageWidth, imageHeight, 256, 256);
-
-        this.titleLabelX = (this.imageWidth - this.font.width(this.title)) / 2;
-
-        super.extractContents(graphics, mouseX, mouseY, partialTick);
+                this.leftPos, this.topPos, 0.0F, 0.0F,
+                this.imageWidth, this.imageHeight, 256, 256);
     }
 }
