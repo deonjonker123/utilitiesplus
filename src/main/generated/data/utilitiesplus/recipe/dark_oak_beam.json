@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": "minecraft:dark_oak_planks",
+    "S": "utilitiesplus:dark_oak_vertical_slab"
+  },
+  "pattern": [
+    "S",
+    "P",
+    "S"
+  ],
+  "result": {
+    "count": 3,
+    "id": "utilitiesplus:dark_oak_beam"
+  }
+}

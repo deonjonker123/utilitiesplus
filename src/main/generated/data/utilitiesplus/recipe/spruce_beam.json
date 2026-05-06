@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": "minecraft:spruce_planks",
+    "S": "utilitiesplus:spruce_vertical_slab"
+  },
+  "pattern": [
+    "S",
+    "P",
+    "S"
+  ],
+  "result": {
+    "count": 3,
+    "id": "utilitiesplus:spruce_beam"
+  }
+}

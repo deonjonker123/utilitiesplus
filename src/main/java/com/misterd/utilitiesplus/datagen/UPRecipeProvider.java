@@ -126,6 +126,128 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                         .define('L', ItemTags.LOGS).define('I', Items.IRON_BARS).define('E', Items.EMERALD_BLOCK)
                         .unlockedBy("has_emerald", has(Items.EMERALD)).save(output);
 
+                // Vertical Slabs — add after the Villager Catcher recipe
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.OAK_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.OAK_PLANKS)
+                        .unlockedBy("has_oak_planks", has(Items.OAK_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.SPRUCE_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.SPRUCE_PLANKS)
+                        .unlockedBy("has_spruce_planks", has(Items.SPRUCE_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.BIRCH_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.BIRCH_PLANKS)
+                        .unlockedBy("has_birch_planks", has(Items.BIRCH_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.JUNGLE_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.JUNGLE_PLANKS)
+                        .unlockedBy("has_jungle_planks", has(Items.JUNGLE_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.ACACIA_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.ACACIA_PLANKS)
+                        .unlockedBy("has_acacia_planks", has(Items.ACACIA_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.DARK_OAK_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.DARK_OAK_PLANKS)
+                        .unlockedBy("has_dark_oak_planks", has(Items.DARK_OAK_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.MANGROVE_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.MANGROVE_PLANKS)
+                        .unlockedBy("has_mangrove_planks", has(Items.MANGROVE_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.CHERRY_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.CHERRY_PLANKS)
+                        .unlockedBy("has_cherry_planks", has(Items.CHERRY_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.PALE_OAK_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.PALE_OAK_PLANKS)
+                        .unlockedBy("has_pale_oak_planks", has(Items.PALE_OAK_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.CRIMSON_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.CRIMSON_PLANKS)
+                        .unlockedBy("has_crimson_planks", has(Items.CRIMSON_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.WARPED_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.WARPED_PLANKS)
+                        .unlockedBy("has_warped_planks", has(Items.WARPED_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.BAMBOO_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.BAMBOO_PLANKS)
+                        .unlockedBy("has_bamboo_planks", has(Items.BAMBOO_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.ACACIA_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.ACACIA_VERTICAL_SLAB).define('P', Items.ACACIA_PLANKS)
+                        .unlockedBy("has_acacia_planks", has(Items.ACACIA_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.BAMBOO_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.BAMBOO_VERTICAL_SLAB).define('P', Items.BAMBOO_PLANKS)
+                        .unlockedBy("has_bamboo_planks", has(Items.BAMBOO_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.BIRCH_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.BIRCH_VERTICAL_SLAB).define('P', Items.BIRCH_PLANKS)
+                        .unlockedBy("has_birch_planks", has(Items.BIRCH_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.CHERRY_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.CHERRY_VERTICAL_SLAB).define('P', Items.CHERRY_PLANKS)
+                        .unlockedBy("has_cherry_planks", has(Items.CHERRY_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.CRIMSON_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.CRIMSON_VERTICAL_SLAB).define('P', Items.CRIMSON_PLANKS)
+                        .unlockedBy("has_crimson_planks", has(Items.CRIMSON_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.DARK_OAK_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.DARK_OAK_VERTICAL_SLAB).define('P', Items.DARK_OAK_PLANKS)
+                        .unlockedBy("has_dark_oak_planks", has(Items.DARK_OAK_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.JUNGLE_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.JUNGLE_VERTICAL_SLAB).define('P', Items.JUNGLE_PLANKS)
+                        .unlockedBy("has_jungle_planks", has(Items.JUNGLE_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.MANGROVE_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.MANGROVE_VERTICAL_SLAB).define('P', Items.MANGROVE_PLANKS)
+                        .unlockedBy("has_mangrove_planks", has(Items.MANGROVE_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.OAK_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.OAK_VERTICAL_SLAB).define('P', Items.OAK_PLANKS)
+                        .unlockedBy("has_oak_planks", has(Items.OAK_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.PALE_OAK_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.PALE_OAK_VERTICAL_SLAB).define('P', Items.PALE_OAK_PLANKS)
+                        .unlockedBy("has_pale_oak_planks", has(Items.PALE_OAK_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.SPRUCE_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.SPRUCE_VERTICAL_SLAB).define('P', Items.SPRUCE_PLANKS)
+                        .unlockedBy("has_spruce_planks", has(Items.SPRUCE_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.WARPED_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.WARPED_VERTICAL_SLAB).define('P', Items.WARPED_PLANKS)
+                        .unlockedBy("has_warped_planks", has(Items.WARPED_PLANKS)).save(output);
+
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.STRIPPED_OAK_LOG, Items.OAK_LOG);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.STRIPPED_OAK_WOOD, Items.OAK_WOOD);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.STRIPPED_SPRUCE_LOG, Items.SPRUCE_LOG);
@@ -525,6 +647,32 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 stonecutterResultFromBase(RecipeCategory.DECORATIONS, Items.BARREL, Items.BAMBOO_BLOCK);
                 stonecutterResultFromBase(RecipeCategory.DECORATIONS, Items.CHEST, Items.STRIPPED_BAMBOO_BLOCK);
                 stonecutterResultFromBase(RecipeCategory.DECORATIONS, Items.BARREL, Items.STRIPPED_BAMBOO_BLOCK);
+
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.OAK_VERTICAL_SLAB, Items.OAK_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.SPRUCE_VERTICAL_SLAB, Items.SPRUCE_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.BIRCH_VERTICAL_SLAB, Items.BIRCH_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.JUNGLE_VERTICAL_SLAB, Items.JUNGLE_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.ACACIA_VERTICAL_SLAB, Items.ACACIA_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.DARK_OAK_VERTICAL_SLAB, Items.DARK_OAK_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.MANGROVE_VERTICAL_SLAB, Items.MANGROVE_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.CHERRY_VERTICAL_SLAB, Items.CHERRY_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.PALE_OAK_VERTICAL_SLAB, Items.PALE_OAK_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.CRIMSON_VERTICAL_SLAB, Items.CRIMSON_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.WARPED_VERTICAL_SLAB, Items.WARPED_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.BAMBOO_VERTICAL_SLAB, Items.BAMBOO_PLANKS, 2);
+
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.ACACIA_BEAM, Items.ACACIA_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.BAMBOO_BEAM, Items.BAMBOO_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.BIRCH_BEAM, Items.BIRCH_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.CHERRY_BEAM, Items.CHERRY_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.CRIMSON_BEAM, Items.CRIMSON_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.DARK_OAK_BEAM, Items.DARK_OAK_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.JUNGLE_BEAM, Items.JUNGLE_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.MANGROVE_BEAM, Items.MANGROVE_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.OAK_BEAM, Items.OAK_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.PALE_OAK_BEAM, Items.PALE_OAK_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.SPRUCE_BEAM, Items.SPRUCE_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, UPBlocks.WARPED_BEAM, Items.WARPED_PLANKS, 2);
             }
         };
     }

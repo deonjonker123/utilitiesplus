@@ -22,6 +22,8 @@ public class KilnScreen extends AbstractContainerScreen<KilnMenu> {
                 leftPos, topPos, 0.0F, 0.0F,
                 imageWidth, imageHeight, 256, 256);
 
+        this.titleLabelX = (this.imageWidth - this.font.width(this.title)) / 2;
+
         renderFlame(graphics);
         renderArrow(graphics);
 

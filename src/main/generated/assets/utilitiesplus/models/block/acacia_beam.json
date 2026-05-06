@@ -1,0 +1,6 @@
+{
+  "parent": "utilitiesplus:block/wooden_beam",
+  "textures": {
+    "all": "minecraft:block/acacia_planks"
+  }
+}

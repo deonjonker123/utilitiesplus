@@ -59,6 +59,8 @@ public class SawbenchScreen extends net.minecraft.client.gui.screens.inventory.A
             }
         }
 
+        this.titleLabelX = (this.imageWidth - this.font.width(this.title)) / 2;
+
         int x = this.leftPos + 52;
         int y = this.topPos + 14;
         int endIndex = this.startIndex + 12;

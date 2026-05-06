@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": "minecraft:mangrove_planks",
+    "S": "utilitiesplus:mangrove_vertical_slab"
+  },
+  "pattern": [
+    "S",
+    "P",
+    "S"
+  ],
+  "result": {
+    "count": 3,
+    "id": "utilitiesplus:mangrove_beam"
+  }
+}

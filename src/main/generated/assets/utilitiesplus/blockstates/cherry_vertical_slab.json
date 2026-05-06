@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "type=double": {
+      "model": "minecraft:block/cherry_planks"
+    },
+    "type=east": {
+      "model": "utilitiesplus:block/cherry_vertical_slab",
+      "y": 90
+    },
+    "type=north": {
+      "model": "utilitiesplus:block/cherry_vertical_slab"
+    },
+    "type=south": {
+      "model": "utilitiesplus:block/cherry_vertical_slab",
+      "y": 180
+    },
+    "type=west": {
+      "model": "utilitiesplus:block/cherry_vertical_slab",
+      "y": 270
+    }
+  }
+}

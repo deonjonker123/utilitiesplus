@@ -11,6 +11,37 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 public class UPCreativeTabs {
+    public static final CreativeModeTab UTILITIES_PLUS_BUILDING = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+            Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "utilitiesplus_building_creativetab"),
+            FabricCreativeModeTab.builder().icon(() -> new ItemStack(UPBlocks.OAK_VERTICAL_SLAB))
+                    .title(Component.translatable("creativetab.utilitiesplus.building"))
+                    .displayItems((parameters, output) -> {
+                        output.accept(UPBlocks.ACACIA_VERTICAL_SLAB);
+                        output.accept(UPBlocks.BAMBOO_VERTICAL_SLAB);
+                        output.accept(UPBlocks.BIRCH_VERTICAL_SLAB);
+                        output.accept(UPBlocks.CHERRY_VERTICAL_SLAB);
+                        output.accept(UPBlocks.CRIMSON_VERTICAL_SLAB);
+                        output.accept(UPBlocks.DARK_OAK_VERTICAL_SLAB);
+                        output.accept(UPBlocks.JUNGLE_VERTICAL_SLAB);
+                        output.accept(UPBlocks.MANGROVE_VERTICAL_SLAB);
+                        output.accept(UPBlocks.OAK_VERTICAL_SLAB);
+                        output.accept(UPBlocks.PALE_OAK_VERTICAL_SLAB);
+                        output.accept(UPBlocks.SPRUCE_VERTICAL_SLAB);
+                        output.accept(UPBlocks.WARPED_VERTICAL_SLAB);
+                        output.accept(UPBlocks.ACACIA_BEAM);
+                        output.accept(UPBlocks.BAMBOO_BEAM);
+                        output.accept(UPBlocks.BIRCH_BEAM);
+                        output.accept(UPBlocks.CHERRY_BEAM);
+                        output.accept(UPBlocks.CRIMSON_BEAM);
+                        output.accept(UPBlocks.DARK_OAK_BEAM);
+                        output.accept(UPBlocks.JUNGLE_BEAM);
+                        output.accept(UPBlocks.MANGROVE_BEAM);
+                        output.accept(UPBlocks.OAK_BEAM);
+                        output.accept(UPBlocks.PALE_OAK_BEAM);
+                        output.accept(UPBlocks.SPRUCE_BEAM);
+                        output.accept(UPBlocks.WARPED_BEAM);
+                    }).build());
+
     public static final CreativeModeTab UTILITIES_PLUS = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
             Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "utilitiesplus_creativetab"),
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(UPBlocks.KILN))
