@@ -67,6 +67,7 @@ public class UPLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(UPBlocks.WARPED_BEAM);
         dropSelf(UPBlocks.FILTERED_HOPPER);
         dropSelf(UPBlocks.FAST_HOPPER);
+        dropSelf(UPBlocks.FAN);
     }
 
     private LootTable.Builder createVerticalSlabItemTable(Block slab) {

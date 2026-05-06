@@ -131,6 +131,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                         .define('I', Items.COPPER_INGOT).define('C', Items.DIAMOND).define('H', UPBlocks.FILTERED_HOPPER)
                         .unlockedBy("has_filtered_hopper", has(UPBlocks.FILTERED_HOPPER)).save(output);
 
+                shaped(RecipeCategory.MISC, UPBlocks.FAN)
+                        .pattern("CIC").pattern("CFC").pattern("CRC")
+                        .define('C', Items.COPPER_INGOT).define('I',Items.IRON_BARS ).define('R', Items.REDSTONE_BLOCK).define('F', Items.BLAST_FURNACE)
+                        .unlockedBy("has_redstone", has(Items.REDSTONE)).save(output);
+
                 shaped(RecipeCategory.MISC, UPItems.VILLAGER_CATCHER)
                         .pattern("LIL").pattern("IEI").pattern("LIL")
                         .define('L', ItemTags.LOGS).define('I', Items.IRON_BARS).define('E', Items.EMERALD_BLOCK)

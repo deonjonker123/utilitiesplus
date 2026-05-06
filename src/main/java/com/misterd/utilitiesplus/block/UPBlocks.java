@@ -50,19 +50,22 @@ public class UPBlocks {
             p -> new BarrelBlock(p.strength(2F, 6F).sound(SoundType.NETHER_WOOD).noOcclusion()));
 
     public static final Block HARVESTER = registerBlock("harvester",
-            p -> new HarvesterBlock(p.strength(2F, 6F).sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion()));
+            p -> new HarvesterBlock(p.strength(3F, 6F).sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion()));
 
     public static final Block KILN = registerBlock("kiln",
-            p -> new KilnBlock(p.strength(2F, 6F).sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion()));
+            p -> new KilnBlock(p.strength(3F, 6F).sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion()));
 
     public static final Block SAWBENCH = registerBlock("sawbench",
             p -> new SawbenchBlock(p.strength(2F, 6F).sound(SoundType.STONE).noOcclusion()));
 
     public static final Block FILTERED_HOPPER = registerBlock("filtered_hopper",
-            p -> new FilteredHopperBlock(p.strength(2F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
+            p -> new FilteredHopperBlock(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
 
     public static final Block FAST_HOPPER = registerBlock("fast_hopper",
-            p -> new FastHopperBlock(p.strength(2F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
+            p -> new FastHopperBlock(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
+
+    public static final Block FAN = registerBlock("fan",
+            p -> new FanBlock(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
 
     public static final Block ACACIA_VERTICAL_SLAB = registerBlock("acacia_vertical_slab",
             p -> new VerticalSlabBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));

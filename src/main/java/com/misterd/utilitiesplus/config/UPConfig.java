@@ -25,6 +25,9 @@ public class UPConfig implements ConfigData {
     public boolean harvesterHoeTakesDamage = true;
 
     @ConfigEntry.Gui.Tooltip
+    public boolean fanParticles = true;
+
+    @ConfigEntry.Gui.Tooltip
     public boolean villagerResetOnRelease = true;
 
     public static UPConfig get() {

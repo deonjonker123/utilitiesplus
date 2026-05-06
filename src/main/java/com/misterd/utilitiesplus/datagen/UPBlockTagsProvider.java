@@ -57,6 +57,7 @@ public class UPBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(UPBlocks.HARVESTER)
                 .add(UPBlocks.KILN)
                 .add(UPBlocks.FILTERED_HOPPER)
+                .add(UPBlocks.FAN)
                 .add(UPBlocks.FAST_HOPPER);
     }
 }

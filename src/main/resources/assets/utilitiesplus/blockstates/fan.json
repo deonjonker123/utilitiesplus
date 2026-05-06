@@ -1,0 +1,31 @@
+{
+	"variants": {
+		"facing=north,powered=false,pulling=false": { "model": "utilitiesplus:block/fan", "x": 90 },
+		"facing=south,powered=false,pulling=false": { "model": "utilitiesplus:block/fan", "x": 90, "y": 180 },
+		"facing=east,powered=false,pulling=false": { "model": "utilitiesplus:block/fan", "x": 90, "y": 90 },
+		"facing=west,powered=false,pulling=false": { "model": "utilitiesplus:block/fan", "x": 90, "y": 270 },
+		"facing=up,powered=false,pulling=false": { "model": "utilitiesplus:block/fan" },
+		"facing=down,powered=false,pulling=false": { "model": "utilitiesplus:block/fan", "x": 180 },
+
+		"facing=north,powered=false,pulling=true": { "model": "utilitiesplus:block/fan_pulling", "x": 90 },
+		"facing=south,powered=false,pulling=true": { "model": "utilitiesplus:block/fan_pulling", "x": 90, "y": 180 },
+		"facing=east,powered=false,pulling=true": { "model": "utilitiesplus:block/fan_pulling", "x": 90, "y": 90 },
+		"facing=west,powered=false,pulling=true": { "model": "utilitiesplus:block/fan_pulling", "x": 90, "y": 270 },
+		"facing=up,powered=false,pulling=true": { "model": "utilitiesplus:block/fan_pulling" },
+		"facing=down,powered=false,pulling=true": { "model": "utilitiesplus:block/fan_pulling", "x": 180 },
+
+		"facing=north,powered=true,pulling=false": { "model": "utilitiesplus:block/fan_powered", "x": 90 },
+		"facing=south,powered=true,pulling=false": { "model": "utilitiesplus:block/fan_powered", "x": 90, "y": 180 },
+		"facing=east,powered=true,pulling=false": { "model": "utilitiesplus:block/fan_powered", "x": 90, "y": 90 },
+		"facing=west,powered=true,pulling=false": { "model": "utilitiesplus:block/fan_powered", "x": 90, "y": 270 },
+		"facing=up,powered=true,pulling=false": { "model": "utilitiesplus:block/fan_powered" },
+		"facing=down,powered=true,pulling=false": { "model": "utilitiesplus:block/fan_powered", "x": 180 },
+
+		"facing=north,powered=true,pulling=true": { "model": "utilitiesplus:block/fan_powered_pulling", "x": 90 },
+		"facing=south,powered=true,pulling=true": { "model": "utilitiesplus:block/fan_powered_pulling", "x": 90, "y": 180 },
+		"facing=east,powered=true,pulling=true": { "model": "utilitiesplus:block/fan_powered_pulling", "x": 90, "y": 90 },
+		"facing=west,powered=true,pulling=true": { "model": "utilitiesplus:block/fan_powered_pulling", "x": 90, "y": 270 },
+		"facing=up,powered=true,pulling=true": { "model": "utilitiesplus:block/fan_powered_pulling" },
+		"facing=down,powered=true,pulling=true": { "model": "utilitiesplus:block/fan_powered_pulling", "x": 180 }
+	}
+}

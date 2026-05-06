@@ -3,6 +3,7 @@
     "utilitiesplus:harvester",
     "utilitiesplus:kiln",
     "utilitiesplus:filtered_hopper",
+    "utilitiesplus:fan",
     "utilitiesplus:fast_hopper"
   ]
 }

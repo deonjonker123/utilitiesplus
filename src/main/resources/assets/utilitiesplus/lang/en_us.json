@@ -26,6 +26,7 @@
   "block.utilitiesplus.sawbench": "Saw Bench",
   "block.utilitiesplus.filtered_hopper": "Filtered Hopper",
   "block.utilitiesplus.fast_hopper": "Fast Hopper",
+  "block.utilitiesplus.fan": "Fan",
 
   "block.utilitiesplus.acacia_vertical_slab": "Acacia Vertical Slab",
   "block.utilitiesplus.bamboo_vertical_slab": "Bamboo Vertical Slab",
@@ -66,5 +67,7 @@
   "text.autoconfig.utilitiesplus.option.villagerResetOnRelease": "Villager resets on release",
   "text.autoconfig.utilitiesplus.option.villagerResetOnRelease.@Tooltip": "Whether a villager released from a Villager Catcher resets to an unemployed novice",
   "text.autoconfig.utilitiesplus.option.harvesterCheckInterval": "Harvester check interval",
-  "text.autoconfig.utilitiesplus.option.harvesterCheckInterval.@Tooltip": "How often the Harvester scans for mature crops, in ticks. 200 = 10 seconds, 20 = 1 second"
+  "text.autoconfig.utilitiesplus.option.harvesterCheckInterval.@Tooltip": "How often the Harvester scans for mature crops, in ticks. 200 = 10 seconds, 20 = 1 second",
+  "text.autoconfig.utilitiesplus.option.fanParticles": "Fan particles",
+  "text.autoconfig.utilitiesplus.option.fanParticles.@Tooltip": "Whether the Fan emits particles while powered"
 }

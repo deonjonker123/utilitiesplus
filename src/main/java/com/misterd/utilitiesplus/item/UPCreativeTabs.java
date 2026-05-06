@@ -52,6 +52,7 @@ public class UPCreativeTabs {
                         output.accept(UPBlocks.SAWBENCH);
                         output.accept(UPBlocks.FILTERED_HOPPER);
                         output.accept(UPBlocks.FAST_HOPPER);
+                        output.accept(UPBlocks.FAN);
                         output.accept(UPBlocks.ACACIA_BARREL);
                         output.accept(UPBlocks.BIRCH_BARREL);
                         output.accept(UPBlocks.CHERRY_BARREL);
