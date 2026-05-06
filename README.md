@@ -57,6 +57,16 @@ A whole log's worth of planks, stairs, slabs, fences, doors, and whatever else y
 
 ---
 
+### Vertical Slabs
+Slabs, but vertical. Available in all wood types because if you're going to do something, you might as well do it properly.
+
+---
+
+### Wooden Beams
+A decorative structural beam, 8×16×8, centred in the block. Doesn't connect to anything. Doesn't do anything clever. Just looks good holding your ceiling up. Available in all wood types.
+
+---
+
 ### Filtered Hopper
 A hopper with a single filter slot. Only items matching the filter pass through. Everything else gets ignored. That's the whole thing.
 
@@ -75,7 +85,7 @@ A redstone clock in a single block. Right-click to increase the pulse interval b
 ---
 
 ### Mine Cart Dock
-Loading and unloading minecarts normally means hopper chains, comparator circuits, and a rats nest of redstone that takes up half a room. The Mine Cart Dock replaces all of that. Place it adjacent to a rail — not on it, next to it, like a comparator — and it'll detect the cart's inventory through the block face, transfer up to 8 items per tick into or out of its 9-slot buffer, and output a comparator signal based on the detected cart's fullness. Toggle between load and unload mode with a right-click. Hook a chest or hopper up to the buffer, wire the comparator output to a powered rail, and you're done. Park cart, wait, cart leaves.
+Loading and unloading minecarts normally means hopper chains, comparator circuits, and a rats nest of redstone that takes up half a room. The Mine Cart Dock replaces all of that. Place it adjacent to a rail — not on it, next to it, like a comparator — and it'll detect the cart's inventory through the block face, transfer up to 8 items per tick into or out of its 27-slot buffer, and output a comparator signal based on the detected cart's fullness. Toggle between load and unload mode with a right-click. Hook a chest or hopper up to the buffer, wire the comparator output to a powered rail, and you're done. Park cart, wait, cart leaves.
 
 ---
 
