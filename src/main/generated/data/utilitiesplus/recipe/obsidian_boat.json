@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": "minecraft:obsidian"
+  },
+  "pattern": [
+    "O O",
+    "OOO"
+  ],
+  "result": {
+    "id": "utilitiesplus:obsidian_boat"
+  }
+}

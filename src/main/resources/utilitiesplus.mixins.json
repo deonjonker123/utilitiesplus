@@ -4,7 +4,12 @@
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
 		"VillagerAccessor",
-		"VillagerInteractMixin"
+		"VillagerInteractMixin",
+		"AbstractBoatMixin",
+		"EntityMixin"
+	],
+	"client": [
+		"ScreenEffectRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

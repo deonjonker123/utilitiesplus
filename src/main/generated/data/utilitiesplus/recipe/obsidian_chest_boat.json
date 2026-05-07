@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "utilitiesplus:obsidian_boat",
+    "minecraft:chest"
+  ],
+  "result": {
+    "id": "utilitiesplus:obsidian_chest_boat"
+  }
+}
