@@ -21,6 +21,11 @@ public class UPBlockEntities {
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "harvester_be"),
                     FabricBlockEntityTypeBuilder.create(HarvesterBlockEntity::new, UPBlocks.HARVESTER).build());
 
+    public static final BlockEntityType<NestBoxBlockEntity> NEST_BOX_BE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "nest_box_be"),
+                    FabricBlockEntityTypeBuilder.create(NestBoxBlockEntity::new, UPBlocks.NEST_BOX).build());
+
     public static final BlockEntityType<FilteredHopperBlockEntity> FILTERED_HOPPER_BE =
             Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "filtered_hopper_be"),

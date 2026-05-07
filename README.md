@@ -46,7 +46,7 @@ Animals are hungry. You have food. The Feeding Trough bridges that gap automatic
 ---
 
 ### Chicken Nest Box
-Chickens are going to lay eggs whether you like it or not. The Nest Box at least makes sure those eggs end up somewhere useful. Place one down and nearby chickens that are about to lay will wander over to do their business properly. The Nest Box collects eggs in a 3×3 area around it and stores them in its 9-slot inventory. Civilization.
+Chickens are going to lay eggs whether you like it or not. The Nest Box at least makes sure those eggs end up somewhere useful. Place one down and the Nest Box collects eggs in a 3×3 area in front of it and stores them in its 9-slot inventory. Hoppers can pull eggs out from the bottom of the nest block.
 
 *(Configurable — see Config section)*
 

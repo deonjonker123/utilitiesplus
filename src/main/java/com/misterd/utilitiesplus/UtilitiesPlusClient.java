@@ -19,6 +19,7 @@ public class UtilitiesPlusClient implements ClientModInitializer {
         MenuScreens.register(UPMenuTypes.FILTERED_HOPPER_MENU, FilteredHopperScreen::new);
         MenuScreens.register(UPMenuTypes.FAST_HOPPER_MENU, FastHopperScreen::new);
         MenuScreens.register(UPMenuTypes.HARVESTER_MENU, HarvesterScreen::new);
+        MenuScreens.register(UPMenuTypes.NEST_BOX_MENU, NestBoxScreen::new);
 
         ModelLayerRegistry.registerModelLayer(UPModelLayerLocations.OBSIDIAN_BOAT, BoatModel::createBoatModel);
         ModelLayerRegistry.registerModelLayer(UPModelLayerLocations.OBSIDIAN_CHEST_BOAT, BoatModel::createChestBoatModel);

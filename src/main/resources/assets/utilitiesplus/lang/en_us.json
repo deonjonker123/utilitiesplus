@@ -80,6 +80,8 @@
   "text.autoconfig.utilitiesplus.option.redstoneClockInterval.@Tooltip": "How often the Redstone Clock pulses, in ticks. 2 = fastest, 300 = every 15 seconds",
   "text.autoconfig.utilitiesplus.option.redstoneClockSound": "Redstone clock sound",
   "text.autoconfig.utilitiesplus.option.redstoneClockSound.@Tooltip": "Whether the Redstone Clock plays a click sound on each pulse",
+  "text.autoconfig.utilitiesplus.option.nestBoxCollectionRadius": "Nest Box collection area",
+  "text.autoconfig.utilitiesplus.option.nestBoxCollectionRadius.@Tooltip": "Size of the area in front of the Nest Box where eggs are collected. 3 = 3x3, 9 = 9x9",
 
   "message.utilitiesplus.redstone_clock.interval": "Pulses every %s ticks",
   "message.utilitiesplus.redstone_clock.interval_reset": "Pulse interval reset to default"

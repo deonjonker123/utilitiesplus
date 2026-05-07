@@ -25,6 +25,10 @@ public class UPConfig implements ConfigData {
     public boolean harvesterHoeTakesDamage = true;
 
     @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.BoundedDiscrete(min = 3, max = 9)
+    public int nestBoxCollectionArea = 3;
+
+    @ConfigEntry.Gui.Tooltip
     @ConfigEntry.BoundedDiscrete(min = 2, max = 300)
     public int redstoneClockInterval = 10;
 
