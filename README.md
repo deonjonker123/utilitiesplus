@@ -80,6 +80,8 @@ Moves 8 items per tick instead of the vanilla 1. Also filterable, because speed 
 ### Redstone Clock
 A redstone clock in a single block. Right-click to increase the pulse interval by 10 ticks, shift-right-click to decrease it. No more spaghetti repeater loops taking up half your base.
 
+Reset it to factory settings (10 ticks) by right-clicking a redstone torch on the clock block.
+
 *(Configurable — see Config section)*
 
 ---
@@ -135,7 +137,8 @@ Don't try it on water. It sinks. Immediately. Don't ask why. It's obsidian.
 | Option                                      | Min | Max    | Default |
 |---------------------------------------------|-----|--------|---------|
 | Storage Barrel base capacity                | 512 | 16,384 | 4,096   |
-| Redstone clock pulse interval (in ticks) | 2   | 300 | 10 |
+| Redstone clock pulse interval (in ticks)    | 2   | 300 | 10 |
+| Redstone clock plays click sound on pulse   | —   | —      | `true`  |
 | Feeding trough animal limit                 | 8   | 128    | 32      |
 | Feeding trough feeding radius               | 3×3 | 15×15  | 9×9     |
 | Nest Box collection radius                  | 3×3 | 9×9    | 3×3     |
