@@ -41,5 +41,10 @@ public class UPBlockEntities {
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "redstone_clock_be"),
                     FabricBlockEntityTypeBuilder.create(RedstoneClockBlockEntity::new, UPBlocks.REDSTONE_CLOCK).build());
 
+    public static final BlockEntityType<FeedingTroughBlockEntity> FEEDING_TROUGH_BE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "feeding_trough_be"),
+                    FabricBlockEntityTypeBuilder.create(FeedingTroughBlockEntity::new, UPBlocks.FEEDING_TROUGH).build());
+
     public static void register() {}
 }

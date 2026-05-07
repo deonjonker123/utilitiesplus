@@ -32,6 +32,11 @@ public class UPMenuTypes {
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "nest_box_menu"),
                     new ExtendedMenuType<>(NestBoxMenu::new, BLOCK_POS_CODEC));
 
+    public static final MenuType<FeedingTroughMenu> FEEDING_TROUGH_MENU =
+            Registry.register(BuiltInRegistries.MENU,
+                    Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "feeding_trough_menu"),
+                    new ExtendedMenuType<>(FeedingTroughMenu::new, BLOCK_POS_CODEC));
+
     public static final MenuType<SawbenchMenu> SAWBENCH_MENU =
             Registry.register(BuiltInRegistries.MENU,
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "sawbench_menu"),

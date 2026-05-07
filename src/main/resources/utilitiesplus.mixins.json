@@ -6,7 +6,8 @@
 		"VillagerAccessor",
 		"VillagerInteractMixin",
 		"AbstractBoatMixin",
-		"EntityMixin"
+		"EntityMixin",
+		"AnimalMixin"
 	],
 	"client": [
 		"ScreenEffectRendererMixin"

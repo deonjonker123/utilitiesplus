@@ -29,6 +29,18 @@ public class UPConfig implements ConfigData {
     public int nestBoxCollectionArea = 3;
 
     @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.BoundedDiscrete(min = 8, max = 128)
+    public int feedingTroughAnimalLimit = 32;
+
+    @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.BoundedDiscrete(min = 20, max = 1200)
+    public int feedingTroughFeedInterval = 100;
+
+    @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.BoundedDiscrete(min = 3, max = 15)
+    public int feedingTroughRadius = 9;
+
+    @ConfigEntry.Gui.Tooltip
     @ConfigEntry.BoundedDiscrete(min = 2, max = 300)
     public int redstoneClockInterval = 10;
 

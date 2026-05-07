@@ -39,7 +39,7 @@ Tired of running back and forth harvesting and replanting crops like some kind o
 ---
 
 ### Feeding Trough
-Animals are hungry. You have food. The Feeding Trough bridges that gap automatically — place it, fill it manually, and it'll feed any animal in a 9×3×9 area around it that finds the contents appetising. If the local animal population exceeds the configured limit, the trough stops working until you do something about the overcrowding. Not its problem. Also, no hopper support. Fill it yourself.
+Animals are hungry. You have food. The Feeding Trough bridges that gap automatically — place it, fill it with anything an animal might reasonably want to eat, and it'll feed any animal in a 9×3×9 area around it that finds the contents appetising. That covers the usual suspects — crops, seeds, hay, flowers, and a few more exotic options for the less picky animals. If the local animal population exceeds the configured limit, the trough stops working until you do something about the overcrowding. Not its problem. Also, no hopper support. Fill it yourself.
 
 *(Configurable — see Config section)*
 
@@ -137,10 +137,11 @@ Don't try it on water. It sinks. Immediately. Don't ask why. It's obsidian.
 | Option                                      | Min | Max    | Default |
 |---------------------------------------------|-----|--------|---------|
 | Storage Barrel base capacity                | 512 | 16,384 | 4,096   |
-| Redstone clock pulse interval (in ticks)    | 2   | 300 | 10 |
+| Redstone clock pulse interval (in ticks)    | 2   | 300    | 10      |
 | Redstone clock plays click sound on pulse   | —   | —      | `true`  |
 | Feeding trough animal limit                 | 8   | 128    | 32      |
 | Feeding trough feeding radius               | 3×3 | 15×15  | 9×9     |
+| Feeding trough feeding interval             | 20  | 1200   | 200     |
 | Nest Box collection radius                  | 3×3 | 9×9    | 3×3     |
 | Harvester harvest check interval (in ticks) | 20  | 1200   | 200     |
 | Harvester work area                         | 3×3 | 15×15  | 9×9     |
