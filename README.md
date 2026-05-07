@@ -126,6 +126,13 @@ For when you need to smelt one thing and don't want to burn through an entire pi
 
 ---
 
+### Obsidian Boat & Chest Boat 
+A boat. For lava. Crafted from obsidian. Navigate lava lakes like a reasonable person instead of bridge-pillaring across them like a noob.
+
+Don't try it on water. It sinks. Immediately. Don't ask why. It's obsidian.
+
+---
+
 ## Config
 | Option                                      | Min | Max    | Default |
 |---------------------------------------------|-----|--------|---------|
