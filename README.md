@@ -6,7 +6,7 @@ Attempts to hit some vanilla misses in (hopefully) interesting ways.
 ## Blocks
 
 ### Kiln
-Apparently Mojang thought you'd never smelt enormous quantities of sand, clay, or cobblestone. The Kiln fixes the arbitrary smelting speed gap by processing the materials vanilla forgot at the same 2x speed as the Blast Furnace and Smoker:
+The Kiln fixes the arbitrary smelting speed gap by processing the materials vanilla forgot at the same 2x speed as the Blast Furnace and Smoker:
 - Clay, Clay Balls, Terracotta
 - Stone, Cobblestone
 - Sand, Red Sand
@@ -14,7 +14,7 @@ Apparently Mojang thought you'd never smelt enormous quantities of sand, clay, o
 ---
 
 ### Storage Barrels *(not the vanilla kind)*
-A storage block that holds up to 4,096 *(configurable)* of a single item type. Because sometimes you just need somewhere to dump 3,000 cobblestone without thinking about it. Upgradeable, hopper-compatible, and available in all 12 wood types because your base's aesthetic matters, apparently.
+A storage block that holds up to 4,096 *(configurable)* of a single item type. Sometimes you just need somewhere to dump 3,000 cobblestone without thinking about it. Upgradeable, hopper-compatible, and available in all 12 wood types.
 
 Breaking a barrel preserves its contents and any installed upgrade.
 
@@ -58,12 +58,12 @@ A whole log's worth of planks, stairs, slabs, fences, doors, and whatever else y
 ---
 
 ### Vertical Slabs
-Slabs, but vertical. Available in all wood types because if you're going to do something, you might as well do it properly.
+Slabs, but vertical. Available in all wood types.
 
 ---
 
 ### Wooden Beams
-A decorative structural beam, 8×16×8, centred in the block. Doesn't connect to anything. Doesn't do anything clever. Just looks good holding your ceiling up. Available in all wood types.
+A decorative structural beam. Doesn't connect to anything. Doesn't do anything clever. Just looks good holding your ceiling up. Available in all wood types.
 
 ---
 
@@ -73,7 +73,7 @@ A hopper with a single filter slot. Only items matching the filter pass through.
 ---
 
 ### Fast Hopper
-Moves 8 items per tick instead of the vanilla 1. Also filterable, because speed without precision is just chaos. Combine with the filtered hopper and pretend you're an engineer.
+Moves 8 items per tick instead of the vanilla 1.
 
 ---
 
