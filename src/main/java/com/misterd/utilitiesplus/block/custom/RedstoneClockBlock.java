@@ -4,6 +4,7 @@ import com.misterd.utilitiesplus.blockentity.UPBlockEntities;
 import com.misterd.utilitiesplus.blockentity.custom.RedstoneClockBlockEntity;
 import com.misterd.utilitiesplus.config.UPConfig;
 import com.mojang.serialization.MapCodec;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -90,12 +91,12 @@ public class RedstoneClockBlock extends BaseEntityBlock {
 
         if (stack.is(Items.REDSTONE_TORCH)) {
             clock.resetInterval();
-            player.sendOverlayMessage(Component.translatable("message.utilitiesplus.redstone_clock.interval_reset"));
+            player.sendOverlayMessage(Component.translatable("message.utilitiesplus.redstone_clock.interval_reset").withStyle(ChatFormatting.GOLD));
             return InteractionResult.SUCCESS_SERVER;
         }
 
         clock.adjustInterval(!player.isShiftKeyDown());
-        player.sendOverlayMessage(Component.translatable("message.utilitiesplus.redstone_clock.interval", clock.getInterval()));
+        player.sendOverlayMessage(Component.translatable("message.utilitiesplus.redstone_clock.interval", clock.getInterval()).withStyle(ChatFormatting.GOLD));
         return InteractionResult.SUCCESS_SERVER;
     }
 
