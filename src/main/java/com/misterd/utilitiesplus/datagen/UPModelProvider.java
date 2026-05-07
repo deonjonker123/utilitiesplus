@@ -25,6 +25,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.Optional;
+import java.util.Properties;
 
 public class UPModelProvider extends FabricModelProvider {
 
@@ -76,9 +77,14 @@ public class UPModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators gen) {
         gen.createTrivialCube(UPBlocks.CHARCOAL_BLOCK);
+        gen.createNonTemplateModelBlock(UPBlocks.FEEDING_TROUGH);
 
         gen.createFurnace(UPBlocks.HARVESTER, TexturedModel.ORIENTABLE);
         gen.createFurnace(UPBlocks.KILN, TexturedModel.ORIENTABLE);
+
+        gen.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(UPBlocks.NEST_BOX,
+                        BlockModelGenerators.plainVariant(Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "block/nest_box")))
+                .with(ROTATION_HORIZONTAL_FACING));
 
         gen.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(UPBlocks.ACACIA_BARREL,
                         BlockModelGenerators.plainVariant(Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "block/acacia_barrel")))

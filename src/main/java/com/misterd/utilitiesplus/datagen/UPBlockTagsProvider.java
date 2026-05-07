@@ -51,11 +51,14 @@ public class UPBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(UPBlocks.OAK_BEAM)
                 .add(UPBlocks.PALE_OAK_BEAM)
                 .add(UPBlocks.SPRUCE_BEAM)
-                .add(UPBlocks.WARPED_BEAM);
+                .add(UPBlocks.WARPED_BEAM)
+                .add(UPBlocks.FEEDING_TROUGH)
+                .add(UPBlocks.NEST_BOX);
 
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(UPBlocks.HARVESTER)
                 .add(UPBlocks.KILN)
+                .add(UPBlocks.REDSTONE_CLOCK)
                 .add(UPBlocks.FILTERED_HOPPER)
                 .add(UPBlocks.FAN)
                 .add(UPBlocks.FAST_HOPPER);

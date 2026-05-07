@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": "minecraft:hay_block",
+    "L": "#minecraft:logs",
+    "P": "#minecraft:planks"
+  },
+  "pattern": [
+    "LPL",
+    "LHL",
+    "LLL"
+  ],
+  "result": {
+    "id": "utilitiesplus:nest_box"
+  }
+}

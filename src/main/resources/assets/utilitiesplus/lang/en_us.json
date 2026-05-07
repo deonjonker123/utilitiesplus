@@ -28,7 +28,10 @@
   "block.utilitiesplus.sawbench": "Saw Bench",
   "block.utilitiesplus.filtered_hopper": "Filtered Hopper",
   "block.utilitiesplus.fast_hopper": "Fast Hopper",
+  "block.utilitiesplus.redstone_clock": "Redstone Clock",
   "block.utilitiesplus.fan": "Fan",
+  "block.utilitiesplus.feeding_trough": "Feeding Trough",
+  "block.utilitiesplus.nest_box": "Nest Box",
 
   "block.utilitiesplus.acacia_vertical_slab": "Acacia Vertical Slab",
   "block.utilitiesplus.bamboo_vertical_slab": "Bamboo Vertical Slab",
@@ -72,5 +75,7 @@
   "text.autoconfig.utilitiesplus.option.harvesterCheckInterval": "Harvester check interval",
   "text.autoconfig.utilitiesplus.option.harvesterCheckInterval.@Tooltip": "How often the Harvester scans for mature crops, in ticks. 200 = 10 seconds, 20 = 1 second",
   "text.autoconfig.utilitiesplus.option.fanParticles": "Fan particles",
-  "text.autoconfig.utilitiesplus.option.fanParticles.@Tooltip": "Whether the Fan emits particles while powered"
+  "text.autoconfig.utilitiesplus.option.fanParticles.@Tooltip": "Whether the Fan emits particles while powered",
+  "text.autoconfig.utilitiesplus.option.redstoneClockInterval": "Redstone clock pulse interval",
+  "text.autoconfig.utilitiesplus.option.redstoneClockInterval.@Tooltip": "How often the Redstone Clock pulses, in ticks. 2 = fastest, 300 = every 15 seconds"
 }

@@ -2,6 +2,7 @@
   "values": [
     "utilitiesplus:harvester",
     "utilitiesplus:kiln",
+    "utilitiesplus:redstone_clock",
     "utilitiesplus:filtered_hopper",
     "utilitiesplus:fan",
     "utilitiesplus:fast_hopper"

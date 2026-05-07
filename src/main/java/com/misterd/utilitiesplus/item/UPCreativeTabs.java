@@ -47,12 +47,15 @@ public class UPCreativeTabs {
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(UPBlocks.KILN))
                     .title(Component.translatable("creativetab.utilitiesplus"))
                     .displayItems((parameters, output) -> {
-                        output.accept(UPBlocks.HARVESTER);
                         output.accept(UPBlocks.KILN);
                         output.accept(UPBlocks.SAWBENCH);
                         output.accept(UPBlocks.FILTERED_HOPPER);
                         output.accept(UPBlocks.FAST_HOPPER);
+                        output.accept(UPBlocks.REDSTONE_CLOCK);
                         output.accept(UPBlocks.FAN);
+                        output.accept(UPBlocks.HARVESTER);
+                        output.accept(UPBlocks.FEEDING_TROUGH);
+                        output.accept(UPBlocks.NEST_BOX);
                         output.accept(UPBlocks.ACACIA_BARREL);
                         output.accept(UPBlocks.BIRCH_BARREL);
                         output.accept(UPBlocks.CHERRY_BARREL);

@@ -36,6 +36,9 @@ public class UPLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(UPBlocks.SPRUCE_BARREL);
         dropSelf(UPBlocks.WARPED_BARREL);
         dropSelf(UPBlocks.SAWBENCH);
+        dropSelf(UPBlocks.FEEDING_TROUGH);
+        dropSelf(UPBlocks.NEST_BOX);
+        dropSelf(UPBlocks.REDSTONE_CLOCK);
 
         dropSelf(UPBlocks.HARVESTER);
         dropSelf(UPBlocks.KILN);

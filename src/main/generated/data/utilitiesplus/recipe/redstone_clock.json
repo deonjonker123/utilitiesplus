@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:repeater",
+    "C": "minecraft:comparator",
+    "I": "minecraft:copper_ingot",
+    "R": "minecraft:redstone_torch",
+    "S": "#minecraft:planks"
+  },
+  "pattern": [
+    "SCS",
+    "RIR",
+    "S#S"
+  ],
+  "result": {
+    "id": "utilitiesplus:redstone_clock"
+  }
+}

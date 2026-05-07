@@ -135,6 +135,7 @@ Don't try it on water. It sinks. Immediately. Don't ask why. It's obsidian.
 | Option                                      | Min | Max    | Default |
 |---------------------------------------------|-----|--------|---------|
 | Storage Barrel base capacity                | 512 | 16,384 | 4,096   |
+| Redstone clock pulse interval (in ticks) | 2   | 300 | 10 |
 | Feeding trough animal limit                 | 8   | 128    | 32      |
 | Feeding trough feeding radius               | 3×3 | 15×15  | 9×9     |
 | Nest Box collection radius                  | 3×3 | 9×9    | 3×3     |

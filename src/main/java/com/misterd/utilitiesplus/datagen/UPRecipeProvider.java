@@ -261,6 +261,22 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                         .define('S', UPBlocks.WARPED_VERTICAL_SLAB).define('P', Items.WARPED_PLANKS)
                         .unlockedBy("has_warped_planks", has(Items.WARPED_PLANKS)).save(output);
 
+                shaped(RecipeCategory.MISC, UPBlocks.FEEDING_TROUGH)
+                        .pattern("LHL").pattern("LLL")
+                        .define('L', ItemTags.LOGS).define('H', Items.HAY_BLOCK)
+                        .unlockedBy("has_hay_block", has(Items.HAY_BLOCK)).save(output);
+
+                shaped(RecipeCategory.MISC, UPBlocks.NEST_BOX)
+                        .pattern("LPL").pattern("LHL").pattern("LLL")
+                        .define('L', ItemTags.LOGS).define('H', Items.HAY_BLOCK).define('P', ItemTags.PLANKS)
+                        .unlockedBy("has_hay_block", has(Items.HAY_BLOCK)).save(output);
+
+                shaped(RecipeCategory.MISC, UPBlocks.REDSTONE_CLOCK)
+                        .pattern("SCS").pattern("RIR").pattern("S#S")
+                        .define('S', ItemTags.PLANKS).define('R', Items.REDSTONE_TORCH)
+                        .define('C', Items.COMPARATOR).define('I', Items.COPPER_INGOT).define('#', Items.REPEATER)
+                        .unlockedBy("has_redstone", has(Items.REDSTONE)).save(output);
+
                 shaped(RecipeCategory.MISC, UPBlocks.CHARCOAL_BLOCK)
                         .pattern("CCC").pattern("CCC").pattern("CCC")
                         .define('C', Items.CHARCOAL)

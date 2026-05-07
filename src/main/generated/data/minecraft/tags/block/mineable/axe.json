@@ -35,6 +35,8 @@
     "utilitiesplus:oak_beam",
     "utilitiesplus:pale_oak_beam",
     "utilitiesplus:spruce_beam",
-    "utilitiesplus:warped_beam"
+    "utilitiesplus:warped_beam",
+    "utilitiesplus:feeding_trough",
+    "utilitiesplus:nest_box"
   ]
 }

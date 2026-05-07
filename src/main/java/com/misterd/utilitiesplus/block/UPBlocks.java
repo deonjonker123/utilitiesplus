@@ -64,8 +64,17 @@ public class UPBlocks {
     public static final Block FAST_HOPPER = registerBlock("fast_hopper",
             p -> new FastHopperBlock(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
 
+    public static final Block REDSTONE_CLOCK = registerBlock("redstone_clock",
+            p -> new Block(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
+
     public static final Block FAN = registerBlock("fan",
             p -> new FanBlock(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
+
+    public static final Block FEEDING_TROUGH = registerBlock("feeding_trough",
+            p -> new FeedingTroughBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
+
+    public static final Block NEST_BOX = registerBlock("nest_box",
+            p -> new NestBoxBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
 
     public static final Block CHARCOAL_BLOCK = registerBlock("charcoal_block",
             p -> new Block(p.strength(3F, 6F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
