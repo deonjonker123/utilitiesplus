@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
 public class UPBlockEntities {
@@ -45,6 +46,16 @@ public class UPBlockEntities {
             Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "feeding_trough_be"),
                     FabricBlockEntityTypeBuilder.create(FeedingTroughBlockEntity::new, UPBlocks.FEEDING_TROUGH).build());
+
+    public static final BlockEntityType<BarrelBlockEntity> BARREL_BE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "barrel_be"),
+                    FabricBlockEntityTypeBuilder.create(BarrelBlockEntity::new,
+                            UPBlocks.ACACIA_BARREL, UPBlocks.BIRCH_BARREL,
+                            UPBlocks.CHERRY_BARREL, UPBlocks.CRIMSON_BARREL, UPBlocks.DARK_OAK_BARREL,
+                            UPBlocks.JUNGLE_BARREL, UPBlocks.MANGROVE_BARREL, UPBlocks.OAK_BARREL,
+                            UPBlocks.PALE_OAK_BARREL, UPBlocks.SPRUCE_BARREL, UPBlocks.WARPED_BARREL
+                    ).build());
 
     public static void register() {}
 }

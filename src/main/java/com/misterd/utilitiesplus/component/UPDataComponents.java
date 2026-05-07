@@ -1,6 +1,7 @@
 package com.misterd.utilitiesplus.component;
 
 import com.misterd.utilitiesplus.UtilitiesPlus;
+import com.misterd.utilitiesplus.component.custom.BarrelData;
 import com.misterd.utilitiesplus.component.custom.CapturedVillagerData;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponentType;
@@ -16,6 +17,16 @@ public class UPDataComponents {
                     DataComponentType.<CapturedVillagerData>builder()
                             .persistent(CapturedVillagerData.CODEC)
                             .networkSynchronized(CapturedVillagerData.STREAM_CODEC)
+                            .build()
+            );
+
+    public static final DataComponentType<BarrelData> BARREL_DATA =
+            Registry.register(
+                    BuiltInRegistries.DATA_COMPONENT_TYPE,
+                    Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "barrel_data"),
+                    DataComponentType.<BarrelData>builder()
+                            .persistent(BarrelData.CODEC)
+                            .networkSynchronized(BarrelData.STREAM_CODEC)
                             .build()
             );
 

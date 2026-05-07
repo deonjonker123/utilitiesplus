@@ -52,5 +52,10 @@ public class UPMenuTypes {
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "fast_hopper_menu"),
                     new MenuType<>(FastHopperMenu::new, FeatureFlags.DEFAULT_FLAGS));
 
+    public static final MenuType<BarrelMenu> BARREL_MENU =
+            Registry.register(BuiltInRegistries.MENU,
+                    Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "barrel_menu"),
+                    new ExtendedMenuType<>(BarrelMenu::new, BLOCK_POS_CODEC));
+
     public static void register() {}
 }

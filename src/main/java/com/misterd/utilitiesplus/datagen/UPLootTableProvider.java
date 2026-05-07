@@ -24,22 +24,22 @@ public class UPLootTableProvider extends FabricBlockLootSubProvider {
 
     @Override
     public void generate() {
-        dropSelf(UPBlocks.ACACIA_BARREL);
-        dropSelf(UPBlocks.BIRCH_BARREL);
-        dropSelf(UPBlocks.CHERRY_BARREL);
-        dropSelf(UPBlocks.CRIMSON_BARREL);
-        dropSelf(UPBlocks.DARK_OAK_BARREL);
-        dropSelf(UPBlocks.JUNGLE_BARREL);
-        dropSelf(UPBlocks.MANGROVE_BARREL);
-        dropSelf(UPBlocks.OAK_BARREL);
-        dropSelf(UPBlocks.PALE_OAK_BARREL);
-        dropSelf(UPBlocks.SPRUCE_BARREL);
-        dropSelf(UPBlocks.WARPED_BARREL);
+        add(UPBlocks.ACACIA_BARREL, LootTable.lootTable());
+        add(UPBlocks.BIRCH_BARREL, LootTable.lootTable());
+        add(UPBlocks.CHERRY_BARREL, LootTable.lootTable());
+        add(UPBlocks.CRIMSON_BARREL, LootTable.lootTable());
+        add(UPBlocks.DARK_OAK_BARREL, LootTable.lootTable());
+        add(UPBlocks.JUNGLE_BARREL, LootTable.lootTable());
+        add(UPBlocks.MANGROVE_BARREL, LootTable.lootTable());
+        add(UPBlocks.OAK_BARREL, LootTable.lootTable());
+        add(UPBlocks.PALE_OAK_BARREL, LootTable.lootTable());
+        add(UPBlocks.SPRUCE_BARREL, LootTable.lootTable());
+        add(UPBlocks.WARPED_BARREL, LootTable.lootTable());
+
         dropSelf(UPBlocks.SAWBENCH);
         dropSelf(UPBlocks.FEEDING_TROUGH);
         dropSelf(UPBlocks.NEST_BOX);
         dropSelf(UPBlocks.REDSTONE_CLOCK);
-
         dropSelf(UPBlocks.HARVESTER);
         dropSelf(UPBlocks.KILN);
 

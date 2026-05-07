@@ -9,6 +9,10 @@
   "item.utilitiesplus.iron_upgrade": "Iron Upgrade",
   "item.utilitiesplus.gold_upgrade": "Gold Upgrade",
   "item.utilitiesplus.diamond_upgrade": "Diamond Upgrade",
+  "tier.utilitiesplus.copper": "Copper",
+  "tier.utilitiesplus.iron": "Iron",
+  "tier.utilitiesplus.gold": "Gold",
+  "tier.utilitiesplus.diamond": "Diamond",
   "item.utilitiesplus.charcoal_bit": "Charcoal Bit",
   "item.utilitiesplus.coal_bit": "Coal Bit",
 
@@ -23,6 +27,7 @@
   "block.utilitiesplus.pale_oak_barrel": "Pale Oak Barrel",
   "block.utilitiesplus.spruce_barrel": "Spruce Barrel",
   "block.utilitiesplus.warped_barrel": "Warped Barrel",
+  "block.utilitiesplus.barrel": "Storage Barrel",
   "block.utilitiesplus.harvester": "Harvester",
   "block.utilitiesplus.kiln": "Kiln",
   "block.utilitiesplus.sawbench": "Saw Bench",
@@ -90,5 +95,8 @@
   "text.autoconfig.utilitiesplus.option.feedingTroughFeedInterval.@Tooltip": "How often the Feeding Trough attempts to feed an animal, in ticks. 100 = 5 seconds, 20 = 1 second",
 
   "message.utilitiesplus.redstone_clock.interval": "Pulses every %s ticks",
-  "message.utilitiesplus.redstone_clock.interval_reset": "Pulse interval reset to default"
+  "message.utilitiesplus.redstone_clock.interval_reset": "Pulse interval reset to default",
+
+  "tooltip.utilitiesplus.barrel.contains": "Contains: %s (%s / %s)",
+  "tooltip.utilitiesplus.barrel.tier": "Tier: %s"
 }

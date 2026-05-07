@@ -1,6 +1,7 @@
 package com.misterd.utilitiesplus;
 
 import com.misterd.utilitiesplus.blockentity.UPBlockEntities;
+import com.misterd.utilitiesplus.client.ber.BarrelBlockEntityRenderer;
 import com.misterd.utilitiesplus.client.ber.FeedingTroughBlockEntityRenderer;
 import com.misterd.utilitiesplus.entity.UPEntities;
 import com.misterd.utilitiesplus.entity.client.UPModelLayerLocations;
@@ -24,6 +25,7 @@ public class UtilitiesPlusClient implements ClientModInitializer {
         MenuScreens.register(UPMenuTypes.HARVESTER_MENU, HarvesterScreen::new);
         MenuScreens.register(UPMenuTypes.NEST_BOX_MENU, NestBoxScreen::new);
         MenuScreens.register(UPMenuTypes.FEEDING_TROUGH_MENU, FeedingTroughScreen::new);
+        MenuScreens.register(UPMenuTypes.BARREL_MENU, BarrelScreen::new);
 
         ModelLayerRegistry.registerModelLayer(UPModelLayerLocations.OBSIDIAN_BOAT, BoatModel::createBoatModel);
         ModelLayerRegistry.registerModelLayer(UPModelLayerLocations.OBSIDIAN_CHEST_BOAT, BoatModel::createChestBoatModel);
@@ -32,5 +34,6 @@ public class UtilitiesPlusClient implements ClientModInitializer {
         EntityRenderers.register(UPEntities.OBSIDIAN_CHEST_BOAT, context -> new BoatRenderer(context, UPModelLayerLocations.OBSIDIAN_CHEST_BOAT));
 
         BlockEntityRenderers.register(UPBlockEntities.FEEDING_TROUGH_BE, FeedingTroughBlockEntityRenderer::new);
+        BlockEntityRenderers.register(UPBlockEntities.BARREL_BE, BarrelBlockEntityRenderer::new);
     }
 }

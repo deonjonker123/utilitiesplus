@@ -5,7 +5,8 @@
         "top": "utilitiesplus:block/filtered_hopper_top",
         "side": "utilitiesplus:block/filtered_hopper_outside",
         "inside_arrow": "utilitiesplus:block/hopper_inside_arrow",
-        "side_arrow": "utilitiesplus:block/filtered_hopper_outside_arrow"
+        "side_arrow": "utilitiesplus:block/filtered_hopper_outside_arrow",
+        "bottom": "utilitiesplus:block/hopper_inside"
     },
     "elements": [
         {
