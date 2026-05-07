@@ -97,7 +97,7 @@ A redstone-powered fan that pushes items, mobs, and players in the direction it'
 ---
 
 ### Charcoal Block
-9 charcoal in a crafting grid, one block out. Same burn properties as a coal block. No gimmicks, no tricks — just a storage solution that should have been in the game already.
+9 charcoal in a crafting grid, one block out. Same burn properties as a coal block. 
 
 ---
 
@@ -106,7 +106,7 @@ A redstone-powered fan that pushes items, mobs, and players in the direction it'
 ### Villager Catcher
 Long minecart rail systems snaking across your entire world just to move one villager into your trading hall? We've all been there. We've all hated it. Right-click a villager with the Villager Catcher to imprison the little guy until you're ready to release them.
 
-**⚠ Fair warning:** Your precious Mending villager will not survive the trip with their trades intact. Upon release, every imprisoned villager resets to an unemployed novice. You have been warned. Don't come crying.
+**⚠ Fair warning:** Your precious Mending villager will not survive the trip with their trades intact. Upon release, every imprisoned villager resets to an unemployed novice. You have been warned.
 
 *(Configurable — see Config section)*
 
