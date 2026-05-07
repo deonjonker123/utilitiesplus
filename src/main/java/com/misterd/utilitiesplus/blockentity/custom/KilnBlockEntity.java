@@ -109,8 +109,8 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
             if (!be.isLit() && !fuel.isEmpty()) {
                 int burnDuration = serverLevel.fuelValues().burnDuration(fuel);
                 if (burnDuration > 0) {
-                    be.litDuration = burnDuration;
-                    be.litTime = burnDuration;
+                    be.litDuration = burnDuration / COOK_SPEED_MULTIPLIER;
+                    be.litTime = burnDuration / COOK_SPEED_MULTIPLIER;
                     dirty = true;
                     fuel.shrink(1);
                     if (fuel.isEmpty()) {
@@ -220,13 +220,19 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
     }
 
     @Override
-    public int getContainerSize() { return SIZE; }
+    public int getContainerSize() {
+        return SIZE;
+    }
 
     @Override
-    public boolean isEmpty() { return inventory.stream().allMatch(ItemStack::isEmpty); }
+    public boolean isEmpty() {
+        return inventory.stream().allMatch(ItemStack::isEmpty);
+    }
 
     @Override
-    public ItemStack getItem(int slot) { return inventory.get(slot); }
+    public ItemStack getItem(int slot) {
+        return inventory.get(slot);
+    }
 
     @Override
     public ItemStack removeItem(int slot, int amount) {
@@ -236,7 +242,9 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
     }
 
     @Override
-    public ItemStack removeItemNoUpdate(int slot) { return ContainerHelper.takeItem(inventory, slot); }
+    public ItemStack removeItemNoUpdate(int slot) {
+        return ContainerHelper.takeItem(inventory, slot);
+    }
 
     @Override
     public void setItem(int slot, ItemStack stack) {
@@ -250,10 +258,14 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
     }
 
     @Override
-    public boolean stillValid(Player player) { return Container.stillValidBlockEntity(this, player); }
+    public boolean stillValid(Player player) {
+        return Container.stillValidBlockEntity(this, player);
+    }
 
     @Override
-    public void clearContent() { inventory.clear(); }
+    public void clearContent() {
+        inventory.clear();
+    }
 
     @Override
     protected void saveAdditional(ValueOutput output) {

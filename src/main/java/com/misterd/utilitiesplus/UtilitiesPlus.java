@@ -7,6 +7,7 @@ import com.misterd.utilitiesplus.entity.UPEntities;
 import com.misterd.utilitiesplus.gui.UPMenuTypes;
 import com.misterd.utilitiesplus.item.UPCreativeTabs;
 import com.misterd.utilitiesplus.item.UPItems;
+import com.misterd.utilitiesplus.util.UPFuels;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -25,5 +26,6 @@ public class UtilitiesPlus implements ModInitializer {
 		UPItems.register();
 		UPCreativeTabs.register();
 		UPEntities.register();
+		UPFuels.register();
 	}
 }

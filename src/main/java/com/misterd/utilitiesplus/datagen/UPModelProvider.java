@@ -75,6 +75,8 @@ public class UPModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators gen) {
+        gen.createTrivialCube(UPBlocks.CHARCOAL_BLOCK);
+
         gen.createFurnace(UPBlocks.HARVESTER, TexturedModel.ORIENTABLE);
         gen.createFurnace(UPBlocks.KILN, TexturedModel.ORIENTABLE);
 
@@ -148,5 +150,7 @@ public class UPModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(UPItems.DIAMOND_UPGRADE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(UPItems.OBSIDIAN_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(UPItems.OBSIDIAN_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(UPItems.CHARCOAL_BIT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(UPItems.COAL_BIT, ModelTemplates.FLAT_ITEM);
     }
 }

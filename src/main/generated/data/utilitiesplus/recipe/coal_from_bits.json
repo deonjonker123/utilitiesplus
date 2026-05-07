@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "utilitiesplus:coal_bit",
+    "utilitiesplus:coal_bit",
+    "utilitiesplus:coal_bit",
+    "utilitiesplus:coal_bit",
+    "utilitiesplus:coal_bit",
+    "utilitiesplus:coal_bit",
+    "utilitiesplus:coal_bit",
+    "utilitiesplus:coal_bit"
+  ],
+  "result": {
+    "id": "minecraft:coal"
+  }
+}

@@ -67,6 +67,9 @@ public class UPBlocks {
     public static final Block FAN = registerBlock("fan",
             p -> new FanBlock(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
 
+    public static final Block CHARCOAL_BLOCK = registerBlock("charcoal_block",
+            p -> new Block(p.strength(3F, 6F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
+
     public static final Block ACACIA_VERTICAL_SLAB = registerBlock("acacia_vertical_slab",
             p -> new VerticalSlabBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
 

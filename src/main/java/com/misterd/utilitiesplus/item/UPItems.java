@@ -28,6 +28,12 @@ public class UPItems {
     public static final Item VILLAGER_CATCHER = registerItem("villager_catcher",
             properties -> new Item(properties));
 
+    public static final Item CHARCOAL_BIT = registerItem("charcoal_bit",
+            properties -> new Item(properties));
+
+    public static final Item COAL_BIT = registerItem("coal_bit",
+            properties -> new Item(properties));
+
     public static final Item OBSIDIAN_BOAT = registerItem("obsidian_boat",
             properties -> new BoatItem(UPEntities.OBSIDIAN_BOAT, properties.stacksTo(1)));
 

@@ -9,6 +9,8 @@
   "item.utilitiesplus.iron_upgrade": "Iron Upgrade",
   "item.utilitiesplus.gold_upgrade": "Gold Upgrade",
   "item.utilitiesplus.diamond_upgrade": "Diamond Upgrade",
+  "item.utilitiesplus.charcoal_bit": "Charcoal Bit",
+  "item.utilitiesplus.coal_bit": "Coal Bit",
 
   "block.utilitiesplus.acacia_barrel": "Acacia Barrel",
   "block.utilitiesplus.birch_barrel": "Birch Barrel",
@@ -53,6 +55,7 @@
   "block.utilitiesplus.pale_oak_beam": "Pale Oak Beam",
   "block.utilitiesplus.spruce_beam": "Spruce Beam",
   "block.utilitiesplus.warped_beam": "Warped Beam",
+  "block.utilitiesplus.charcoal_block": "Charcoal Block",
 
   "entity.utilitiesplus.obsidian_boat": "Obsidian Boat",
   "entity.utilitiesplus.obsidian_chest_boat": "Obsidian Chest Boat",

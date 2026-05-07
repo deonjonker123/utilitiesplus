@@ -71,6 +71,9 @@ public class UPCreativeTabs {
                         output.accept(UPItems.VILLAGER_CATCHER);
                         output.accept(UPItems.OBSIDIAN_BOAT);
                         output.accept(UPItems.OBSIDIAN_CHEST_BOAT);
+                        output.accept(UPBlocks.CHARCOAL_BLOCK);
+                        output.accept(UPItems.CHARCOAL_BIT);
+                        output.accept(UPItems.COAL_BIT);
                     }).build());
 
     public static void register() {}

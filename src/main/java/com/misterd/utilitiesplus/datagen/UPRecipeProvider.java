@@ -261,6 +261,27 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                         .define('S', UPBlocks.WARPED_VERTICAL_SLAB).define('P', Items.WARPED_PLANKS)
                         .unlockedBy("has_warped_planks", has(Items.WARPED_PLANKS)).save(output);
 
+                shaped(RecipeCategory.MISC, UPBlocks.CHARCOAL_BLOCK)
+                        .pattern("CCC").pattern("CCC").pattern("CCC")
+                        .define('C', Items.CHARCOAL)
+                        .unlockedBy("has_charcoal", has(Items.CHARCOAL)).save(output);
+
+                shapeless(RecipeCategory.MISC, UPItems.CHARCOAL_BIT, 8)
+                        .requires(Items.CHARCOAL)
+                        .unlockedBy(getHasName(Items.COAL), has(Items.COAL)).save(output);
+
+                shapeless(RecipeCategory.MISC, UPItems.COAL_BIT, 8)
+                        .requires(Items.COAL)
+                        .unlockedBy(getHasName(Items.COAL), has(Items.COAL)).save(output);
+
+                shapeless(RecipeCategory.MISC, Items.CHARCOAL)
+                        .requires(UPItems.CHARCOAL_BIT, 8)
+                        .unlockedBy(getHasName(UPItems.CHARCOAL_BIT), has(UPItems.CHARCOAL_BIT)).save(output, "charcoal_from_bits");
+
+                shapeless(RecipeCategory.MISC, Items.COAL)
+                        .requires(UPItems.COAL_BIT, 8)
+                        .unlockedBy(getHasName(UPItems.COAL_BIT), has(UPItems.COAL_BIT)).save(output, "coal_from_bits");
+
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.STRIPPED_OAK_LOG, Items.OAK_LOG);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.STRIPPED_OAK_WOOD, Items.OAK_WOOD);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.STRIPPED_SPRUCE_LOG, Items.SPRUCE_LOG);

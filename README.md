@@ -119,8 +119,8 @@ Long minecart rail systems snaking across your entire world just to move one vil
 
 ---
 
-### Tiny Coal and Charcoal
-One tiny coal or charcoal smelts exactly one item. For when you need to smelt one thing and don't want to burn through an entire piece of coal like a maniac.
+### Coal and Charcoal bits
+For when you need to smelt one thing and don't want to burn through an entire piece of coal like a maniac.
 
 ---
 

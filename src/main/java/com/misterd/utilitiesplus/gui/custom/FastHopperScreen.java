@@ -14,7 +14,7 @@ public class FastHopperScreen extends AbstractContainerScreen<FastHopperMenu> {
 
     public FastHopperScreen(FastHopperMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 133);
-        this.inventoryLabelY = this.imageHeight - 94;
+        this.inventoryLabelY = this.imageHeight - 92;
         this.titleLabelX = (this.imageWidth - this.font.width(this.title)) / 2;
     }
 
