@@ -2,6 +2,7 @@ package com.misterd.utilitiesplus.datagen;
 
 import com.misterd.utilitiesplus.UtilitiesPlus;
 import com.misterd.utilitiesplus.block.UPBlocks;
+import com.misterd.utilitiesplus.component.UPDataComponents;
 import com.misterd.utilitiesplus.item.UPItems;
 import com.misterd.utilitiesplus.util.UPBlockStateProperties;
 import com.misterd.utilitiesplus.util.VerticalSlabType;
@@ -12,13 +13,12 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
-import net.minecraft.client.data.models.model.ModelLocationUtils;
-import net.minecraft.client.data.models.model.ModelTemplate;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.block.dispatch.VariantMutator;
+import net.minecraft.client.renderer.item.ClientItem;
+import net.minecraft.client.renderer.item.ConditionalItemModel;
+import net.minecraft.client.renderer.item.ItemModel;
+import net.minecraft.client.renderer.item.properties.conditional.HasComponent;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
@@ -149,7 +149,6 @@ public class UPModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
-        itemModelGenerators.generateFlatItem(UPItems.VILLAGER_CATCHER, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(UPItems.IRON_UPGRADE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(UPItems.COPPER_UPGRADE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(UPItems.GOLD_UPGRADE, ModelTemplates.FLAT_ITEM);
@@ -158,5 +157,11 @@ public class UPModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(UPItems.OBSIDIAN_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(UPItems.CHARCOAL_BIT, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(UPItems.COAL_BIT, ModelTemplates.FLAT_ITEM);
+
+        ItemModel.Unbaked unbakedVillagerCatcher = ItemModelUtils.plainModel(itemModelGenerators.createFlatItemModel(UPItems.VILLAGER_CATCHER, ModelTemplates.FLAT_ITEM));
+        ItemModel.Unbaked unbakedOccupiedVillagerCatcher = ItemModelUtils.plainModel(itemModelGenerators.createFlatItemModel(UPItems.VILLAGER_CATCHER, "_occupied", ModelTemplates.FLAT_ITEM));
+        itemModelGenerators.itemModelOutput.accept(UPItems.VILLAGER_CATCHER,
+                new ClientItem(new ConditionalItemModel.Unbaked(Optional.empty(), new HasComponent(UPDataComponents.VILLAGER_DATA, false),
+                        unbakedOccupiedVillagerCatcher, unbakedVillagerCatcher), new ClientItem.Properties(false, false, 1F)).model());
     }
 }

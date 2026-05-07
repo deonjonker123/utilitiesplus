@@ -3,7 +3,8 @@
 	"package": "com.misterd.utilitiesplus.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin"
+		"VillagerAccessor",
+		"VillagerInteractMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

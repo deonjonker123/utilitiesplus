@@ -2,6 +2,7 @@ package com.misterd.utilitiesplus.item;
 
 import com.misterd.utilitiesplus.UtilitiesPlus;
 import com.misterd.utilitiesplus.entity.UPEntities;
+import com.misterd.utilitiesplus.item.custom.VillagerCatcherItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -26,7 +27,7 @@ public class UPItems {
             properties -> new Item(properties));
 
     public static final Item VILLAGER_CATCHER = registerItem("villager_catcher",
-            properties -> new Item(properties));
+            properties -> new VillagerCatcherItem(properties));
 
     public static final Item CHARCOAL_BIT = registerItem("charcoal_bit",
             properties -> new Item(properties));
