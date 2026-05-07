@@ -29,6 +29,9 @@ public class UPConfig implements ConfigData {
     public int redstoneClockInterval = 10;
 
     @ConfigEntry.Gui.Tooltip
+    public boolean redstoneClockSound = true;
+
+    @ConfigEntry.Gui.Tooltip
     public boolean fanParticles = true;
 
     @ConfigEntry.Gui.Tooltip

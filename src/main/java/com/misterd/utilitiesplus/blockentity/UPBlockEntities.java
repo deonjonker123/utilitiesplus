@@ -2,10 +2,7 @@ package com.misterd.utilitiesplus.blockentity;
 
 import com.misterd.utilitiesplus.UtilitiesPlus;
 import com.misterd.utilitiesplus.block.UPBlocks;
-import com.misterd.utilitiesplus.blockentity.custom.FastHopperBlockEntity;
-import com.misterd.utilitiesplus.blockentity.custom.FilteredHopperBlockEntity;
-import com.misterd.utilitiesplus.blockentity.custom.HarvesterBlockEntity;
-import com.misterd.utilitiesplus.blockentity.custom.KilnBlockEntity;
+import com.misterd.utilitiesplus.blockentity.custom.*;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -33,6 +30,11 @@ public class UPBlockEntities {
             Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
                     Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "fast_hopper_be"),
                     FabricBlockEntityTypeBuilder.create(FastHopperBlockEntity::new, UPBlocks.FAST_HOPPER).build());
+
+    public static final BlockEntityType<RedstoneClockBlockEntity> REDSTONE_CLOCK_BE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "redstone_clock_be"),
+                    FabricBlockEntityTypeBuilder.create(RedstoneClockBlockEntity::new, UPBlocks.REDSTONE_CLOCK).build());
 
     public static void register() {}
 }

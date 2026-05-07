@@ -77,5 +77,10 @@
   "text.autoconfig.utilitiesplus.option.fanParticles": "Fan particles",
   "text.autoconfig.utilitiesplus.option.fanParticles.@Tooltip": "Whether the Fan emits particles while powered",
   "text.autoconfig.utilitiesplus.option.redstoneClockInterval": "Redstone clock pulse interval",
-  "text.autoconfig.utilitiesplus.option.redstoneClockInterval.@Tooltip": "How often the Redstone Clock pulses, in ticks. 2 = fastest, 300 = every 15 seconds"
+  "text.autoconfig.utilitiesplus.option.redstoneClockInterval.@Tooltip": "How often the Redstone Clock pulses, in ticks. 2 = fastest, 300 = every 15 seconds",
+  "text.autoconfig.utilitiesplus.option.redstoneClockSound": "Redstone clock sound",
+  "text.autoconfig.utilitiesplus.option.redstoneClockSound.@Tooltip": "Whether the Redstone Clock plays a click sound on each pulse",
+
+  "message.utilitiesplus.redstone_clock.interval": "Pulses every %s ticks",
+  "message.utilitiesplus.redstone_clock.interval_reset": "Pulse interval reset to default"
 }

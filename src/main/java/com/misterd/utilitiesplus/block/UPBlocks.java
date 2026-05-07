@@ -65,7 +65,7 @@ public class UPBlocks {
             p -> new FastHopperBlock(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
 
     public static final Block REDSTONE_CLOCK = registerBlock("redstone_clock",
-            p -> new Block(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
+            p -> new RedstoneClockBlock(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
 
     public static final Block FAN = registerBlock("fan",
             p -> new FanBlock(p.strength(3F, 6F).sound(SoundType.STONE).noOcclusion().requiresCorrectToolForDrops()));
