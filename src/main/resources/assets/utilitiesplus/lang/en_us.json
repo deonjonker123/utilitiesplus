@@ -15,6 +15,7 @@
   "tier.utilitiesplus.diamond": "Diamond",
   "item.utilitiesplus.charcoal_bit": "Charcoal Bit",
   "item.utilitiesplus.coal_bit": "Coal Bit",
+  "item.utilitiesplus.trowel": "Trowel",
 
   "block.utilitiesplus.acacia_barrel": "Acacia Barrel",
   "block.utilitiesplus.birch_barrel": "Birch Barrel",
@@ -98,5 +99,6 @@
   "message.utilitiesplus.redstone_clock.interval_reset": "Pulse interval reset to default",
 
   "tooltip.utilitiesplus.barrel.contains": "Contains: %s (%s / %s)",
-  "tooltip.utilitiesplus.barrel.tier": "Tier: %s"
+  "tooltip.utilitiesplus.barrel.tier": "Tier: %s",
+  "tooltip.utilitiesplus.trowel": "Randomly places blocks from the Hotbar"
 }

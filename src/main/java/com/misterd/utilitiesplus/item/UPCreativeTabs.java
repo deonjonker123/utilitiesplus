@@ -71,6 +71,7 @@ public class UPCreativeTabs {
                         output.accept(UPItems.IRON_UPGRADE);
                         output.accept(UPItems.GOLD_UPGRADE);
                         output.accept(UPItems.DIAMOND_UPGRADE);
+                        output.accept(UPItems.TROWEL);
                         output.accept(UPItems.VILLAGER_CATCHER);
                         output.accept(UPItems.OBSIDIAN_BOAT);
                         output.accept(UPItems.OBSIDIAN_CHEST_BOAT);

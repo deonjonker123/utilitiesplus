@@ -2,6 +2,7 @@ package com.misterd.utilitiesplus.item;
 
 import com.misterd.utilitiesplus.UtilitiesPlus;
 import com.misterd.utilitiesplus.entity.UPEntities;
+import com.misterd.utilitiesplus.item.custom.TrowelItem;
 import com.misterd.utilitiesplus.item.custom.VillagerCatcherItem;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -34,6 +35,9 @@ public class UPItems {
 
     public static final Item COAL_BIT = registerItem("coal_bit",
             properties -> new Item(properties));
+
+    public static final Item TROWEL = registerItem("trowel",
+            properties -> new TrowelItem(properties));
 
     public static final Item OBSIDIAN_BOAT = registerItem("obsidian_boat",
             properties -> new BoatItem(UPEntities.OBSIDIAN_BOAT, properties.stacksTo(1)));

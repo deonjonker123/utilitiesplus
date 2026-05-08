@@ -128,6 +128,11 @@ Don't try it on water. It sinks. Immediately. It's obsidian.
 
 ---
 
+### Trowel
+Building with varied textures means constantly swapping between block types in your hotbar. The Trowel does the swapping for you — right-click to place a random block from your hotbar. Stacks with more items are more likely to be picked, so your materials deplete evenly. Good for breaking up repetitive surfaces without the busywork.
+
+---
+
 ## Config
 | Option                                      | Min | Max    | Default |
 |---------------------------------------------|-----|--------|---------|

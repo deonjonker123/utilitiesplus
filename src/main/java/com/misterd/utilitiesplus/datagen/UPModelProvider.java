@@ -157,6 +157,7 @@ public class UPModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(UPItems.OBSIDIAN_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(UPItems.CHARCOAL_BIT, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(UPItems.COAL_BIT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(UPItems.TROWEL, ModelTemplates.FLAT_ITEM);
 
         ItemModel.Unbaked unbakedVillagerCatcher = ItemModelUtils.plainModel(itemModelGenerators.createFlatItemModel(UPItems.VILLAGER_CATCHER, ModelTemplates.FLAT_ITEM));
         ItemModel.Unbaked unbakedOccupiedVillagerCatcher = ItemModelUtils.plainModel(itemModelGenerators.createFlatItemModel(UPItems.VILLAGER_CATCHER, "_occupied", ModelTemplates.FLAT_ITEM));

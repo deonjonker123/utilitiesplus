@@ -307,6 +307,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                         .requires(UPItems.OBSIDIAN_BOAT).requires(Items.CHEST)
                         .unlockedBy(getHasName(UPItems.OBSIDIAN_BOAT), has(UPItems.OBSIDIAN_BOAT)).save(output);
 
+                shaped(RecipeCategory.MISC, UPItems.TROWEL)
+                        .pattern("  I").pattern("SI ")
+                        .define('S', Items.STICK).define('I', Items.IRON_INGOT)
+                        .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT)).save(output);
+
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.STRIPPED_OAK_LOG, Items.OAK_LOG);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.STRIPPED_OAK_WOOD, Items.OAK_WOOD);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.STRIPPED_SPRUCE_LOG, Items.SPRUCE_LOG);
