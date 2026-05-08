@@ -438,6 +438,19 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 stonecutterResultFromBase(RecipeCategory.MISC, Items.STICK, Items.WARPED_PLANKS, 4);
                 stonecutterResultFromBase(RecipeCategory.MISC, Items.STICK, Items.BAMBOO_PLANKS, 4);
 
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.OAK_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.SPRUCE_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.BIRCH_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.JUNGLE_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.ACACIA_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.DARK_OAK_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.MANGROVE_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.CHERRY_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.PALE_OAK_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.CRIMSON_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.WARPED_PLANKS, 2);
+                stonecutterResultFromBase(RecipeCategory.MISC, Items.LADDER, Items.BAMBOO_PLANKS, 2);
+
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.OAK_SLAB, Items.OAK_PLANKS, 2);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Items.OAK_STAIRS, Items.OAK_PLANKS);
                 stonecutterResultFromBase(RecipeCategory.DECORATIONS, Items.OAK_FENCE, Items.OAK_PLANKS);
