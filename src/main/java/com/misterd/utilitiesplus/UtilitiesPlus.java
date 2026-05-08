@@ -8,7 +8,9 @@ import com.misterd.utilitiesplus.entity.UPEntities;
 import com.misterd.utilitiesplus.gui.UPMenuTypes;
 import com.misterd.utilitiesplus.item.UPCreativeTabs;
 import com.misterd.utilitiesplus.item.UPItems;
+import com.misterd.utilitiesplus.item.custom.NameTagEvents;
 import com.misterd.utilitiesplus.item.custom.VillagerCatcherItem;
+import com.misterd.utilitiesplus.network.UPNetwork;
 import com.misterd.utilitiesplus.recipe.UPRecipes;
 import com.misterd.utilitiesplus.util.UPFuels;
 import net.fabricmc.api.ModInitializer;
@@ -25,6 +27,8 @@ public class UtilitiesPlus implements ModInitializer {
 		UPConfig.register();
 		UPDataComponents.register();
 		UPRecipes.register();
+		UPNetwork.register();
+		NameTagEvents.register();
 		UPBlockEntities.register();
 		UPMenuTypes.register();
 		UPBlocks.register();

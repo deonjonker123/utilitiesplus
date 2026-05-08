@@ -23,6 +23,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.TagValueInput;
+import net.minecraft.world.level.storage.TagValueOutput;
 
 import java.util.Optional;
 
@@ -43,7 +44,7 @@ public class VillagerCatcherItem extends Item {
             if (stack.has(UPDataComponents.VILLAGER_DATA)) return InteractionResult.PASS;
 
             ProblemReporter.Collector collector = new ProblemReporter.Collector();
-            net.minecraft.world.level.storage.TagValueOutput valueOutput = net.minecraft.world.level.storage.TagValueOutput.createWithoutContext(collector);
+            TagValueOutput valueOutput = TagValueOutput.createWithoutContext(collector);
             villager.saveWithoutId(valueOutput);
             CompoundTag nbt = valueOutput.buildResult();
 

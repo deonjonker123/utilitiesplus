@@ -65,9 +65,10 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ContainerSi
                 food.shrink(1);
                 if (food.isEmpty()) {
                     be.setTheItem(ItemStack.EMPTY);
-                    return;
+                } else {
+                    be.setChanged();
                 }
-                break;
+                return;
             }
         }
     }

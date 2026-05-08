@@ -73,7 +73,7 @@ A hopper with a single filter slot. Only items matching the filter pass through.
 ---
 
 ### Fast Hopper
-Moves 8 items per tick instead of the vanilla 1.
+Moves 8 items per tick instead of the vanilla 1. Can also be filtered.
 
 ---
 
@@ -130,6 +130,11 @@ Don't try it on water. It sinks. Immediately. It's obsidian.
 
 ### Trowel
 Building with varied textures means constantly swapping between block types in your hotbar. The Trowel does the swapping for you — right-click to place a random block from your hotbar. Stacks with more items are more likely to be picked, so your materials deplete evenly. Good for breaking up repetitive surfaces without the busywork.
+
+---
+### Easy Name Tag Naming/Renaming
+
+Right-clicking a name tag opens a text field where you can type a name directly. No need for an anvil and it doesn't cost experience.
 
 ---
 

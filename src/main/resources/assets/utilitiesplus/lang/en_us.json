@@ -100,5 +100,8 @@
 
   "tooltip.utilitiesplus.barrel.contains": "Contains: %s (%s / %s)",
   "tooltip.utilitiesplus.barrel.tier": "Tier: %s",
-  "tooltip.utilitiesplus.trowel": "Randomly places blocks from the Hotbar"
+  "tooltip.utilitiesplus.trowel": "Randomly places blocks from the Hotbar",
+
+  "screen.utilitiesplus.name_tag.set": "Set",
+  "screen.utilitiesplus.name_tag.cancel": "Cancel"
 }
