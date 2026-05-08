@@ -1,5 +1,8 @@
 # Utilities Plus
-Attempts to hit some vanilla misses in (hopefully) interesting ways.
+
+![](https://raw.githubusercontent.com/deonjonker123/utilitiesplus/refs/heads/master/banner.png)
+
+A bunch of useful vanilla+ kind of blocks and items.
 
 ---
 
