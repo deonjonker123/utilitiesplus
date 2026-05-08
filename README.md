@@ -39,7 +39,7 @@ Tired of running back and forth harvesting and replanting crops like some kind o
 ---
 
 ### Feeding Trough
-Animals are hungry. You have food. The Feeding Trough bridges that gap automatically — place it, fill it with anything an animal might reasonably want to eat, and it'll feed any animal in a 9×3×9 area around it that finds the contents appetising. That covers the usual suspects — crops, seeds, hay, flowers, and a few more exotic options for the less picky animals. If the local animal population exceeds the configured limit, the trough stops working until you do something about the overcrowding. Not its problem. Also, no hopper support. Fill it yourself.
+Animals are hungry. You have food. The Feeding Trough bridges that gap automatically — place it, fill it with anything an animal might reasonably want to eat, and it'll feed any animal in a 9×3×9 area around it that finds the contents appetising. That covers the usual suspects — crops, seeds, hay, flowers, and a few more exotic options for the less picky animals. If the local animal population exceeds the configured limit, the trough stops working until you do something about the overcrowding. Also, no hopper support. Refill it manually.
 
 *(Configurable — see Config section)*
 
@@ -122,14 +122,14 @@ Long minecart rail systems snaking across your entire world just to move one vil
 ---
 
 ### Coal and Charcoal bits
-For when you need to smelt one thing and don't want to burn through an entire piece of coal like a maniac.
+When you need to smelt one thing and don't want to burn through an entire piece of coal.
 
 ---
 
 ### Obsidian Boat & Chest Boat 
-A boat. For lava. Crafted from obsidian. Navigate lava lakes like a reasonable person instead of bridge-pillaring across them like a noob.
+A boat. For lava. Crafted from obsidian. Navigate lava lakes like a reasonable person instead of bridge-pillaring across them.
 
-Don't try it on water. It sinks. Immediately. Don't ask why. It's obsidian.
+Don't try it on water. It sinks. Immediately. It's obsidian.
 
 ---
 
