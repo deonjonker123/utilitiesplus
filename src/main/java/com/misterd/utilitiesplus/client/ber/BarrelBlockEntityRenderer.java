@@ -72,14 +72,14 @@ public class BarrelBlockEntityRenderer implements BlockEntityRenderer<BarrelBloc
         if (state.storedCount > 0) {
             poseStack.pushPose();
             poseStack.translate(0.0, 0.05, -0.01);
-            poseStack.scale(0.4f, 0.4f, 0.005f);
+            poseStack.scale(0.45f, 0.45f, 0.005f);
             state.storedItemState.submit(poseStack, collector, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
             poseStack.popPose();
         }
 
         if (!state.countText.isEmpty()) {
             poseStack.pushPose();
-            poseStack.translate(0.0, -0.22, -0.01);
+            poseStack.translate(0.0, -0.30, -0.015);
             float textScale = 0.6f / 60.0f;
             poseStack.scale(textScale, -textScale, textScale);
             float width = font.width(state.countText);
@@ -100,8 +100,8 @@ public class BarrelBlockEntityRenderer implements BlockEntityRenderer<BarrelBloc
 
         if (state.hasUpgrade) {
             poseStack.pushPose();
-            poseStack.translate(0.445, -0.445, 0.01);
-            poseStack.scale(0.12f, 0.12f, 0.001f);
+            poseStack.translate(0.468, -0.46, 0.006);
+            poseStack.scale(0.09f, 0.09f, 0.007f);
             state.upgradeItemState.submit(poseStack, collector, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
             poseStack.popPose();
         }
