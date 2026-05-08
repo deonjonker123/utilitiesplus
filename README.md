@@ -86,11 +86,6 @@ Reset it to factory settings (10 ticks) by right-clicking a redstone torch on th
 
 ---
 
-### Mine Cart Dock
-Loading and unloading minecarts normally means hopper chains, comparator circuits, and a rats nest of redstone that takes up half a room. The Mine Cart Dock replaces all of that. Place it adjacent to a rail — not on it, next to it, like a comparator — and it'll detect the cart's inventory through the block face, transfer up to 8 items per tick into or out of its 27-slot buffer, and output a comparator signal based on the detected cart's fullness. Toggle between load and unload mode with a right-click. Hook a chest or hopper up to the buffer, wire the comparator output to a powered rail, and you're done. Park cart, wait, cart leaves.
-
----
-
 ### Fan
 A redstone-powered fan that pushes items, mobs, and players in the direction it's facing. Shift-right-click to reverse the flow and pull things toward it instead. Redstone signal strength controls the range. Useful for sorting systems, mob farms, or just annoying your friends.
 
