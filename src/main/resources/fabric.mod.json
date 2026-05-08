@@ -3,7 +3,7 @@
 	"id": "utilitiesplus",
 	"version": "${version}",
 	"name": "UtilitiesPlus",
-	"description": "Attempts to hit some vanilla misses in interesting ways. ",
+	"description": "A bunch of useful vanilla+ kind of blocks and items.",
 	"authors": [
 		"MisterD Modding"
 	],
@@ -35,6 +35,8 @@
 		"fabricloader": ">=0.19.2",
 		"minecraft": "~26.1.2",
 		"java": ">=25",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"cloth-config": "*",
+		"modmenu": "*"
 	}
 }

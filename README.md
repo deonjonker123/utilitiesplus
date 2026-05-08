@@ -152,3 +152,12 @@ Right-clicking a name tag opens a text field where you can type a name directly.
 | Harvester work area                         | 3×3 | 15×15  | 9×9     |
 | Hoe loses durability in Harvester           | —   | —      | `true`  |
 | Villager resets to unemployed on release    | —   | —      | `true`  |
+
+---
+
+## Dependencies
+- [Fabric API](https://modrinth.com/mod/fabric-api)
+- [Cloth Config](https://modrinth.com/mod/cloth-config)
+- [Mod Menu](https://modrinth.com/mod/modmenu)
+
+---
