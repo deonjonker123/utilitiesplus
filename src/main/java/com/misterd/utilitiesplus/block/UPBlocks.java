@@ -78,6 +78,10 @@ public class UPBlocks {
     public static final Block NEST_BOX = registerBlock("nest_box",
             p -> new NestBoxBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
 
+    public static final Block LANTERN_BRACKET = registerBlock("lantern_bracket",
+            p -> new LanternBracketBlock(p.strength(2F, 6F).sound(SoundType.METAL).noOcclusion()
+                    .lightLevel(state -> state.getValue(LanternBracketBlock.LIGHT_LEVEL))));
+
     public static final Block CHARCOAL_BLOCK = registerBlock("charcoal_block",
             p -> new Block(p.strength(3F, 6F).sound(SoundType.STONE).requiresCorrectToolForDrops()));
 

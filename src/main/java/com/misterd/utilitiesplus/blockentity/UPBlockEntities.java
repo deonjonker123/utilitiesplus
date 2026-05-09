@@ -7,7 +7,6 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
 public class UPBlockEntities {
@@ -56,6 +55,11 @@ public class UPBlockEntities {
                             UPBlocks.JUNGLE_BARREL, UPBlocks.MANGROVE_BARREL, UPBlocks.OAK_BARREL,
                             UPBlocks.PALE_OAK_BARREL, UPBlocks.SPRUCE_BARREL, UPBlocks.WARPED_BARREL
                     ).build());
+
+    public static final BlockEntityType<LanternBracketBlockEntity> LANTERN_BRACKET_BE =
+            Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
+                    Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "lantern_bracket_be"),
+                    FabricBlockEntityTypeBuilder.create(LanternBracketBlockEntity::new, UPBlocks.LANTERN_BRACKET).build());
 
     public static void register() {}
 }

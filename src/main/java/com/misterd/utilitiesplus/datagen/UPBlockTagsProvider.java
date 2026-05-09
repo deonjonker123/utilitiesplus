@@ -56,6 +56,7 @@ public class UPBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(UPBlocks.NEST_BOX);
 
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(UPBlocks.LANTERN_BRACKET)
                 .add(UPBlocks.HARVESTER)
                 .add(UPBlocks.KILN)
                 .add(UPBlocks.REDSTONE_CLOCK)

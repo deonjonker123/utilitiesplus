@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "facing=north,attachment=block": {
+      "model": "utilitiesplus:block/lantern_bracket"
+    },
+    "facing=east,attachment=block": {
+      "model": "utilitiesplus:block/lantern_bracket",
+      "y": 90
+    },
+    "facing=south,attachment=block": {
+      "model": "utilitiesplus:block/lantern_bracket",
+      "y": 180
+    },
+    "facing=west,attachment=block": {
+      "model": "utilitiesplus:block/lantern_bracket",
+      "y": 270
+    },
+    "facing=north,attachment=fence_post": {
+      "model": "utilitiesplus:block/fence_lantern_bracket"
+    },
+    "facing=east,attachment=fence_post": {
+      "model": "utilitiesplus:block/fence_lantern_bracket",
+      "y": 90
+    },
+    "facing=south,attachment=fence_post": {
+      "model": "utilitiesplus:block/fence_lantern_bracket",
+      "y": 180
+    },
+    "facing=west,attachment=fence_post": {
+      "model": "utilitiesplus:block/fence_lantern_bracket",
+      "y": 270
+    },
+    "facing=north,attachment=wall": {
+      "model": "utilitiesplus:block/beam_lantern_bracket"
+    },
+    "facing=east,attachment=wall": {
+      "model": "utilitiesplus:block/beam_lantern_bracket",
+      "y": 90
+    },
+    "facing=south,attachment=wall": {
+      "model": "utilitiesplus:block/beam_lantern_bracket",
+      "y": 180
+    },
+    "facing=west,attachment=wall": {
+      "model": "utilitiesplus:block/beam_lantern_bracket",
+      "y": 270
+    }
+  }
+}

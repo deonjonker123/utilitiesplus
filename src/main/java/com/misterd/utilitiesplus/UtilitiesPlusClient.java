@@ -3,6 +3,7 @@ package com.misterd.utilitiesplus;
 import com.misterd.utilitiesplus.blockentity.UPBlockEntities;
 import com.misterd.utilitiesplus.client.ber.BarrelBlockEntityRenderer;
 import com.misterd.utilitiesplus.client.ber.FeedingTroughBlockEntityRenderer;
+import com.misterd.utilitiesplus.client.ber.LanternBracketBlockEntityRenderer;
 import com.misterd.utilitiesplus.entity.UPEntities;
 import com.misterd.utilitiesplus.entity.client.UPModelLayerLocations;
 import com.misterd.utilitiesplus.gui.UPMenuTypes;
@@ -35,5 +36,6 @@ public class UtilitiesPlusClient implements ClientModInitializer {
 
         BlockEntityRenderers.register(UPBlockEntities.FEEDING_TROUGH_BE, FeedingTroughBlockEntityRenderer::new);
         BlockEntityRenderers.register(UPBlockEntities.BARREL_BE, BarrelBlockEntityRenderer::new);
+        BlockEntityRenderers.register(UPBlockEntities.LANTERN_BRACKET_BE, LanternBracketBlockEntityRenderer::new);
     }
 }
