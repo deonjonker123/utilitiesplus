@@ -2,9 +2,18 @@ package com.misterd.utilitiesplus.gui.custom;
 
 import com.misterd.utilitiesplus.block.UPBlocks;
 import com.misterd.utilitiesplus.gui.UPMenuTypes;
+import com.misterd.utilitiesplus.network.SawbenchRecipesPacket;
+import com.misterd.utilitiesplus.recipe.UPRecipes;
+import com.misterd.utilitiesplus.recipe.custom.SawbenchRecipe;
+import com.misterd.utilitiesplus.util.UPTags;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.Entity;
@@ -17,15 +26,18 @@ import net.minecraft.world.inventory.ResultContainer;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.SelectableRecipe;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
-import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.Level;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class SawbenchMenu extends AbstractContainerMenu {
 
@@ -39,14 +51,15 @@ public class SawbenchMenu extends AbstractContainerMenu {
     private final ContainerLevelAccess access;
     private final DataSlot selectedRecipeIndex;
     private final Level level;
-    private SelectableRecipe.SingleInputSet<StonecutterRecipe> recipesForInput;
+    private List<RecipeHolder<SawbenchRecipe>> recipesForInput;
+    private List<ItemStack> clientResults = Collections.emptyList();
     private ItemStack input;
     private long lastSoundTime;
+    public final Container container;
+    private final ResultContainer resultContainer;
     public final Slot inputSlot;
     public final Slot resultSlot;
     private Runnable slotUpdateListener;
-    public final Container container;
-    private final ResultContainer resultContainer;
 
     public SawbenchMenu(int containerId, Inventory inventory) {
         this(containerId, inventory, ContainerLevelAccess.NULL);
@@ -55,7 +68,7 @@ public class SawbenchMenu extends AbstractContainerMenu {
     public SawbenchMenu(int containerId, Inventory inventory, ContainerLevelAccess access) {
         super(UPMenuTypes.SAWBENCH_MENU, containerId);
         this.selectedRecipeIndex = DataSlot.standalone();
-        this.recipesForInput = SelectableRecipe.SingleInputSet.empty();
+        this.recipesForInput = Collections.emptyList();
         this.input = ItemStack.EMPTY;
         this.slotUpdateListener = () -> {};
         this.resultContainer = new ResultContainer();
@@ -78,7 +91,7 @@ public class SawbenchMenu extends AbstractContainerMenu {
         this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33) {
             @Override
             public boolean mayPlace(ItemStack stack) {
-                return stack.is(ItemTags.LOGS) || stack.is(ItemTags.PLANKS);
+                return stack.is(UPTags.Items.SAWBENCH_INPUTS);
             }
         });
 
@@ -122,9 +135,9 @@ public class SawbenchMenu extends AbstractContainerMenu {
     }
 
     public int getSelectedRecipeIndex() { return this.selectedRecipeIndex.get(); }
-    public SelectableRecipe.SingleInputSet<StonecutterRecipe> getVisibleRecipes() { return this.recipesForInput; }
-    public int getNumberOfVisibleRecipes() { return this.recipesForInput.size(); }
-    public boolean hasInputItem() { return this.inputSlot.hasItem() && !this.recipesForInput.isEmpty(); }
+    public List<RecipeHolder<SawbenchRecipe>> getVisibleRecipes() { return this.recipesForInput; }
+    public int getNumberOfVisibleRecipes() { return this.clientResults.isEmpty() ? this.recipesForInput.size() : this.clientResults.size(); }
+    public boolean hasInputItem() { return this.inputSlot.hasItem() && (!this.recipesForInput.isEmpty() || !this.clientResults.isEmpty()); }
 
     @Override
     public boolean stillValid(Player player) {
@@ -147,41 +160,75 @@ public class SawbenchMenu extends AbstractContainerMenu {
 
     @Override
     public void slotsChanged(Container container) {
-        ItemStack input = this.inputSlot.getItem();
-        if (!input.is(this.input.getItem())) {
-            this.input = input.copy();
-            this.setupRecipeList(input);
+        ItemStack item = this.inputSlot.getItem();
+        if (!item.is(this.input.getItem())) {
+            this.input = item.copy();
+            if (item.isEmpty()) {
+                this.clientResults = Collections.emptyList();
+                this.recipesForInput = Collections.emptyList();
+                this.slotUpdateListener.run();
+            }
+            this.setupRecipeList(item);
         }
     }
 
+    @SuppressWarnings("unchecked")
     private void setupRecipeList(ItemStack item) {
         this.selectedRecipeIndex.set(-1);
         this.resultSlot.set(ItemStack.EMPTY);
-        if (!item.isEmpty() && (item.is(ItemTags.LOGS) || item.is(ItemTags.PLANKS))) {
-            this.recipesForInput = this.level.recipeAccess().stonecutterRecipes().selectByInput(item);
-        } else {
-            this.recipesForInput = SelectableRecipe.SingleInputSet.empty();
+        if (item.isEmpty() || !(this.level instanceof ServerLevel serverLevel)) {
+            this.recipesForInput = Collections.emptyList();
+            return;
         }
+        SingleRecipeInput recipeInput = new SingleRecipeInput(item);
+        this.recipesForInput = serverLevel.recipeAccess().getRecipes().stream()
+                .filter(h -> h.value().getType() == UPRecipes.SAWBENCH_TYPE)
+                .map(h -> (RecipeHolder<SawbenchRecipe>) h)
+                .filter(h -> h.value().matches(recipeInput, serverLevel))
+                .collect(Collectors.toList());
+
+        List<ItemStack> results = this.recipesForInput.stream()
+                .map(h -> h.value().getResult())
+                .collect(Collectors.toList());
+
+        this.access.execute((level, pos) -> {
+            level.players().forEach(p -> {
+                if (p instanceof ServerPlayer sp && sp.containerMenu == this) {
+                    ServerPlayNetworking.send(sp, new SawbenchRecipesPacket(results));
+                }
+            });
+        });
     }
 
     private void setupResultSlot(int index) {
-        Optional<RecipeHolder<StonecutterRecipe>> usedRecipe;
         if (!this.recipesForInput.isEmpty() && isValidRecipeIndex(index)) {
-            SelectableRecipe.SingleInputEntry<StonecutterRecipe> entry = this.recipesForInput.entries().get(index);
-            usedRecipe = entry.recipe().recipe();
+            RecipeHolder<SawbenchRecipe> holder = this.recipesForInput.get(index);
+            this.resultContainer.setRecipeUsed(holder);
+            this.resultSlot.set(holder.value().assemble(new SingleRecipeInput(this.container.getItem(0))));
         } else {
-            usedRecipe = Optional.empty();
-        }
-
-        usedRecipe.ifPresentOrElse(recipe -> {
-            this.resultContainer.setRecipeUsed(recipe);
-            this.resultSlot.set(recipe.value().assemble(new SingleRecipeInput(this.container.getItem(0))));
-        }, () -> {
             this.resultSlot.set(ItemStack.EMPTY);
             this.resultContainer.setRecipeUsed(null);
-        });
-
+        }
         this.broadcastChanges();
+    }
+
+    public List<ItemStack> getClientResults() { return this.clientResults; }
+
+    public void setClientRecipes(List<ItemStack> results) {
+        this.clientResults = results;
+        this.recipesForInput = results.stream()
+                .map(stack -> new RecipeHolder<>(
+                        ResourceKey.create(
+                                Registries.RECIPE,
+                                Identifier.fromNamespaceAndPath("utilitiesplus", "client/" + UUID.randomUUID())
+                        ),
+                        new SawbenchRecipe(
+                                Ingredient.of(Items.OAK_LOG),
+                                new ItemStackTemplate(stack.getItem(), stack.getCount())
+                        )
+                ))
+                .collect(Collectors.toList());
+        this.slotUpdateListener.run();
     }
 
     public void registerUpdateListener(Runnable listener) { this.slotUpdateListener = listener; }
@@ -206,12 +253,12 @@ public class SawbenchMenu extends AbstractContainerMenu {
                 slot.onQuickCraft(stack, clicked);
             } else if (slotIndex == INPUT_SLOT) {
                 if (!this.moveItemStackTo(stack, INV_SLOT_START, USE_ROW_SLOT_END, false)) return ItemStack.EMPTY;
-            } else if (stack.is(ItemTags.LOGS) || stack.is(ItemTags.PLANKS)) {
-                if (!this.moveItemStackTo(stack, INPUT_SLOT, INPUT_SLOT + 1, false)) return ItemStack.EMPTY;
             } else if (slotIndex >= INV_SLOT_START && slotIndex < INV_SLOT_END) {
-                if (!this.moveItemStackTo(stack, USE_ROW_SLOT_START, USE_ROW_SLOT_END, false)) return ItemStack.EMPTY;
+                if (!this.moveItemStackTo(stack, INPUT_SLOT, INPUT_SLOT + 1, false))
+                    if (!this.moveItemStackTo(stack, USE_ROW_SLOT_START, USE_ROW_SLOT_END, false)) return ItemStack.EMPTY;
             } else if (slotIndex >= USE_ROW_SLOT_START && slotIndex < USE_ROW_SLOT_END) {
-                if (!this.moveItemStackTo(stack, INV_SLOT_START, INV_SLOT_END, false)) return ItemStack.EMPTY;
+                if (!this.moveItemStackTo(stack, INPUT_SLOT, INPUT_SLOT + 1, false))
+                    if (!this.moveItemStackTo(stack, INV_SLOT_START, INV_SLOT_END, false)) return ItemStack.EMPTY;
             }
 
             if (stack.isEmpty()) slot.setByPlayer(ItemStack.EMPTY);

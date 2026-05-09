@@ -1,0 +1,8 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:stripped_birch_log",
+  "result": {
+    "count": 4,
+    "id": "minecraft:birch_planks"
+  }
+}

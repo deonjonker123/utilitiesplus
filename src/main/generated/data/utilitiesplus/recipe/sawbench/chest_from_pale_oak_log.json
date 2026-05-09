@@ -1,0 +1,7 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:pale_oak_log",
+  "result": {
+    "id": "minecraft:chest"
+  }
+}

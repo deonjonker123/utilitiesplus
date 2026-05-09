@@ -1,0 +1,7 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:bamboo_block",
+  "result": {
+    "id": "minecraft:barrel"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:jungle_log",
+  "result": {
+    "id": "utilitiesplus:jungle_barrel"
+  }
+}

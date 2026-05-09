@@ -1,0 +1,7 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:stripped_spruce_wood",
+  "result": {
+    "id": "minecraft:chest"
+  }
+}

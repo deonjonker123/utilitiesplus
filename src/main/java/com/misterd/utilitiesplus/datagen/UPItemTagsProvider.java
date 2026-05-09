@@ -5,6 +5,7 @@ import com.misterd.utilitiesplus.util.UPTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 
 import java.util.concurrent.CompletableFuture;
@@ -97,5 +98,11 @@ public class UPItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(Items.PEONY)
                 .add(Items.OPEN_EYEBLOSSOM)
                 .add(Items.CLOSED_EYEBLOSSOM);
+
+        valueLookupBuilder(UPTags.Items.SAWBENCH_INPUTS)
+                .forceAddTag(ItemTags.LOGS)
+                .forceAddTag(ItemTags.PLANKS)
+                .forceAddTag(ItemTags.BAMBOO_BLOCKS)
+                .add(Items.BAMBOO_MOSAIC);
     }
 }

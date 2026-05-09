@@ -1,0 +1,7 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:stripped_warped_stem",
+  "result": {
+    "id": "minecraft:chest"
+  }
+}

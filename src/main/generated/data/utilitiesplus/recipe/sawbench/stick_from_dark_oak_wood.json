@@ -1,0 +1,8 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:dark_oak_wood",
+  "result": {
+    "count": 16,
+    "id": "minecraft:stick"
+  }
+}

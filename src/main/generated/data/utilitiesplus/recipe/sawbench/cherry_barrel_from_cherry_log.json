@@ -1,0 +1,7 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:cherry_log",
+  "result": {
+    "id": "utilitiesplus:cherry_barrel"
+  }
+}

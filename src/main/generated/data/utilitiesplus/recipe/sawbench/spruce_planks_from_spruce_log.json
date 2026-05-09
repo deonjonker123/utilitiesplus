@@ -1,0 +1,8 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:spruce_log",
+  "result": {
+    "count": 4,
+    "id": "minecraft:spruce_planks"
+  }
+}

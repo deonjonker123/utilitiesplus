@@ -1,0 +1,7 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:stripped_crimson_hyphae",
+  "result": {
+    "id": "utilitiesplus:crimson_barrel"
+  }
+}

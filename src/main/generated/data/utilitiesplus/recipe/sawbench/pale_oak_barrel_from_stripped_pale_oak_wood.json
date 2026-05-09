@@ -1,0 +1,7 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:stripped_pale_oak_wood",
+  "result": {
+    "id": "utilitiesplus:pale_oak_barrel"
+  }
+}

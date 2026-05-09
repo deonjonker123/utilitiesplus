@@ -5,6 +5,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
@@ -12,15 +13,13 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
-import net.minecraft.util.context.ContextMap;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.item.crafting.SelectableRecipe;
-import net.minecraft.world.item.crafting.StonecutterRecipe;
-import net.minecraft.world.item.crafting.display.SlotDisplay;
-import net.minecraft.world.item.crafting.display.SlotDisplayContext;
+import net.minecraft.world.item.ItemStack;
+
+import java.util.List;
 
 @Environment(EnvType.CLIENT)
-public class SawbenchScreen extends net.minecraft.client.gui.screens.inventory.AbstractContainerScreen<SawbenchMenu> {
+public class SawbenchScreen extends AbstractContainerScreen<SawbenchMenu> {
 
     private static final Identifier SCROLLER_SPRITE = Identifier.withDefaultNamespace("container/stonecutter/scroller");
     private static final Identifier SCROLLER_DISABLED_SPRITE = Identifier.withDefaultNamespace("container/stonecutter/scroller_disabled");
@@ -75,16 +74,14 @@ public class SawbenchScreen extends net.minecraft.client.gui.screens.inventory.A
             int edgeLeft = this.leftPos + 52;
             int edgeTop = this.topPos + 14;
             int endIndex = this.startIndex + 12;
-            SelectableRecipe.SingleInputSet<StonecutterRecipe> visibleRecipes = this.menu.getVisibleRecipes();
+            List<ItemStack> results = this.menu.getClientResults();
 
-            for (int index = this.startIndex; index < endIndex && index < visibleRecipes.size(); ++index) {
+            for (int index = this.startIndex; index < endIndex && index < results.size(); ++index) {
                 int posIndex = index - this.startIndex;
                 int itemLeft = edgeLeft + posIndex % 4 * 16;
                 int itemRight = edgeTop + posIndex / 4 * 18 + 2;
                 if (mouseX >= itemLeft && mouseX < itemLeft + 16 && mouseY >= itemRight && mouseY < itemRight + 18) {
-                    ContextMap context = SlotDisplayContext.fromLevel(this.minecraft.level);
-                    SlotDisplay buttonIcon = visibleRecipes.entries().get(index).recipe().optionDisplay();
-                    graphics.setTooltipForNextFrame(this.font, buttonIcon.resolveForFirstStack(context), mouseX, mouseY);
+                    graphics.setTooltipForNextFrame(this.font, results.get(index), mouseX, mouseY);
                 }
             }
         }
@@ -114,16 +111,14 @@ public class SawbenchScreen extends net.minecraft.client.gui.screens.inventory.A
     }
 
     private void extractRecipes(GuiGraphicsExtractor graphics, int x, int y, int endIndex) {
-        SelectableRecipe.SingleInputSet<StonecutterRecipe> visibleRecipes = this.menu.getVisibleRecipes();
-        ContextMap context = SlotDisplayContext.fromLevel(this.minecraft.level);
+        List<ItemStack> results = this.menu.getClientResults();
 
-        for (int index = this.startIndex; index < endIndex && index < visibleRecipes.size(); ++index) {
+        for (int index = this.startIndex; index < endIndex && index < results.size(); ++index) {
             int posIndex = index - this.startIndex;
             int posX = x + posIndex % 4 * 16;
             int row = posIndex / 4;
             int posY = y + row * 18 + 2;
-            SlotDisplay buttonIcon = visibleRecipes.entries().get(index).recipe().optionDisplay();
-            graphics.item(buttonIcon.resolveForFirstStack(context), posX, posY);
+            graphics.item(results.get(index), posX, posY);
         }
     }
 

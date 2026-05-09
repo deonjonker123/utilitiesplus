@@ -1,0 +1,7 @@
+{
+  "type": "utilitiesplus:sawbench",
+  "ingredient": "minecraft:oak_planks",
+  "result": {
+    "id": "minecraft:oak_button"
+  }
+}
