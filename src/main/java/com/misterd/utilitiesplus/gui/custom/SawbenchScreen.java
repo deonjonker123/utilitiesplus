@@ -21,12 +21,12 @@ import java.util.List;
 @Environment(EnvType.CLIENT)
 public class SawbenchScreen extends AbstractContainerScreen<SawbenchMenu> {
 
-    private static final Identifier SCROLLER_SPRITE = Identifier.withDefaultNamespace("container/stonecutter/scroller");
-    private static final Identifier SCROLLER_DISABLED_SPRITE = Identifier.withDefaultNamespace("container/stonecutter/scroller_disabled");
-    private static final Identifier RECIPE_SELECTED_SPRITE = Identifier.withDefaultNamespace("container/stonecutter/recipe_selected");
-    private static final Identifier RECIPE_HIGHLIGHTED_SPRITE = Identifier.withDefaultNamespace("container/stonecutter/recipe_highlighted");
-    private static final Identifier RECIPE_SPRITE = Identifier.withDefaultNamespace("container/stonecutter/recipe");
-    private static final Identifier BG_LOCATION = Identifier.withDefaultNamespace("textures/gui/container/stonecutter.png");
+    private static final Identifier SCROLLER_SPRITE = Identifier.fromNamespaceAndPath("utilitiesplus","scroller");
+    private static final Identifier SCROLLER_DISABLED_SPRITE = Identifier.fromNamespaceAndPath("utilitiesplus","scroller_disabled");
+    private static final Identifier RECIPE_SELECTED_SPRITE = Identifier.fromNamespaceAndPath("utilitiesplus","recipe_selected");
+    private static final Identifier RECIPE_HIGHLIGHTED_SPRITE = Identifier.fromNamespaceAndPath("utilitiesplus","recipe_highlighted");
+    private static final Identifier RECIPE_SPRITE = Identifier.fromNamespaceAndPath("utilitiesplus","recipe");
+    private static final Identifier BG_LOCATION = Identifier.fromNamespaceAndPath("utilitiesplus","textures/gui/sawbench_gui.png");
 
     private float scrollOffs;
     private boolean scrolling;

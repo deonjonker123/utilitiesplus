@@ -103,5 +103,7 @@
   "tooltip.utilitiesplus.trowel": "Randomly places blocks from the Hotbar",
 
   "screen.utilitiesplus.name_tag.set": "Set",
-  "screen.utilitiesplus.name_tag.cancel": "Cancel"
+  "screen.utilitiesplus.name_tag.cancel": "Cancel",
+  "screen.utilitiesplus.name_tag.field": "Name Tag",
+  "screen.utilitiesplus.name_tag": "Name Tag"
 }

@@ -52,15 +52,17 @@ public class NameTagScreen extends Screen {
         addRenderableWidget(nameField);
         setInitialFocus(nameField);
 
-        addRenderableWidget(Button.builder(
+        addRenderableWidget(new NameTagButton(
+                leftPos + 66, topPos + 43, 50, 20,
                 Component.translatable("screen.utilitiesplus.name_tag.set"),
                 btn -> applyAndClose()
-        ).bounds(leftPos + 66, topPos + 43, 50, 20).build());
+        ));
 
-        addRenderableWidget(Button.builder(
+        addRenderableWidget(new NameTagButton(
+                leftPos + 119, topPos + 43, 50, 20,
                 Component.translatable("screen.utilitiesplus.name_tag.cancel"),
                 btn -> onClose()
-        ).bounds(leftPos + 119, topPos + 43, 50, 20).build());
+        ));
     }
 
     private void applyAndClose() {

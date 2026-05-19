@@ -51,8 +51,8 @@ public class FeedingTroughBlockEntity extends BlockEntity implements ContainerSi
 
         int radius = UPConfig.get().feedingTroughRadius;
         AABB area = new AABB(
-                pos.getX() - radius, pos.getY(),     pos.getZ() - radius,
-                pos.getX() + radius, pos.getY() + 3, pos.getZ() + radius
+                pos.getX() - radius,pos.getY(), pos.getZ() - radius,
+                pos.getX() + radius,pos.getY() + 3, pos.getZ() + radius
         );
 
         List<Animal> animals = level.getEntitiesOfClass(Animal.class, area);
