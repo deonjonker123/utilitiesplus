@@ -8,7 +8,8 @@
 		"AbstractBoatMixin",
 		"EntityMixin",
 		"AnimalMixin",
-		"LanternItemMixin"
+		"LanternItemMixin",
+		"PlayerMixin"
 	],
 	"client": [
 		"ScreenEffectRendererMixin"
