@@ -85,6 +85,8 @@ A redstone clock in a single block. Right-click to increase the pulse interval b
 
 Reset it to factory settings (10 ticks) by right-clicking a redstone torch on the clock block.
 
+Can now be toggled on/off with a redstone signal. Powering the block stops the clock and cuts its output; removing the signal resumes it.
+
 *(Configurable — see Config section)*
 
 ---
@@ -135,6 +137,9 @@ Don't try it on water. It sinks. Immediately. It's obsidian.
 Building with varied textures means constantly swapping between block types in your hotbar. The Trowel does the swapping for you — right-click to place a random block from your hotbar. Stacks with more items are more likely to be picked, so your materials deplete evenly. Good for breaking up repetitive surfaces without the busywork.
 
 ---
+
+## Features
+
 ### Name Tags
 
 Right-clicking a name tag opens a text field where you can type a name directly. No need for an anvil and it doesn't cost experience.
@@ -144,6 +149,12 @@ Right-clicking a name tag opens a text field where you can type a name directly.
 ### Wall Lanterns
 
 Lanterns can now be hung on the side of any solid block, fence, beam, or wall. Right-click with a lantern in hand and it'll mount itself with a bracket. Works with any lantern. That's the whole thing.
+
+---
+
+### Fence Jumping
+
+You can jump over fences, fence gates and walls. Not much to it.
 
 ---
 
