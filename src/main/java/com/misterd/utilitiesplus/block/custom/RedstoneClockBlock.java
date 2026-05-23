@@ -27,6 +27,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.server.level.ServerLevel;
 import org.jspecify.annotations.Nullable;
@@ -35,10 +36,13 @@ public class RedstoneClockBlock extends BaseEntityBlock {
 
     public static final MapCodec<RedstoneClockBlock> CODEC = simpleCodec(RedstoneClockBlock::new);
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+    public static final BooleanProperty ENABLED = BooleanProperty.create("enabled");
 
     public RedstoneClockBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, false));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(POWERED, false)
+                .setValue(ENABLED, true));
     }
 
     @Override
@@ -53,7 +57,7 @@ public class RedstoneClockBlock extends BaseEntityBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(POWERED);
+        builder.add(POWERED, ENABLED);
     }
 
     @Nullable
@@ -73,6 +77,13 @@ public class RedstoneClockBlock extends BaseEntityBlock {
 
     private static void tick(Level level, BlockPos pos, BlockState state, RedstoneClockBlockEntity be) {
         if (!(level instanceof ServerLevel)) return;
+        if (!state.getValue(ENABLED)) {
+            if (state.getValue(POWERED)) {
+                level.setBlock(pos, state.setValue(POWERED, false), 3);
+                level.updateNeighborsAt(pos, state.getBlock());
+            }
+            return;
+        }
         boolean shouldPulse = be.onTick();
         boolean powered = state.getValue(POWERED);
         if (shouldPulse != powered) {
@@ -81,6 +92,24 @@ public class RedstoneClockBlock extends BaseEntityBlock {
             if (shouldPulse && UPConfig.get().redstoneClockSound) {
                 level.playSound(null, pos, SoundEvents.DISPENSER_DISPENSE, SoundSource.BLOCKS, 0.4f, 2.0f);
             }
+        }
+    }
+
+    @Override
+    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, @Nullable Orientation orientation, boolean movedByPiston) {
+        if (level.isClientSide()) return;
+        boolean hasSignal = level.hasNeighborSignal(pos);
+        boolean enabled = state.getValue(ENABLED);
+        if (hasSignal == enabled) {
+            level.setBlock(pos, state.setValue(ENABLED, !hasSignal), 3);
+        }
+    }
+
+    @Override
+    protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+        if (level.isClientSide()) return;
+        if (level.hasNeighborSignal(pos)) {
+            level.setBlock(pos, state.setValue(ENABLED, false), 3);
         }
     }
 

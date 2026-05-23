@@ -40,10 +40,10 @@ public class UPItems {
             properties -> new TrowelItem(properties));
 
     public static final Item OBSIDIAN_BOAT = registerItem("obsidian_boat",
-            properties -> new BoatItem(UPEntities.OBSIDIAN_BOAT, properties.stacksTo(1)));
+            properties -> new BoatItem(UPEntities.OBSIDIAN_BOAT, properties.stacksTo(1).fireResistant()));
 
     public static final Item OBSIDIAN_CHEST_BOAT = registerItem("obsidian_chest_boat",
-            properties -> new BoatItem(UPEntities.OBSIDIAN_CHEST_BOAT, properties.stacksTo(1)));
+            properties -> new BoatItem(UPEntities.OBSIDIAN_CHEST_BOAT, properties.stacksTo(1).fireResistant()));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, name),

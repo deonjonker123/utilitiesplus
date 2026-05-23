@@ -1,6 +1,8 @@
 {
   "variants": {
-    "powered=false": { "model": "utilitiesplus:block/redstone_clock" },
-    "powered=true": { "model": "utilitiesplus:block/redstone_clock_powered" }
+    "enabled=true,powered=false":  { "model": "utilitiesplus:block/redstone_clock" },
+    "enabled=true,powered=true":   { "model": "utilitiesplus:block/redstone_clock_powered" },
+    "enabled=false,powered=false": { "model": "utilitiesplus:block/redstone_clock" },
+    "enabled=false,powered=true":  { "model": "utilitiesplus:block/redstone_clock" }
   }
 }
