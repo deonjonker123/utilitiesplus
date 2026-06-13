@@ -26,11 +26,23 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jspecify.annotations.Nullable;
 
 public class FeedingTroughBlock extends BaseEntityBlock {
-    public static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D);
+    public static final VoxelShape SHAPE = Shapes.or(
+            Block.box(2, 7, 2, 14, 8, 14),
+            Block.box(2, 1, 1, 14, 9, 2),
+            Block.box(2, 1, 14, 14, 9, 15),
+            Block.box(1, 1, 2, 2, 9, 14),
+            Block.box(14, 1, 2, 15, 9, 14),
+            Block.box(2, 1, 2, 14, 2, 14),
+            Block.box(0, 0, 0, 2, 10, 2),
+            Block.box(14, 0, 0, 16, 10, 2),
+            Block.box(0, 0, 14, 2, 10, 16),
+            Block.box(14, 0, 14, 16, 10, 16)
+    );
 
     public static final MapCodec<FeedingTroughBlock> CODEC = simpleCodec(FeedingTroughBlock::new);
 
