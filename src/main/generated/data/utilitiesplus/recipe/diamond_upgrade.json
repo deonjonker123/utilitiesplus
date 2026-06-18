@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "#utilitiesplus:barrel_block_items",
     "B": "minecraft:diamond_block",

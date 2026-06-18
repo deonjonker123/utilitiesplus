@@ -17,6 +17,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.npc.villager.Villager;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -100,7 +101,7 @@ public class VillagerCatcherItem extends Item {
 
         ServerLevel serverLevel = (ServerLevel) level;
 
-        Villager villager = EntityType.VILLAGER.create(serverLevel, EntitySpawnReason.LOAD);
+        Villager villager = EntityTypes.VILLAGER.create(serverLevel, EntitySpawnReason.LOAD);
         if (villager == null) return InteractionResult.FAIL;
 
         CompoundTag nbt = data.nbt().copy();

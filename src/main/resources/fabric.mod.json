@@ -9,7 +9,7 @@
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/deonjonker123/utilitiesplus/tree/26.2"
 	},
 	"license": "MIT",
 	"icon": "assets/utilitiesplus/icon.png",
@@ -33,7 +33,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.19.2",
-		"minecraft": "~26.1.2",
+		"minecraft": "~26.2",
 		"java": ">=25",
 		"fabric-api": "*",
 		"cloth-config": "*",

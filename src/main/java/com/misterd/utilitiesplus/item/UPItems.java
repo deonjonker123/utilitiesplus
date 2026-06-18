@@ -16,28 +16,28 @@ import java.util.function.Function;
 
 public class UPItems {
     public static final Item COPPER_UPGRADE = registerItem("copper_upgrade",
-            properties -> new Item(properties));
+            Item::new);
 
     public static final Item IRON_UPGRADE = registerItem("iron_upgrade",
-            properties -> new Item(properties));
+            Item::new);
 
     public static final Item GOLD_UPGRADE = registerItem("gold_upgrade",
-            properties -> new Item(properties));
+            Item::new);
 
     public static final Item DIAMOND_UPGRADE = registerItem("diamond_upgrade",
-            properties -> new Item(properties));
+            Item::new);
 
     public static final Item VILLAGER_CATCHER = registerItem("villager_catcher",
-            properties -> new VillagerCatcherItem(properties));
+            VillagerCatcherItem::new);
 
     public static final Item CHARCOAL_BIT = registerItem("charcoal_bit",
-            properties -> new Item(properties));
+            Item::new);
 
     public static final Item COAL_BIT = registerItem("coal_bit",
-            properties -> new Item(properties));
+            Item::new);
 
     public static final Item TROWEL = registerItem("trowel",
-            properties -> new TrowelItem(properties));
+            TrowelItem::new);
 
     public static final Item OBSIDIAN_BOAT = registerItem("obsidian_boat",
             properties -> new BoatItem(UPEntities.OBSIDIAN_BOAT, properties.stacksTo(1).fireResistant()));

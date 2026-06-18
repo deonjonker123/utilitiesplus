@@ -27,6 +27,6 @@ public class NameTagEvents {
 
     @Environment(EnvType.CLIENT)
     private static void openScreen(ItemStack stack) {
-        Minecraft.getInstance().setScreen(new NameTagScreen(stack));
+        Minecraft.getInstance().gui.setScreen(new NameTagScreen(stack));
     }
 }

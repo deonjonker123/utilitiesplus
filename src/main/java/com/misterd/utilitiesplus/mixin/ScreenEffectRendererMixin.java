@@ -17,17 +17,12 @@ public class ScreenEffectRendererMixin {
 
     @Shadow private Minecraft minecraft;
 
-    @Inject(
-            method = "renderScreenEffect",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/ScreenEffectRenderer;renderFire(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;)V"),
-            cancellable = true
-    )
+    @Inject(method = "submit", at = @At("HEAD"), cancellable = true)
     private void cancelFireOverlay(boolean isFirstPerson, boolean isSleeping, float partialTicks, SubmitNodeCollector submitNodeCollector, boolean hideGui, CallbackInfo ci) {
         Player player = this.minecraft.player;
         boolean inObsidianBoat = player.getVehicle() instanceof ObsidianBoat || player.getVehicle() instanceof ObsidianChestBoat;
         if (inObsidianBoat && !player.isOnFire()) {
             ci.cancel();
         }
-        System.out.println("fire ticks: " + player.getRemainingFireTicks() + " inBoat: " + inObsidianBoat + " isOnFire: " + player.isOnFire());
     }
 }

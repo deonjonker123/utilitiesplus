@@ -20,6 +20,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.WeatheringCopper;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -112,7 +113,9 @@ public class UPRecipeProvider extends FabricRecipeProvider {
 
                 shaped(RecipeCategory.MISC, UPItems.COPPER_UPGRADE)
                         .pattern("IBI").pattern("B#B").pattern("III")
-                        .define('#', UPTags.Items.BARREL_BLOCK_ITEMS).define('I', Items.COPPER_INGOT).define('B', Items.COPPER_BLOCK)
+                        .define('#', UPTags.Items.BARREL_BLOCK_ITEMS)
+                        .define('I', Items.COPPER_INGOT)
+                        .define('B', Items.COPPER_BLOCK.weathering().pick(WeatheringCopper.WeatherState.UNAFFECTED))
                         .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(output);
 
                 shaped(RecipeCategory.MISC, UPItems.IRON_UPGRADE)
@@ -598,9 +601,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(Items.BAMBOO_RAFT, 1, Items.BAMBOO_PLANKS, output);
 
                 sawbench(Items.CHEST, 1, Items.OAK_LOG, output);
+                sawbench(Items.STRIPPED_OAK_LOG, 1, Items.OAK_LOG, output);
                 sawbench(Items.BARREL, 1, Items.OAK_LOG, output);
                 sawbench(UPBlocks.OAK_BARREL, 1, Items.OAK_LOG, output);
                 sawbench(Items.CHEST, 1, Items.OAK_WOOD, output);
+                sawbench(Items.STRIPPED_OAK_WOOD, 1, Items.OAK_WOOD, output);
                 sawbench(Items.BARREL, 1, Items.OAK_WOOD, output);
                 sawbench(UPBlocks.OAK_BARREL, 1, Items.OAK_WOOD, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_OAK_LOG, output);
@@ -611,9 +616,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.OAK_BARREL, 1, Items.STRIPPED_OAK_WOOD, output);
 
                 sawbench(Items.CHEST, 1, Items.SPRUCE_LOG, output);
+                sawbench(Items.STRIPPED_SPRUCE_LOG, 1, Items.SPRUCE_LOG, output);
                 sawbench(Items.BARREL, 1, Items.SPRUCE_LOG, output);
                 sawbench(UPBlocks.SPRUCE_BARREL, 1, Items.SPRUCE_LOG, output);
                 sawbench(Items.CHEST, 1, Items.SPRUCE_WOOD, output);
+                sawbench(Items.STRIPPED_SPRUCE_WOOD, 1, Items.SPRUCE_WOOD, output);
                 sawbench(Items.BARREL, 1, Items.SPRUCE_WOOD, output);
                 sawbench(UPBlocks.SPRUCE_BARREL, 1, Items.SPRUCE_WOOD, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_SPRUCE_LOG, output);
@@ -624,9 +631,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.SPRUCE_BARREL, 1, Items.STRIPPED_SPRUCE_WOOD, output);
 
                 sawbench(Items.CHEST, 1, Items.BIRCH_LOG, output);
+                sawbench(Items.STRIPPED_BIRCH_LOG, 1, Items.BIRCH_LOG, output);
                 sawbench(Items.BARREL, 1, Items.BIRCH_LOG, output);
                 sawbench(UPBlocks.BIRCH_BARREL, 1, Items.BIRCH_LOG, output);
                 sawbench(Items.CHEST, 1, Items.BIRCH_WOOD, output);
+                sawbench(Items.STRIPPED_BIRCH_WOOD, 1, Items.BIRCH_WOOD, output);
                 sawbench(Items.BARREL, 1, Items.BIRCH_WOOD, output);
                 sawbench(UPBlocks.BIRCH_BARREL, 1, Items.BIRCH_WOOD, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_BIRCH_LOG, output);
@@ -637,9 +646,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.BIRCH_BARREL, 1, Items.STRIPPED_BIRCH_WOOD, output);
 
                 sawbench(Items.CHEST, 1, Items.JUNGLE_LOG, output);
+                sawbench(Items.STRIPPED_JUNGLE_LOG, 1, Items.JUNGLE_LOG, output);
                 sawbench(Items.BARREL, 1, Items.JUNGLE_LOG, output);
                 sawbench(UPBlocks.JUNGLE_BARREL, 1, Items.JUNGLE_LOG, output);
                 sawbench(Items.CHEST, 1, Items.JUNGLE_WOOD, output);
+                sawbench(Items.STRIPPED_JUNGLE_WOOD, 1, Items.JUNGLE_WOOD, output);
                 sawbench(Items.BARREL, 1, Items.JUNGLE_WOOD, output);
                 sawbench(UPBlocks.JUNGLE_BARREL, 1, Items.JUNGLE_WOOD, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_JUNGLE_LOG, output);
@@ -650,9 +661,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.JUNGLE_BARREL, 1, Items.STRIPPED_JUNGLE_WOOD, output);
 
                 sawbench(Items.CHEST, 1, Items.ACACIA_LOG, output);
+                sawbench(Items.STRIPPED_ACACIA_LOG, 1, Items.ACACIA_LOG, output);
                 sawbench(Items.BARREL, 1, Items.ACACIA_LOG, output);
                 sawbench(UPBlocks.ACACIA_BARREL, 1, Items.ACACIA_LOG, output);
                 sawbench(Items.CHEST, 1, Items.ACACIA_WOOD, output);
+                sawbench(Items.STRIPPED_ACACIA_WOOD, 1, Items.ACACIA_WOOD, output);
                 sawbench(Items.BARREL, 1, Items.ACACIA_WOOD, output);
                 sawbench(UPBlocks.ACACIA_BARREL, 1, Items.ACACIA_WOOD, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_ACACIA_LOG, output);
@@ -663,9 +676,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.ACACIA_BARREL, 1, Items.STRIPPED_ACACIA_WOOD, output);
 
                 sawbench(Items.CHEST, 1, Items.DARK_OAK_LOG, output);
+                sawbench(Items.STRIPPED_DARK_OAK_LOG, 1, Items.DARK_OAK_LOG, output);
                 sawbench(Items.BARREL, 1, Items.DARK_OAK_LOG, output);
                 sawbench(UPBlocks.DARK_OAK_BARREL, 1, Items.DARK_OAK_LOG, output);
                 sawbench(Items.CHEST, 1, Items.DARK_OAK_WOOD, output);
+                sawbench(Items.STRIPPED_DARK_OAK_WOOD, 1, Items.DARK_OAK_WOOD, output);
                 sawbench(Items.BARREL, 1, Items.DARK_OAK_WOOD, output);
                 sawbench(UPBlocks.DARK_OAK_BARREL, 1, Items.DARK_OAK_WOOD, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_DARK_OAK_LOG, output);
@@ -676,9 +691,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.DARK_OAK_BARREL, 1, Items.STRIPPED_DARK_OAK_WOOD, output);
 
                 sawbench(Items.CHEST, 1, Items.MANGROVE_LOG, output);
+                sawbench(Items.STRIPPED_MANGROVE_LOG, 1, Items.MANGROVE_LOG, output);
                 sawbench(Items.BARREL, 1, Items.MANGROVE_LOG, output);
                 sawbench(UPBlocks.MANGROVE_BARREL, 1, Items.MANGROVE_LOG, output);
                 sawbench(Items.CHEST, 1, Items.MANGROVE_WOOD, output);
+                sawbench(Items.STRIPPED_MANGROVE_WOOD, 1, Items.MANGROVE_WOOD, output);
                 sawbench(Items.BARREL, 1, Items.MANGROVE_WOOD, output);
                 sawbench(UPBlocks.MANGROVE_BARREL, 1, Items.MANGROVE_WOOD, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_MANGROVE_LOG, output);
@@ -689,9 +706,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.MANGROVE_BARREL, 1, Items.STRIPPED_MANGROVE_WOOD, output);
 
                 sawbench(Items.CHEST, 1, Items.CHERRY_LOG, output);
+                sawbench(Items.STRIPPED_CHERRY_LOG, 1, Items.CHERRY_LOG, output);
                 sawbench(Items.BARREL, 1, Items.CHERRY_LOG, output);
                 sawbench(UPBlocks.CHERRY_BARREL, 1, Items.CHERRY_LOG, output);
                 sawbench(Items.CHEST, 1, Items.CHERRY_WOOD, output);
+                sawbench(Items.STRIPPED_CHERRY_WOOD, 1, Items.CHERRY_WOOD, output);
                 sawbench(Items.BARREL, 1, Items.CHERRY_WOOD, output);
                 sawbench(UPBlocks.CHERRY_BARREL, 1, Items.CHERRY_WOOD, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_CHERRY_LOG, output);
@@ -702,9 +721,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.CHERRY_BARREL, 1, Items.STRIPPED_CHERRY_WOOD, output);
 
                 sawbench(Items.CHEST, 1, Items.PALE_OAK_LOG, output);
+                sawbench(Items.STRIPPED_PALE_OAK_LOG, 1, Items.PALE_OAK_LOG, output);
                 sawbench(Items.BARREL, 1, Items.PALE_OAK_LOG, output);
                 sawbench(UPBlocks.PALE_OAK_BARREL, 1, Items.PALE_OAK_LOG, output);
                 sawbench(Items.CHEST, 1, Items.PALE_OAK_WOOD, output);
+                sawbench(Items.STRIPPED_PALE_OAK_WOOD, 1, Items.PALE_OAK_WOOD, output);
                 sawbench(Items.BARREL, 1, Items.PALE_OAK_WOOD, output);
                 sawbench(UPBlocks.PALE_OAK_BARREL, 1, Items.PALE_OAK_WOOD, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_PALE_OAK_LOG, output);
@@ -715,9 +736,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.PALE_OAK_BARREL, 1, Items.STRIPPED_PALE_OAK_WOOD, output);
 
                 sawbench(Items.CHEST, 1, Items.CRIMSON_STEM, output);
+                sawbench(Items.STRIPPED_CRIMSON_STEM, 1, Items.CRIMSON_STEM, output);
                 sawbench(Items.BARREL, 1, Items.CRIMSON_STEM, output);
                 sawbench(UPBlocks.CRIMSON_BARREL, 1, Items.CRIMSON_STEM, output);
                 sawbench(Items.CHEST, 1, Items.CRIMSON_HYPHAE, output);
+                sawbench(Items.STRIPPED_CRIMSON_HYPHAE, 1, Items.CRIMSON_HYPHAE, output);
                 sawbench(Items.BARREL, 1, Items.CRIMSON_HYPHAE, output);
                 sawbench(UPBlocks.CRIMSON_BARREL, 1, Items.CRIMSON_HYPHAE, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_CRIMSON_STEM, output);
@@ -728,9 +751,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.CRIMSON_BARREL, 1, Items.STRIPPED_CRIMSON_HYPHAE, output);
 
                 sawbench(Items.CHEST, 1, Items.WARPED_STEM, output);
+                sawbench(Items.STRIPPED_WARPED_STEM, 1, Items.WARPED_STEM, output);
                 sawbench(Items.BARREL, 1, Items.WARPED_STEM, output);
                 sawbench(UPBlocks.WARPED_BARREL, 1, Items.WARPED_STEM, output);
                 sawbench(Items.CHEST, 1, Items.WARPED_HYPHAE, output);
+                sawbench(Items.STRIPPED_WARPED_HYPHAE, 1, Items.WARPED_HYPHAE, output);
                 sawbench(Items.BARREL, 1, Items.WARPED_HYPHAE, output);
                 sawbench(UPBlocks.WARPED_BARREL, 1, Items.WARPED_HYPHAE, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_WARPED_STEM, output);
@@ -741,6 +766,7 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.WARPED_BARREL, 1, Items.STRIPPED_WARPED_HYPHAE, output);
 
                 sawbench(Items.CHEST, 1, Items.BAMBOO_BLOCK, output);
+                sawbench(Items.STRIPPED_BAMBOO_BLOCK, 1, Items.BAMBOO_BLOCK, output);
                 sawbench(Items.BARREL, 1, Items.BAMBOO_BLOCK, output);
                 sawbench(Items.CHEST, 1, Items.STRIPPED_BAMBOO_BLOCK, output);
                 sawbench(Items.BARREL, 1, Items.STRIPPED_BAMBOO_BLOCK, output);

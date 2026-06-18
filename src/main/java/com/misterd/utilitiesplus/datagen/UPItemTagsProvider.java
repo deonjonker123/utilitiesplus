@@ -5,7 +5,9 @@ import com.misterd.utilitiesplus.util.UPTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
 import java.util.concurrent.CompletableFuture;
@@ -16,93 +18,83 @@ public class UPItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
         super(output, registryLookupFuture);
     }
 
+    private static ResourceKey<Item> key(Item item) {
+        return item.builtInRegistryHolder().key();
+    }
+
     @Override
     public void addTags(HolderLookup.Provider provider) {
-        valueLookupBuilder(UPTags.Items.BARREL_BLOCK_ITEMS)
-                .add(UPBlocks.ACACIA_BARREL.asItem())
-                .add(UPBlocks.BIRCH_BARREL.asItem())
-                .add(UPBlocks.CHERRY_BARREL.asItem())
-                .add(UPBlocks.CRIMSON_BARREL.asItem())
-                .add(UPBlocks.DARK_OAK_BARREL.asItem())
-                .add(UPBlocks.JUNGLE_BARREL.asItem())
-                .add(UPBlocks.MANGROVE_BARREL.asItem())
-                .add(UPBlocks.OAK_BARREL.asItem())
-                .add(UPBlocks.PALE_OAK_BARREL.asItem())
-                .add(UPBlocks.SPRUCE_BARREL.asItem())
-                .add(UPBlocks.WARPED_BARREL.asItem());
+        tag(UPTags.Items.BARREL_BLOCK_ITEMS)
+                .add(key(UPBlocks.ACACIA_BARREL.asItem()))
+                .add(key(UPBlocks.BIRCH_BARREL.asItem()))
+                .add(key(UPBlocks.CHERRY_BARREL.asItem()))
+                .add(key(UPBlocks.CRIMSON_BARREL.asItem()))
+                .add(key(UPBlocks.DARK_OAK_BARREL.asItem()))
+                .add(key(UPBlocks.JUNGLE_BARREL.asItem()))
+                .add(key(UPBlocks.MANGROVE_BARREL.asItem()))
+                .add(key(UPBlocks.OAK_BARREL.asItem()))
+                .add(key(UPBlocks.PALE_OAK_BARREL.asItem()))
+                .add(key(UPBlocks.SPRUCE_BARREL.asItem()))
+                .add(key(UPBlocks.WARPED_BARREL.asItem()));
 
-        valueLookupBuilder(UPTags.Items.KILN_SMELTABLES)
-                .add(Items.CLAY)
-                .add(Items.CLAY_BALL)
-                .add(Items.WHITE_TERRACOTTA)
-                .add(Items.ORANGE_TERRACOTTA)
-                .add(Items.MAGENTA_TERRACOTTA)
-                .add(Items.LIGHT_BLUE_TERRACOTTA)
-                .add(Items.YELLOW_TERRACOTTA)
-                .add(Items.LIME_TERRACOTTA)
-                .add(Items.PINK_TERRACOTTA)
-                .add(Items.GRAY_TERRACOTTA)
-                .add(Items.LIGHT_GRAY_TERRACOTTA)
-                .add(Items.CYAN_TERRACOTTA)
-                .add(Items.PURPLE_TERRACOTTA)
-                .add(Items.BLUE_TERRACOTTA)
-                .add(Items.BROWN_TERRACOTTA)
-                .add(Items.GREEN_TERRACOTTA)
-                .add(Items.RED_TERRACOTTA)
-                .add(Items.BLACK_TERRACOTTA)
-                .add(Items.STONE)
-                .add(Items.COBBLESTONE)
-                .add(Items.SAND)
-                .add(Items.RED_SAND);
+        tag(UPTags.Items.KILN_SMELTABLES)
+                .add(key(Items.CLAY))
+                .add(key(Items.CLAY_BALL))
+                .addAll(Items.DYED_TERRACOTTA.map(UPItemTagsProvider::key).asList())
+                .add(key(Items.TERRACOTTA))
+                .add(key(Items.STONE))
+                .add(key(Items.COBBLESTONE))
+                .add(key(Items.SAND))
+                .add(key(Items.RED_SAND));
 
-        valueLookupBuilder(UPTags.Items.ANIMAL_FEED)
-                .add(Items.CARROT)
-                .add(Items.POTATO)
-                .add(Items.BEETROOT)
-                .add(Items.GOLDEN_APPLE)
-                .add(Items.GOLDEN_CARROT)
-                .add(Items.ENCHANTED_GOLDEN_APPLE)
-                .add(Items.WHEAT)
-                .add(Items.WHEAT_SEEDS)
-                .add(Items.PUMPKIN_SEEDS)
-                .add(Items.MELON_SEEDS)
-                .add(Items.BEETROOT_SEEDS)
-                .add(Items.TORCHFLOWER_SEEDS)
-                .add(Items.PITCHER_POD)
-                .add(Items.HAY_BLOCK)
-                .add(Items.SEAGRASS)
-                .add(Items.BAMBOO)
-                .add(Items.CACTUS)
-                .add(Items.WARPED_FUNGUS)
-                .add(Items.CRIMSON_FUNGUS)
-                .add(Items.SLIME_BALL)
-                .add(Items.SPIDER_EYE)
+        tag(UPTags.Items.ANIMAL_FEED)
+                .add(key(Items.CARROT))
+                .add(key(Items.POTATO))
+                .add(key(Items.BEETROOT))
+                .add(key(Items.GOLDEN_APPLE))
+                .add(key(Items.GOLDEN_CARROT))
+                .add(key(Items.ENCHANTED_GOLDEN_APPLE))
+                .add(key(Items.WHEAT))
+                .add(key(Items.WHEAT_SEEDS))
+                .add(key(Items.PUMPKIN_SEEDS))
+                .add(key(Items.MELON_SEEDS))
+                .add(key(Items.BEETROOT_SEEDS))
+                .add(key(Items.TORCHFLOWER_SEEDS))
+                .add(key(Items.PITCHER_POD))
+                .add(key(Items.HAY_BLOCK))
+                .add(key(Items.SEAGRASS))
+                .add(key(Items.BAMBOO))
+                .add(key(Items.CACTUS))
+                .add(key(Items.WARPED_FUNGUS))
+                .add(key(Items.CRIMSON_FUNGUS))
+                .add(key(Items.SLIME_BALL))
+                .add(key(Items.SPIDER_EYE))
 
-                .add(Items.DANDELION)
-                .add(Items.POPPY)
-                .add(Items.BLUE_ORCHID)
-                .add(Items.ALLIUM)
-                .add(Items.AZURE_BLUET)
-                .add(Items.ORANGE_TULIP)
-                .add(Items.PINK_TULIP)
-                .add(Items.RED_TULIP)
-                .add(Items.ORANGE_TULIP)
-                .add(Items.WHITE_TULIP)
-                .add(Items.OXEYE_DAISY)
-                .add(Items.CORNFLOWER)
-                .add(Items.LILY_OF_THE_VALLEY)
-                .add(Items.TORCHFLOWER)
-                .add(Items.SUNFLOWER)
-                .add(Items.LILAC)
-                .add(Items.ROSE_BUSH)
-                .add(Items.PEONY)
-                .add(Items.OPEN_EYEBLOSSOM)
-                .add(Items.CLOSED_EYEBLOSSOM);
+                .add(key(Items.DANDELION))
+                .add(key(Items.POPPY))
+                .add(key(Items.BLUE_ORCHID))
+                .add(key(Items.ALLIUM))
+                .add(key(Items.AZURE_BLUET))
+                .add(key(Items.ORANGE_TULIP))
+                .add(key(Items.PINK_TULIP))
+                .add(key(Items.RED_TULIP))
+                .add(key(Items.ORANGE_TULIP))
+                .add(key(Items.WHITE_TULIP))
+                .add(key(Items.OXEYE_DAISY))
+                .add(key(Items.CORNFLOWER))
+                .add(key(Items.LILY_OF_THE_VALLEY))
+                .add(key(Items.TORCHFLOWER))
+                .add(key(Items.SUNFLOWER))
+                .add(key(Items.LILAC))
+                .add(key(Items.ROSE_BUSH))
+                .add(key(Items.PEONY))
+                .add(key(Items.OPEN_EYEBLOSSOM))
+                .add(key(Items.CLOSED_EYEBLOSSOM));
 
-        valueLookupBuilder(UPTags.Items.SAWBENCH_INPUTS)
+        tag(UPTags.Items.SAWBENCH_INPUTS)
                 .forceAddTag(ItemTags.LOGS)
                 .forceAddTag(ItemTags.PLANKS)
                 .forceAddTag(ItemTags.BAMBOO_BLOCKS)
-                .add(Items.BAMBOO_MOSAIC);
+                .add(key(Items.BAMBOO_MOSAIC));
     }
 }
