@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:warped_vertical_slab"
+        "recipes": "utilitiesplus:warped_vertical_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

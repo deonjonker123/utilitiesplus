@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:jungle_barrel"
+        "recipes": "utilitiesplus:jungle_barrel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

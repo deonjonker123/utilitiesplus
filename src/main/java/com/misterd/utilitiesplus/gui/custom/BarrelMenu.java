@@ -28,19 +28,16 @@ public class BarrelMenu extends AbstractContainerMenu {
         super(UPMenuTypes.BARREL_MENU, id);
         this.blockEntity = be;
 
-        // Upgrade slot — restricted placement and removal
         addSlot(new Slot(be, BarrelBlockEntity.SLOT_UPGRADE, 152, 61) {
             @Override
             public boolean mayPlace(ItemStack stack) {
                 Tier incoming = Tier.fromUpgradeItem(stack.getItem());
                 if (incoming == null) return false;
-                // Only allow placing a higher tier than current
                 return incoming.getLevel() > be.getTier().getLevel();
             }
 
             @Override
             public boolean mayPickup(Player player) {
-                // Can only remove the upgrade if the stored count fits in the tier below
                 return be.canRemoveUpgrade(be.getTier());
             }
 
@@ -75,10 +72,8 @@ public class BarrelMenu extends AbstractContainerMenu {
         ItemStack copy = stack.copy();
 
         if (index == SLOT_UPGRADE) {
-            // Shift-click upgrade out to player inventory
             if (!moveItemStackTo(stack, PLAYER_INV_START, PLAYER_HB_END, true)) return ItemStack.EMPTY;
         } else {
-            // Shift-click from player inventory — try to place into upgrade slot if it's an upgrade item
             if (Tier.fromUpgradeItem(stack.getItem()) != null) {
                 if (!moveItemStackTo(stack, SLOT_UPGRADE, SLOT_UPGRADE + 1, false)) return ItemStack.EMPTY;
             } else {

@@ -14,6 +14,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Prediction;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.Entity;
@@ -265,7 +266,7 @@ public class SawbenchMenu extends AbstractContainerMenu {
             slot.setChanged();
             if (stack.getCount() == clicked.getCount()) return ItemStack.EMPTY;
             slot.onTake(player, stack);
-            if (slotIndex == RESULT_SLOT) player.drop(stack, false);
+            if (slotIndex == RESULT_SLOT) player.drop(stack, false, Prediction.SERVER_ONLY);
             this.broadcastChanges();
         }
 

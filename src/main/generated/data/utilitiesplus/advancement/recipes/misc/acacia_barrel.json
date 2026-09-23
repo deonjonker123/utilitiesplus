@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:acacia_barrel"
+        "recipes": "utilitiesplus:acacia_barrel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

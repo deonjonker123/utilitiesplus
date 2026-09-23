@@ -14,7 +14,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
-import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class UPBlocks {
@@ -43,6 +42,9 @@ public class UPBlocks {
             p -> new BarrelBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
 
     public static final Block PALE_OAK_BARREL = registerBarrel("pale_oak_barrel",
+            p -> new BarrelBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
+
+    public static final Block POPLAR_BARREL = registerBarrel("poplar_barrel",
             p -> new BarrelBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
 
     public static final Block SPRUCE_BARREL = registerBarrel("spruce_barrel",
@@ -115,6 +117,9 @@ public class UPBlocks {
     public static final Block PALE_OAK_VERTICAL_SLAB = registerBlock("pale_oak_vertical_slab",
             p -> new VerticalSlabBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
 
+    public static final Block POPLAR_VERTICAL_SLAB = registerBlock("poplar_vertical_slab",
+            p -> new VerticalSlabBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
+
     public static final Block SPRUCE_VERTICAL_SLAB = registerBlock("spruce_vertical_slab",
             p -> new VerticalSlabBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
 
@@ -149,6 +154,9 @@ public class UPBlocks {
             p -> new WoodenBeamBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
 
     public static final Block PALE_OAK_BEAM = registerBlock("pale_oak_beam",
+            p -> new WoodenBeamBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
+
+    public static final Block POPLAR_BEAM = registerBlock("poplar_beam",
             p -> new WoodenBeamBlock(p.strength(2F, 6F).sound(SoundType.WOOD).noOcclusion()));
 
     public static final Block SPRUCE_BEAM = registerBlock("spruce_beam",

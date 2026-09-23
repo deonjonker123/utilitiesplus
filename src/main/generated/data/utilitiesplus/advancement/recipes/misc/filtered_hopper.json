@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:filtered_hopper"
+        "recipes": "utilitiesplus:filtered_hopper"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

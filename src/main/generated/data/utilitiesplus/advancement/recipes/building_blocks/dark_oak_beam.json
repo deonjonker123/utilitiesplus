@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:dark_oak_beam"
+        "recipes": "utilitiesplus:dark_oak_beam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

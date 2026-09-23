@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:redstone_clock"
+        "recipes": "utilitiesplus:redstone_clock"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

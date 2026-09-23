@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:copper_upgrade"
+        "recipes": "utilitiesplus:copper_upgrade"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

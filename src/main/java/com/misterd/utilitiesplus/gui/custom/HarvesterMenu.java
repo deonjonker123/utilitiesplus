@@ -3,6 +3,7 @@ package com.misterd.utilitiesplus.gui.custom;
 import com.misterd.utilitiesplus.blockentity.custom.HarvesterBlockEntity;
 import com.misterd.utilitiesplus.gui.UPMenuTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -50,7 +51,7 @@ public class HarvesterMenu extends AbstractContainerMenu {
         addSlot(new Slot(be, SLOT_FUEL, 80, 37) {
             @Override
             public boolean mayPlace(ItemStack stack) {
-                return level.fuelValues().isFuel(stack);
+                return stack.has(DataComponents.COOKING_FUEL);
             }
         });
 

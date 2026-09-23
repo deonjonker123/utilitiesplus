@@ -111,12 +111,12 @@ public class BarrelBlockEntityRenderer implements BlockEntityRenderer<BarrelBloc
 
     private void applyFacingRotation(PoseStack poseStack, Direction facing) {
         poseStack.translate(0.5, 0.5, 0.5);
-        poseStack.mulPose(Axis.YP.rotationDegrees(180.0f));
+        poseStack.rotateDegrees(Axis.YP, 180.0f);
         switch (facing) {
-            case NORTH -> poseStack.mulPose(Axis.YP.rotationDegrees(0.0f));
-            case EAST -> poseStack.mulPose(Axis.YP.rotationDegrees(-90.0f));
-            case SOUTH -> poseStack.mulPose(Axis.YP.rotationDegrees(180.0f));
-            case WEST -> poseStack.mulPose(Axis.YP.rotationDegrees(90.0f));
+            case NORTH -> poseStack.rotateDegrees(Axis.YP,0.0f);
+            case EAST -> poseStack.rotateDegrees(Axis.YP, -90.0f);
+            case SOUTH -> poseStack.rotateDegrees(Axis.YP, 180.0f);
+            case WEST -> poseStack.rotateDegrees(Axis.YP, 90.0f);
             default -> {
             }
         }

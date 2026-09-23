@@ -41,7 +41,7 @@ public class FeedingTroughBlockEntityRenderer implements BlockEntityRenderer<Fee
 
         poseStack.translate(0.5f, 0.35f, 0.5f);
         poseStack.scale(0.6f, 0.5f, 0.6f);
-        poseStack.mulPose(Axis.XP.rotationDegrees(90f));
+        poseStack.rotateDegrees(Axis.XP, 90f);
 
 
         state.itemStackRenderState.submit(poseStack, submitNodeCollector, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);

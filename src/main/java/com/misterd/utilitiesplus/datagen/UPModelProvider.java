@@ -22,10 +22,10 @@ import net.minecraft.client.renderer.item.properties.conditional.HasComponent;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.Optional;
-import java.util.Properties;
 
 public class UPModelProvider extends FabricModelProvider {
 
@@ -113,6 +113,9 @@ public class UPModelProvider extends FabricModelProvider {
         gen.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(UPBlocks.PALE_OAK_BARREL,
                         BlockModelGenerators.plainVariant(Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "block/pale_oak_barrel")))
                 .with(ROTATION_HORIZONTAL_FACING));
+        gen.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(UPBlocks.POPLAR_BARREL,
+                        BlockModelGenerators.plainVariant(Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "block/poplar_barrel")))
+                .with(ROTATION_HORIZONTAL_FACING));
         gen.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(UPBlocks.SPRUCE_BARREL,
                         BlockModelGenerators.plainVariant(Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "block/spruce_barrel")))
                 .with(ROTATION_HORIZONTAL_FACING));
@@ -120,31 +123,33 @@ public class UPModelProvider extends FabricModelProvider {
                         BlockModelGenerators.plainVariant(Identifier.fromNamespaceAndPath(UtilitiesPlus.MODID, "block/warped_barrel")))
                 .with(ROTATION_HORIZONTAL_FACING));
 
-        createVerticalSlab(gen, UPBlocks.ACACIA_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.ACACIA_PLANKS);
-        createVerticalSlab(gen, UPBlocks.BAMBOO_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.BAMBOO_PLANKS);
-        createVerticalSlab(gen, UPBlocks.BIRCH_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.BIRCH_PLANKS);
-        createVerticalSlab(gen, UPBlocks.CHERRY_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.CHERRY_PLANKS);
-        createVerticalSlab(gen, UPBlocks.CRIMSON_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.CRIMSON_PLANKS);
-        createVerticalSlab(gen, UPBlocks.DARK_OAK_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.DARK_OAK_PLANKS);
-        createVerticalSlab(gen, UPBlocks.JUNGLE_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.JUNGLE_PLANKS);
-        createVerticalSlab(gen, UPBlocks.MANGROVE_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.MANGROVE_PLANKS);
-        createVerticalSlab(gen, UPBlocks.OAK_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.OAK_PLANKS);
-        createVerticalSlab(gen, UPBlocks.PALE_OAK_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.PALE_OAK_PLANKS);
-        createVerticalSlab(gen, UPBlocks.SPRUCE_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.SPRUCE_PLANKS);
-        createVerticalSlab(gen, UPBlocks.WARPED_VERTICAL_SLAB, net.minecraft.world.level.block.Blocks.WARPED_PLANKS);
+        createVerticalSlab(gen, UPBlocks.ACACIA_VERTICAL_SLAB, Blocks.ACACIA_PLANKS);
+        createVerticalSlab(gen, UPBlocks.BAMBOO_VERTICAL_SLAB, Blocks.BAMBOO_PLANKS);
+        createVerticalSlab(gen, UPBlocks.BIRCH_VERTICAL_SLAB, Blocks.BIRCH_PLANKS);
+        createVerticalSlab(gen, UPBlocks.CHERRY_VERTICAL_SLAB, Blocks.CHERRY_PLANKS);
+        createVerticalSlab(gen, UPBlocks.CRIMSON_VERTICAL_SLAB, Blocks.CRIMSON_PLANKS);
+        createVerticalSlab(gen, UPBlocks.DARK_OAK_VERTICAL_SLAB, Blocks.DARK_OAK_PLANKS);
+        createVerticalSlab(gen, UPBlocks.JUNGLE_VERTICAL_SLAB, Blocks.JUNGLE_PLANKS);
+        createVerticalSlab(gen, UPBlocks.MANGROVE_VERTICAL_SLAB, Blocks.MANGROVE_PLANKS);
+        createVerticalSlab(gen, UPBlocks.OAK_VERTICAL_SLAB, Blocks.OAK_PLANKS);
+        createVerticalSlab(gen, UPBlocks.PALE_OAK_VERTICAL_SLAB, Blocks.PALE_OAK_PLANKS);
+        createVerticalSlab(gen, UPBlocks.POPLAR_VERTICAL_SLAB, Blocks.POPLAR_PLANKS);
+        createVerticalSlab(gen, UPBlocks.SPRUCE_VERTICAL_SLAB, Blocks.SPRUCE_PLANKS);
+        createVerticalSlab(gen, UPBlocks.WARPED_VERTICAL_SLAB, Blocks.WARPED_PLANKS);
 
-        createBeam(gen, UPBlocks.ACACIA_BEAM, net.minecraft.world.level.block.Blocks.ACACIA_PLANKS);
-        createBeam(gen, UPBlocks.BAMBOO_BEAM, net.minecraft.world.level.block.Blocks.BAMBOO_PLANKS);
-        createBeam(gen, UPBlocks.BIRCH_BEAM, net.minecraft.world.level.block.Blocks.BIRCH_PLANKS);
-        createBeam(gen, UPBlocks.CHERRY_BEAM, net.minecraft.world.level.block.Blocks.CHERRY_PLANKS);
-        createBeam(gen, UPBlocks.CRIMSON_BEAM, net.minecraft.world.level.block.Blocks.CRIMSON_PLANKS);
-        createBeam(gen, UPBlocks.DARK_OAK_BEAM, net.minecraft.world.level.block.Blocks.DARK_OAK_PLANKS);
-        createBeam(gen, UPBlocks.JUNGLE_BEAM, net.minecraft.world.level.block.Blocks.JUNGLE_PLANKS);
-        createBeam(gen, UPBlocks.MANGROVE_BEAM, net.minecraft.world.level.block.Blocks.MANGROVE_PLANKS);
-        createBeam(gen, UPBlocks.OAK_BEAM, net.minecraft.world.level.block.Blocks.OAK_PLANKS);
-        createBeam(gen, UPBlocks.PALE_OAK_BEAM, net.minecraft.world.level.block.Blocks.PALE_OAK_PLANKS);
-        createBeam(gen, UPBlocks.SPRUCE_BEAM, net.minecraft.world.level.block.Blocks.SPRUCE_PLANKS);
-        createBeam(gen, UPBlocks.WARPED_BEAM, net.minecraft.world.level.block.Blocks.WARPED_PLANKS);
+        createBeam(gen, UPBlocks.ACACIA_BEAM, Blocks.ACACIA_PLANKS);
+        createBeam(gen, UPBlocks.BAMBOO_BEAM, Blocks.BAMBOO_PLANKS);
+        createBeam(gen, UPBlocks.BIRCH_BEAM, Blocks.BIRCH_PLANKS);
+        createBeam(gen, UPBlocks.CHERRY_BEAM, Blocks.CHERRY_PLANKS);
+        createBeam(gen, UPBlocks.CRIMSON_BEAM, Blocks.CRIMSON_PLANKS);
+        createBeam(gen, UPBlocks.DARK_OAK_BEAM, Blocks.DARK_OAK_PLANKS);
+        createBeam(gen, UPBlocks.JUNGLE_BEAM, Blocks.JUNGLE_PLANKS);
+        createBeam(gen, UPBlocks.MANGROVE_BEAM, Blocks.MANGROVE_PLANKS);
+        createBeam(gen, UPBlocks.OAK_BEAM, Blocks.OAK_PLANKS);
+        createBeam(gen, UPBlocks.PALE_OAK_BEAM, Blocks.PALE_OAK_PLANKS);
+        createBeam(gen, UPBlocks.POPLAR_BEAM, Blocks.POPLAR_PLANKS);
+        createBeam(gen, UPBlocks.SPRUCE_BEAM, Blocks.SPRUCE_PLANKS);
+        createBeam(gen, UPBlocks.WARPED_BEAM, Blocks.WARPED_PLANKS);
     }
 
     @Override

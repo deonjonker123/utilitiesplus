@@ -1,7 +1,6 @@
 package com.misterd.utilitiesplus.block.custom;
 
 import com.misterd.utilitiesplus.gui.custom.SawbenchMenu;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -33,7 +32,6 @@ public class SawbenchBlock extends Block {
     );
 
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final MapCodec<SawbenchBlock> CODEC = simpleCodec(SawbenchBlock::new);
 
     public SawbenchBlock(Properties properties) {
         super(properties);
@@ -48,11 +46,6 @@ public class SawbenchBlock extends Block {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
-    }
-
-    @Override
-    protected MapCodec<? extends Block> codec() {
-        return CODEC;
     }
 
     @Override

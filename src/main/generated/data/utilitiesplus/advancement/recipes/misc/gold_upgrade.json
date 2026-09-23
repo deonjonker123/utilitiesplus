@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:gold_upgrade"
+        "recipes": "utilitiesplus:gold_upgrade"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -47,12 +47,12 @@ public class LanternBracketBlockEntityRenderer implements BlockEntityRenderer<La
         poseStack.pushPose();
 
         poseStack.translate(0.5, 0.5, 0.5);
-        poseStack.mulPose(Axis.YP.rotationDegrees(180.0f));
+        poseStack.rotateDegrees(Axis.YP, 180.0f);
         switch (state.facing) {
-            case NORTH -> poseStack.mulPose(Axis.YP.rotationDegrees(0.0f));
-            case EAST -> poseStack.mulPose(Axis.YP.rotationDegrees(-90.0f));
-            case SOUTH -> poseStack.mulPose(Axis.YP.rotationDegrees(180.0f));
-            case WEST -> poseStack.mulPose(Axis.YP.rotationDegrees(90.0f));
+            case NORTH -> poseStack.rotateDegrees(Axis.YP,0.0f);
+            case EAST -> poseStack.rotateDegrees(Axis.YP, -90.0f);
+            case SOUTH -> poseStack.rotateDegrees(Axis.YP, 180.0f);
+            case WEST -> poseStack.rotateDegrees(Axis.YP, 90.0f);
             default -> {}
         }
         poseStack.translate(-0.5, 0, -0.5);

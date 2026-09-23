@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:spruce_beam"
+        "recipes": "utilitiesplus:spruce_beam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

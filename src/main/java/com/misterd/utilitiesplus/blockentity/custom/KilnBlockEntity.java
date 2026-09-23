@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
@@ -24,6 +25,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.component.CookingFuel;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
@@ -34,6 +36,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ResolvableInt;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
 
@@ -91,6 +98,17 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
 
     public ContainerData getData() { return data; }
 
+    private LootContext getLootContext(ServerLevel level) {
+        return new LootContext.Builder(
+                new LootParams.Builder(level)
+                        .withParameter(LootContextParams.BLOCK_STATE, this.getBlockState())
+                        .withParameter(LootContextParams.BLOCK_ENTITY, this)
+                        .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(this.getBlockPos()))
+                        .withParameter(LootContextParams.CONTAINER, this)
+                        .create(LootContextParamSets.CONTAINER_PROCESS)
+        ).create(Optional.empty());
+    }
+
     public static void tick(Level level, BlockPos pos, BlockState state, KilnBlockEntity be) {
         if (!(level instanceof ServerLevel serverLevel)) return;
 
@@ -107,7 +125,9 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
             ItemStack fuel = be.inventory.get(SLOT_FUEL);
 
             if (!be.isLit() && !fuel.isEmpty()) {
-                int burnDuration = serverLevel.fuelValues().burnDuration(fuel);
+                int burnDuration = ResolvableInt.getFromItem(
+                        fuel, DataComponents.COOKING_FUEL, CookingFuel::burnTime, be.getLootContext(serverLevel), 0
+                );
                 if (burnDuration > 0) {
                     be.litDuration = burnDuration / COOK_SPEED_MULTIPLIER;
                     be.litTime = burnDuration / COOK_SPEED_MULTIPLIER;
@@ -211,7 +231,7 @@ public class KilnBlockEntity extends BlockEntity implements WorldlyContainer, Me
     public boolean canPlaceItemThroughFace(int slot, ItemStack stack, @Nullable Direction dir) {
         if (dir == Direction.DOWN) return false;
         if (dir == Direction.UP) return slot == SLOT_INPUT && stack.is(UPTags.Items.KILN_SMELTABLES);
-        return slot == SLOT_FUEL && level.fuelValues().isFuel(stack);
+        return slot == SLOT_FUEL && stack.has(DataComponents.COOKING_FUEL);
     }
 
     @Override

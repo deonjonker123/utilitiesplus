@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:birch_barrel"
+        "recipes": "utilitiesplus:birch_barrel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

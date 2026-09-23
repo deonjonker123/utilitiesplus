@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:pale_oak_beam"
+        "recipes": "utilitiesplus:pale_oak_beam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

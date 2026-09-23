@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:fast_hopper"
+        "recipes": "utilitiesplus:fast_hopper"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

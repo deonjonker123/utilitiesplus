@@ -7,11 +7,13 @@ import com.misterd.utilitiesplus.recipe.custom.SawbenchRecipe;
 import com.misterd.utilitiesplus.util.UPTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
@@ -30,8 +32,8 @@ public class UPRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
-        return new RecipeProvider(provider, recipeOutput) {
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, BootstrapContext<Recipe<?>> output, BootstrapContext<Advancement> advancementOutput) {
+        return new RecipeProvider(output, advancementOutput) {
             @Override
             public void buildRecipes() {
 
@@ -85,6 +87,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                         .pattern("PDP").pattern("PBP").pattern("PDP")
                         .define('P', Items.PALE_OAK_PLANKS).define('B', Items.BARREL).define('D', Items.PALE_OAK_SLAB)
                         .unlockedBy("has_pale_oak_planks", has(Items.PALE_OAK_PLANKS)).save(output);
+
+                shaped(RecipeCategory.MISC, UPBlocks.POPLAR_BARREL)
+                        .pattern("PDP").pattern("PBP").pattern("PDP")
+                        .define('P', Items.POPLAR_PLANKS).define('B', Items.BARREL).define('D', Items.POPLAR_SLAB)
+                        .unlockedBy("has_poplar_planks", has(Items.POPLAR_PLANKS)).save(output);
 
                 shaped(RecipeCategory.MISC, UPBlocks.SPRUCE_BARREL)
                         .pattern("PDP").pattern("PBP").pattern("PDP")
@@ -213,6 +220,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                         .define('#', Items.BAMBOO_PLANKS)
                         .unlockedBy("has_bamboo_planks", has(Items.BAMBOO_PLANKS)).save(output);
 
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.POPLAR_VERTICAL_SLAB, 3)
+                        .pattern("#").pattern("#").pattern("#")
+                        .define('#', Items.POPLAR_PLANKS)
+                        .unlockedBy("has_poplar_planks", has(Items.POPLAR_PLANKS)).save(output);
+
                 shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.ACACIA_BEAM, 3)
                         .pattern("S").pattern("P").pattern("S")
                         .define('S', UPBlocks.ACACIA_VERTICAL_SLAB).define('P', Items.ACACIA_PLANKS)
@@ -262,6 +274,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                         .pattern("S").pattern("P").pattern("S")
                         .define('S', UPBlocks.PALE_OAK_VERTICAL_SLAB).define('P', Items.PALE_OAK_PLANKS)
                         .unlockedBy("has_pale_oak_planks", has(Items.PALE_OAK_PLANKS)).save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.POPLAR_BEAM, 3)
+                        .pattern("S").pattern("P").pattern("S")
+                        .define('S', UPBlocks.POPLAR_VERTICAL_SLAB).define('P', Items.POPLAR_PLANKS)
+                        .unlockedBy("has_poplar_planks", has(Items.POPLAR_PLANKS)).save(output);
 
                 shaped(RecipeCategory.BUILDING_BLOCKS, UPBlocks.SPRUCE_BEAM, 3)
                         .pattern("S").pattern("P").pattern("S")
@@ -360,6 +377,12 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(Items.PALE_OAK_PLANKS, 4, Items.PALE_OAK_WOOD, output);
                 sawbench(Items.PALE_OAK_PLANKS, 4, Items.STRIPPED_PALE_OAK_LOG, output);
                 sawbench(Items.PALE_OAK_PLANKS, 4, Items.STRIPPED_PALE_OAK_WOOD, output);
+
+                sawbench(Items.POPLAR_PLANKS, 4, Items.POPLAR_LOG, output);
+                sawbench(Items.POPLAR_PLANKS, 4, Items.POPLAR_WOOD, output);
+                sawbench(Items.POPLAR_PLANKS, 4, Items.STRIPPED_POPLAR_LOG, output);
+                sawbench(Items.POPLAR_PLANKS, 4, Items.STRIPPED_POPLAR_WOOD, output);
+
                 sawbench(Items.CRIMSON_PLANKS, 4, Items.CRIMSON_STEM, output);
                 sawbench(Items.CRIMSON_PLANKS, 4, Items.CRIMSON_HYPHAE, output);
                 sawbench(Items.CRIMSON_PLANKS, 4, Items.STRIPPED_CRIMSON_STEM, output);
@@ -380,6 +403,7 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(Items.STICK, 4, Items.MANGROVE_PLANKS, output);
                 sawbench(Items.STICK, 4, Items.CHERRY_PLANKS, output);
                 sawbench(Items.STICK, 4, Items.PALE_OAK_PLANKS, output);
+                sawbench(Items.STICK, 4, Items.POPLAR_PLANKS, output);
                 sawbench(Items.STICK, 4, Items.CRIMSON_PLANKS, output);
                 sawbench(Items.STICK, 4, Items.WARPED_PLANKS, output);
                 sawbench(Items.STICK, 4, Items.BAMBOO_PLANKS, output);
@@ -393,6 +417,7 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(Items.LADDER, 2, Items.MANGROVE_PLANKS, output);
                 sawbench(Items.LADDER, 2, Items.CHERRY_PLANKS, output);
                 sawbench(Items.LADDER, 2, Items.PALE_OAK_PLANKS, output);
+                sawbench(Items.LADDER, 2, Items.POPLAR_PLANKS, output);
                 sawbench(Items.LADDER, 2, Items.CRIMSON_PLANKS, output);
                 sawbench(Items.LADDER, 2, Items.WARPED_PLANKS, output);
                 sawbench(Items.LADDER, 2, Items.BAMBOO_PLANKS, output);
@@ -441,6 +466,11 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(Items.PALE_OAK_STAIRS, 1, Items.PALE_OAK_PLANKS, output);
                 sawbench(Items.PALE_OAK_FENCE, 1, Items.PALE_OAK_PLANKS, output);
                 sawbench(Items.PALE_OAK_FENCE_GATE, 1, Items.PALE_OAK_PLANKS, output);
+
+                sawbench(Items.POPLAR_SLAB, 2, Items.POPLAR_PLANKS, output);
+                sawbench(Items.POPLAR_STAIRS, 1, Items.POPLAR_PLANKS, output);
+                sawbench(Items.POPLAR_FENCE, 1, Items.POPLAR_PLANKS, output);
+                sawbench(Items.POPLAR_FENCE_GATE, 1, Items.POPLAR_PLANKS, output);
 
                 sawbench(Items.CRIMSON_SLAB, 2, Items.CRIMSON_PLANKS, output);
                 sawbench(Items.CRIMSON_STAIRS, 1, Items.CRIMSON_PLANKS, output);
@@ -493,6 +523,12 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(Items.STICK, 16, Items.STRIPPED_CHERRY_WOOD, output);
                 sawbench(Items.STICK, 16, Items.PALE_OAK_LOG, output);
                 sawbench(Items.STICK, 16, Items.PALE_OAK_WOOD, output);
+
+                sawbench(Items.STICK, 16, Items.POPLAR_LOG, output);
+                sawbench(Items.STICK, 16, Items.POPLAR_WOOD, output);
+                sawbench(Items.STICK, 16, Items.STRIPPED_POPLAR_LOG, output);
+                sawbench(Items.STICK, 16, Items.STRIPPED_POPLAR_WOOD, output);
+
                 sawbench(Items.STICK, 16, Items.STRIPPED_PALE_OAK_LOG, output);
                 sawbench(Items.STICK, 16, Items.STRIPPED_PALE_OAK_WOOD, output);
                 sawbench(Items.STICK, 16, Items.CRIMSON_STEM, output);
@@ -577,6 +613,14 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(Items.PALE_OAK_SIGN, 2, Items.PALE_OAK_PLANKS, output);
                 sawbench(Items.PALE_OAK_HANGING_SIGN, 1, Items.PALE_OAK_PLANKS, output);
                 sawbench(Items.PALE_OAK_BOAT, 1, Items.PALE_OAK_PLANKS, output);
+
+                sawbench(Items.POPLAR_DOOR, 1, Items.POPLAR_PLANKS, output);
+                sawbench(Items.POPLAR_TRAPDOOR, 2, Items.POPLAR_PLANKS, output);
+                sawbench(Items.POPLAR_PRESSURE_PLATE, 1, Items.POPLAR_PLANKS, output);
+                sawbench(Items.POPLAR_BUTTON, 1, Items.POPLAR_PLANKS, output);
+                sawbench(Items.POPLAR_SIGN, 2, Items.POPLAR_PLANKS, output);
+                sawbench(Items.POPLAR_HANGING_SIGN, 1, Items.POPLAR_PLANKS, output);
+                sawbench(Items.POPLAR_BOAT, 1, Items.POPLAR_PLANKS, output);
 
                 sawbench(Items.CRIMSON_DOOR, 1, Items.CRIMSON_PLANKS, output);
                 sawbench(Items.CRIMSON_TRAPDOOR, 2, Items.CRIMSON_PLANKS, output);
@@ -735,6 +779,21 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(Items.BARREL, 1, Items.STRIPPED_PALE_OAK_WOOD, output);
                 sawbench(UPBlocks.PALE_OAK_BARREL, 1, Items.STRIPPED_PALE_OAK_WOOD, output);
 
+                sawbench(Items.CHEST, 1, Items.POPLAR_LOG, output);
+                sawbench(Items.STRIPPED_PALE_OAK_LOG, 1, Items.POPLAR_LOG, output);
+                sawbench(Items.BARREL, 1, Items.POPLAR_LOG, output);
+                sawbench(UPBlocks.POPLAR_BARREL, 1, Items.POPLAR_LOG, output);
+                sawbench(Items.CHEST, 1, Items.POPLAR_WOOD, output);
+                sawbench(Items.STRIPPED_PALE_OAK_WOOD, 1, Items.POPLAR_WOOD, output);
+                sawbench(Items.BARREL, 1, Items.POPLAR_WOOD, output);
+                sawbench(UPBlocks.PALE_OAK_BARREL, 1, Items.POPLAR_WOOD, output);
+                sawbench(Items.CHEST, 1, Items.STRIPPED_POPLAR_LOG, output);
+                sawbench(Items.BARREL, 1, Items.STRIPPED_POPLAR_LOG, output);
+                sawbench(UPBlocks.POPLAR_BARREL, 1, Items.STRIPPED_POPLAR_LOG, output);
+                sawbench(Items.CHEST, 1, Items.STRIPPED_POPLAR_WOOD, output);
+                sawbench(Items.BARREL, 1, Items.STRIPPED_POPLAR_WOOD, output);
+                sawbench(UPBlocks.POPLAR_BARREL, 1, Items.STRIPPED_POPLAR_WOOD, output);
+
                 sawbench(Items.CHEST, 1, Items.CRIMSON_STEM, output);
                 sawbench(Items.STRIPPED_CRIMSON_STEM, 1, Items.CRIMSON_STEM, output);
                 sawbench(Items.BARREL, 1, Items.CRIMSON_STEM, output);
@@ -780,6 +839,7 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.MANGROVE_VERTICAL_SLAB, 2, Items.MANGROVE_PLANKS, output);
                 sawbench(UPBlocks.CHERRY_VERTICAL_SLAB, 2, Items.CHERRY_PLANKS, output);
                 sawbench(UPBlocks.PALE_OAK_VERTICAL_SLAB, 2, Items.PALE_OAK_PLANKS, output);
+                sawbench(UPBlocks.POPLAR_VERTICAL_SLAB, 2, Items.POPLAR_PLANKS, output);
                 sawbench(UPBlocks.CRIMSON_VERTICAL_SLAB, 2, Items.CRIMSON_PLANKS, output);
                 sawbench(UPBlocks.WARPED_VERTICAL_SLAB, 2, Items.WARPED_PLANKS, output);
                 sawbench(UPBlocks.BAMBOO_VERTICAL_SLAB, 2, Items.BAMBOO_PLANKS, output);
@@ -794,6 +854,7 @@ public class UPRecipeProvider extends FabricRecipeProvider {
                 sawbench(UPBlocks.MANGROVE_BEAM, 2, Items.MANGROVE_PLANKS, output);
                 sawbench(UPBlocks.OAK_BEAM, 2, Items.OAK_PLANKS, output);
                 sawbench(UPBlocks.PALE_OAK_BEAM, 2, Items.PALE_OAK_PLANKS, output);
+                sawbench(UPBlocks.POPLAR_BEAM, 2, Items.POPLAR_PLANKS, output);
                 sawbench(UPBlocks.SPRUCE_BEAM, 2, Items.SPRUCE_PLANKS, output);
                 sawbench(UPBlocks.WARPED_BEAM, 2, Items.WARPED_PLANKS, output);
             }

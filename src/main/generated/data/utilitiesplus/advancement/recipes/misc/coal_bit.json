@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:coal_bit"
+        "recipes": "utilitiesplus:coal_bit"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:trowel"
+        "recipes": "utilitiesplus:trowel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:charcoal_from_bits"
+        "recipes": "utilitiesplus:charcoal_from_bits"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

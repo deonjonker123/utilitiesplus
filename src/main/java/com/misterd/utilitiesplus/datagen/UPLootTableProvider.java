@@ -12,8 +12,8 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -33,6 +33,7 @@ public class UPLootTableProvider extends FabricBlockLootSubProvider {
         add(UPBlocks.MANGROVE_BARREL, LootTable.lootTable());
         add(UPBlocks.OAK_BARREL, LootTable.lootTable());
         add(UPBlocks.PALE_OAK_BARREL, LootTable.lootTable());
+        add(UPBlocks.POPLAR_BARREL, LootTable.lootTable());
         add(UPBlocks.SPRUCE_BARREL, LootTable.lootTable());
         add(UPBlocks.WARPED_BARREL, LootTable.lootTable());
 
@@ -53,6 +54,7 @@ public class UPLootTableProvider extends FabricBlockLootSubProvider {
         add(UPBlocks.MANGROVE_VERTICAL_SLAB, createVerticalSlabItemTable(UPBlocks.MANGROVE_VERTICAL_SLAB));
         add(UPBlocks.OAK_VERTICAL_SLAB, createVerticalSlabItemTable(UPBlocks.OAK_VERTICAL_SLAB));
         add(UPBlocks.PALE_OAK_VERTICAL_SLAB, createVerticalSlabItemTable(UPBlocks.PALE_OAK_VERTICAL_SLAB));
+        add(UPBlocks.POPLAR_VERTICAL_SLAB, createVerticalSlabItemTable(UPBlocks.POPLAR_VERTICAL_SLAB));
         add(UPBlocks.SPRUCE_VERTICAL_SLAB, createVerticalSlabItemTable(UPBlocks.SPRUCE_VERTICAL_SLAB));
         add(UPBlocks.WARPED_VERTICAL_SLAB, createVerticalSlabItemTable(UPBlocks.WARPED_VERTICAL_SLAB));
 
@@ -66,6 +68,7 @@ public class UPLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(UPBlocks.MANGROVE_BEAM);
         dropSelf(UPBlocks.OAK_BEAM);
         dropSelf(UPBlocks.PALE_OAK_BEAM);
+        dropSelf(UPBlocks.POPLAR_BEAM);
         dropSelf(UPBlocks.SPRUCE_BEAM);
         dropSelf(UPBlocks.WARPED_BEAM);
         dropSelf(UPBlocks.FILTERED_HOPPER);
@@ -75,11 +78,11 @@ public class UPLootTableProvider extends FabricBlockLootSubProvider {
 
     private LootTable.Builder createVerticalSlabItemTable(Block slab) {
         return LootTable.lootTable().withPool(LootPool.lootPool()
-                .setRolls(ConstantValue.exactly(1.0F))
+                .setRolls(ContextIntProviders.exactly(1))
                 .add(this.applyExplosionDecay(slab, LootItem.lootTableItem(slab)
-                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))
-                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(slab)
-                                        .setProperties(StatePropertiesPredicate.Builder.properties()
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(2))
+                                .when(MatchBlock.blockMatches(this.blocks, slab,
+                                        StatePropertiesPredicate.Builder.properties()
                                                 .hasProperty(UPBlockStateProperties.VERTICAL_SLAB_TYPE, VerticalSlabType.DOUBLE)))))));
     }
 }

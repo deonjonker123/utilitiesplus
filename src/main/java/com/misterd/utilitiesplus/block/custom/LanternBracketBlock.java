@@ -2,9 +2,10 @@ package com.misterd.utilitiesplus.block.custom;
 
 import com.misterd.utilitiesplus.block.UPBlocks;
 import com.misterd.utilitiesplus.blockentity.custom.LanternBracketBlockEntity;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
@@ -37,8 +38,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jspecify.annotations.Nullable;
 
 public class LanternBracketBlock extends BaseEntityBlock {
-
-    public static final MapCodec<LanternBracketBlock> CODEC = simpleCodec(LanternBracketBlock::new);
 
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final EnumProperty<BracketAttachment> ATTACHMENT =
@@ -142,11 +141,6 @@ public class LanternBracketBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected MapCodec<LanternBracketBlock> codec() {
-        return CODEC;
-    }
-
-    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, ATTACHMENT, LIGHT_LEVEL);
     }
@@ -229,7 +223,7 @@ public class LanternBracketBlock extends BaseEntityBlock {
     }
 
     @Override
-    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
+    public void playerDestroy(ServerLevel level, ServerPlayer player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
         if (!level.isClientSide() && blockEntity instanceof LanternBracketBlockEntity be && !be.isEmpty()) {
             Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(),
                     new ItemStack(be.getLanternState().getBlock()));

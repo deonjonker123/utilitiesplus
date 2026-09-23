@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:mangrove_beam"
+        "recipes": "utilitiesplus:mangrove_beam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

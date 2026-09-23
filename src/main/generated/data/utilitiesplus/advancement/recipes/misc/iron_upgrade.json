@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:iron_upgrade"
+        "recipes": "utilitiesplus:iron_upgrade"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

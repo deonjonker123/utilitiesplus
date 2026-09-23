@@ -2,7 +2,6 @@ package com.misterd.utilitiesplus.block.custom;
 
 import com.misterd.utilitiesplus.util.UPBlockStateProperties;
 import com.misterd.utilitiesplus.util.VerticalSlabType;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -32,7 +31,6 @@ import org.jspecify.annotations.Nullable;
 
 public class VerticalSlabBlock extends Block implements SimpleWaterloggedBlock {
 
-    public static final MapCodec<VerticalSlabBlock> CODEC = simpleCodec(VerticalSlabBlock::new);
     public static final EnumProperty<VerticalSlabType> TYPE = UPBlockStateProperties.VERTICAL_SLAB_TYPE;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
@@ -46,11 +44,6 @@ public class VerticalSlabBlock extends Block implements SimpleWaterloggedBlock {
         this.registerDefaultState(this.defaultBlockState()
                 .setValue(TYPE, VerticalSlabType.NORTH)
                 .setValue(WATERLOGGED, false));
-    }
-
-    @Override
-    protected MapCodec<? extends Block> codec() {
-        return CODEC;
     }
 
     @Override

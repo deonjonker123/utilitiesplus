@@ -14,6 +14,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.util.Prediction;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.MenuProvider;
@@ -156,7 +157,7 @@ public class BarrelBlockEntity extends BlockEntity implements WorldlyContainer, 
         if (oldItem != null) {
             ItemStack returnStack = new ItemStack(oldItem);
             if (!player.getInventory().add(returnStack)) {
-                player.drop(returnStack, false);
+                player.drop(returnStack, false, Prediction.SERVER_ONLY);
             }
         }
 

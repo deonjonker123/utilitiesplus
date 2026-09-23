@@ -34,6 +34,7 @@ public class UPItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(key(UPBlocks.MANGROVE_BARREL.asItem()))
                 .add(key(UPBlocks.OAK_BARREL.asItem()))
                 .add(key(UPBlocks.PALE_OAK_BARREL.asItem()))
+                .add(key(UPBlocks.POPLAR_BARREL.asItem()))
                 .add(key(UPBlocks.SPRUCE_BARREL.asItem()))
                 .add(key(UPBlocks.WARPED_BARREL.asItem()));
 

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:warped_barrel"
+        "recipes": "utilitiesplus:warped_barrel"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

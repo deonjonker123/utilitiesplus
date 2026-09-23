@@ -3,10 +3,10 @@ package com.misterd.utilitiesplus.block.custom;
 import com.misterd.utilitiesplus.blockentity.UPBlockEntities;
 import com.misterd.utilitiesplus.blockentity.custom.FeedingTroughBlockEntity;
 import com.misterd.utilitiesplus.util.UPTags;
-import com.mojang.serialization.MapCodec;
 import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -44,15 +44,8 @@ public class FeedingTroughBlock extends BaseEntityBlock {
             Block.box(14, 0, 14, 16, 10, 16)
     );
 
-    public static final MapCodec<FeedingTroughBlock> CODEC = simpleCodec(FeedingTroughBlock::new);
-
     public FeedingTroughBlock(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
     }
 
     @Override
@@ -66,7 +59,7 @@ public class FeedingTroughBlock extends BaseEntityBlock {
     }
 
     @Override
-    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
+    public void playerDestroy(ServerLevel level, ServerPlayer player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
         if (level.getBlockEntity(pos) instanceof FeedingTroughBlockEntity feedingTroughBlockEntity) {
             feedingTroughBlockEntity.drops();
             level.updateNeighbourForOutputSignal(pos, this);

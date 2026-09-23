@@ -1,6 +1,5 @@
 package com.misterd.utilitiesplus.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -26,7 +25,6 @@ import org.jspecify.annotations.Nullable;
 
 public class WoodenBeamBlock extends Block implements SimpleWaterloggedBlock {
 
-    public static final MapCodec<WoodenBeamBlock> CODEC = simpleCodec(WoodenBeamBlock::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     private static final VoxelShape SHAPE = Block.column(8.0, 0.0, 16.0);
@@ -34,11 +32,6 @@ public class WoodenBeamBlock extends Block implements SimpleWaterloggedBlock {
     public WoodenBeamBlock(BlockBehaviour.Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
-    }
-
-    @Override
-    protected MapCodec<? extends Block> codec() {
-        return CODEC;
     }
 
     @Override

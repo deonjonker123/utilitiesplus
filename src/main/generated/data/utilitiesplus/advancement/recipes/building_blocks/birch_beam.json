@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:birch_beam"
+        "recipes": "utilitiesplus:birch_beam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

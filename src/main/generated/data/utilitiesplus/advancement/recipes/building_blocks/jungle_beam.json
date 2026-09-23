@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:jungle_beam"
+        "recipes": "utilitiesplus:jungle_beam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -2,12 +2,12 @@ package com.misterd.utilitiesplus.block.custom;
 
 import com.misterd.utilitiesplus.blockentity.UPBlockEntities;
 import com.misterd.utilitiesplus.blockentity.custom.HarvesterBlockEntity;
-import com.mojang.serialization.MapCodec;
 import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -39,7 +39,6 @@ public class HarvesterBlock extends BaseEntityBlock {
 
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
-    public static final MapCodec<HarvesterBlock> CODEC = simpleCodec(HarvesterBlock::new);
 
     public HarvesterBlock(Properties properties) {
         super(properties);
@@ -58,11 +57,6 @@ public class HarvesterBlock extends BaseEntityBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, LIT);
-    }
-
-    @Override
-    protected MapCodec<HarvesterBlock> codec() {
-        return CODEC;
     }
 
     @Override
@@ -111,7 +105,7 @@ public class HarvesterBlock extends BaseEntityBlock {
     }
 
     @Override
-    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
+    public void playerDestroy(ServerLevel level, ServerPlayer player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
         if (!level.isClientSide() && blockEntity instanceof HarvesterBlockEntity harvester) {
             Containers.dropContents(level, pos, harvester);
         }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:diamond_upgrade"
+        "recipes": "utilitiesplus:diamond_upgrade"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

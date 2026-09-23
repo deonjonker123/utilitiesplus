@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:cherry_barrel"
+        "recipes": "utilitiesplus:cherry_barrel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

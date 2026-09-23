@@ -4,13 +4,12 @@ import com.misterd.utilitiesplus.blockentity.custom.BarrelBlockEntity;
 import com.misterd.utilitiesplus.blockentity.custom.BarrelBlockEntity.Tier;
 import com.misterd.utilitiesplus.component.UPDataComponents;
 import com.misterd.utilitiesplus.component.custom.BarrelData;
-import com.mojang.serialization.MapCodec;
 import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Prediction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -36,16 +35,10 @@ import org.jspecify.annotations.Nullable;
 public class BarrelBlock extends BaseEntityBlock {
 
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final MapCodec<BarrelBlock> CODEC = simpleCodec(BarrelBlock::new);
 
     public BarrelBlock(Properties properties) {
         super(properties);
         registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
-    }
-
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
     }
 
     @Override
@@ -97,8 +90,8 @@ public class BarrelBlock extends BaseEntityBlock {
             if (stack.isEmpty() && !barrel.isEmpty()) {
                 int amount = player.isShiftKeyDown() ? 1 : barrel.getStoredType().getMaxStackSize();
                 ItemStack extracted = barrel.extract(amount);
-                player.getInventory().placeItemBackInInventory(extracted);
-                if (!extracted.isEmpty()) player.drop(extracted, false);
+                player.getInventory().placeItemBackInInventory(extracted, Prediction.SERVER_ONLY);
+                if (!extracted.isEmpty()) player.drop(extracted, false, Prediction.SERVER_ONLY);
                 level.updateNeighbourForOutputSignal(pos, this);
                 return InteractionResult.SUCCESS_SERVER;
             }

@@ -3,11 +3,11 @@ package com.misterd.utilitiesplus.block.custom;
 import com.misterd.utilitiesplus.blockentity.UPBlockEntities;
 import com.misterd.utilitiesplus.blockentity.custom.RedstoneClockBlockEntity;
 import com.misterd.utilitiesplus.config.UPConfig;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -29,12 +29,10 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.server.level.ServerLevel;
 import org.jspecify.annotations.Nullable;
 
 public class RedstoneClockBlock extends BaseEntityBlock {
 
-    public static final MapCodec<RedstoneClockBlock> CODEC = simpleCodec(RedstoneClockBlock::new);
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public static final BooleanProperty ENABLED = BooleanProperty.create("enabled");
 
@@ -43,11 +41,6 @@ public class RedstoneClockBlock extends BaseEntityBlock {
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(POWERED, false)
                 .setValue(ENABLED, true));
-    }
-
-    @Override
-    protected MapCodec<RedstoneClockBlock> codec() {
-        return CODEC;
     }
 
     @Override

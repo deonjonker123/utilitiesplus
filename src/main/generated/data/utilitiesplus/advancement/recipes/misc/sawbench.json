@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:sawbench"
+        "recipes": "utilitiesplus:sawbench"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

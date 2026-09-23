@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:crimson_beam"
+        "recipes": "utilitiesplus:crimson_beam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

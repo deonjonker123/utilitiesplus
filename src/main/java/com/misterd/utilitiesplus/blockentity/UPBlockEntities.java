@@ -53,7 +53,8 @@ public class UPBlockEntities {
                             UPBlocks.ACACIA_BARREL, UPBlocks.BIRCH_BARREL,
                             UPBlocks.CHERRY_BARREL, UPBlocks.CRIMSON_BARREL, UPBlocks.DARK_OAK_BARREL,
                             UPBlocks.JUNGLE_BARREL, UPBlocks.MANGROVE_BARREL, UPBlocks.OAK_BARREL,
-                            UPBlocks.PALE_OAK_BARREL, UPBlocks.SPRUCE_BARREL, UPBlocks.WARPED_BARREL
+                            UPBlocks.PALE_OAK_BARREL, UPBlocks.SPRUCE_BARREL, UPBlocks.WARPED_BARREL,
+                            UPBlocks.POPLAR_BARREL
                     ).build());
 
     public static final BlockEntityType<LanternBracketBlockEntity> LANTERN_BRACKET_BE =

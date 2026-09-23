@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:spruce_barrel"
+        "recipes": "utilitiesplus:spruce_barrel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

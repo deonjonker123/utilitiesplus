@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:bamboo_beam"
+        "recipes": "utilitiesplus:bamboo_beam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

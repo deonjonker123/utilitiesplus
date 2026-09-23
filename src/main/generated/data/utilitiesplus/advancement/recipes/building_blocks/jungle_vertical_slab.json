@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:jungle_vertical_slab"
+        "recipes": "utilitiesplus:jungle_vertical_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

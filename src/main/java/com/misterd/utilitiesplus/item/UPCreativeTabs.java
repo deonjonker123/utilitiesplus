@@ -26,6 +26,7 @@ public class UPCreativeTabs {
                         output.accept(UPBlocks.MANGROVE_VERTICAL_SLAB);
                         output.accept(UPBlocks.OAK_VERTICAL_SLAB);
                         output.accept(UPBlocks.PALE_OAK_VERTICAL_SLAB);
+                        output.accept(UPBlocks.POPLAR_VERTICAL_SLAB);
                         output.accept(UPBlocks.SPRUCE_VERTICAL_SLAB);
                         output.accept(UPBlocks.WARPED_VERTICAL_SLAB);
                         output.accept(UPBlocks.ACACIA_BEAM);
@@ -38,6 +39,7 @@ public class UPCreativeTabs {
                         output.accept(UPBlocks.MANGROVE_BEAM);
                         output.accept(UPBlocks.OAK_BEAM);
                         output.accept(UPBlocks.PALE_OAK_BEAM);
+                        output.accept(UPBlocks.POPLAR_BEAM);
                         output.accept(UPBlocks.SPRUCE_BEAM);
                         output.accept(UPBlocks.WARPED_BEAM);
                     }).build());
@@ -65,6 +67,7 @@ public class UPCreativeTabs {
                         output.accept(UPBlocks.MANGROVE_BARREL);
                         output.accept(UPBlocks.OAK_BARREL);
                         output.accept(UPBlocks.PALE_OAK_BARREL);
+                        output.accept(UPBlocks.POPLAR_BARREL);
                         output.accept(UPBlocks.SPRUCE_BARREL);
                         output.accept(UPBlocks.WARPED_BARREL);
                         output.accept(UPItems.COPPER_UPGRADE);

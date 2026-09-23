@@ -2,7 +2,6 @@ package com.misterd.utilitiesplus.block.custom;
 
 import com.misterd.utilitiesplus.blockentity.UPBlockEntities;
 import com.misterd.utilitiesplus.blockentity.custom.FilteredHopperBlockEntity;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
@@ -42,7 +41,6 @@ import java.util.function.Function;
 
 public class FilteredHopperBlock extends BaseEntityBlock {
 
-    public static final MapCodec<FilteredHopperBlock> CODEC = simpleCodec(FilteredHopperBlock::new);
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING_HOPPER;
     public static final BooleanProperty ENABLED = BlockStateProperties.ENABLED;
 
@@ -73,11 +71,6 @@ public class FilteredHopperBlock extends BaseEntityBlock {
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return shapes.apply(state);
-    }
-
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
     }
 
     @Override

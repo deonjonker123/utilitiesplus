@@ -1,7 +1,6 @@
 package com.misterd.utilitiesplus.block.custom;
 
 import com.misterd.utilitiesplus.config.UPConfig;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -28,7 +27,6 @@ import java.util.List;
 
 public class FanBlock extends Block {
 
-    public static final MapCodec<FanBlock> CODEC = simpleCodec(FanBlock::new);
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public static final BooleanProperty PULLING = BooleanProperty.create("pulling");
@@ -41,11 +39,6 @@ public class FanBlock extends Block {
                 .setValue(POWERED, false)
                 .setValue(PULLING, false)
                 .setValue(POWER, 0));
-    }
-
-    @Override
-    protected MapCodec<FanBlock> codec() {
-        return CODEC;
     }
 
     @Override
@@ -112,7 +105,7 @@ public class FanBlock extends Block {
                 List<Entity> entities = level.getEntities(null, box);
                 for (Entity entity : entities) {
                     entity.setDeltaMovement(entity.getDeltaMovement().add(force));
-                    entity.hurtMarked = true;
+                    entity.syncVelocity = true;
                 }
             }
         }

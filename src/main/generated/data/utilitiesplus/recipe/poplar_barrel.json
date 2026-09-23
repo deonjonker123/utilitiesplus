@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:barrel",
+    "D": "minecraft:poplar_slab",
+    "P": "minecraft:poplar_planks"
+  },
+  "pattern": [
+    "PDP",
+    "PBP",
+    "PDP"
+  ],
+  "result": {
+    "id": "utilitiesplus:poplar_barrel"
+  }
+}

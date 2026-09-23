@@ -2,10 +2,11 @@ package com.misterd.utilitiesplus.block.custom;
 
 import com.misterd.utilitiesplus.blockentity.UPBlockEntities;
 import com.misterd.utilitiesplus.blockentity.custom.NestBoxBlockEntity;
-import com.mojang.serialization.MapCodec;
+import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
@@ -30,13 +31,11 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
 import org.jspecify.annotations.Nullable;
 
 public class NestBoxBlock extends BaseEntityBlock {
 
     public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final MapCodec<NestBoxBlock> CODEC = simpleCodec(NestBoxBlock::new);
 
     private static final VoxelShape SHAPE_SOUTH = Shapes.or(
             Block.box(0, 0, 0, 16, 1, 16),
@@ -93,11 +92,6 @@ public class NestBoxBlock extends BaseEntityBlock {
     public NestBoxBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.SOUTH));
-    }
-
-    @Override
-    protected MapCodec<NestBoxBlock> codec() {
-        return CODEC;
     }
 
     @Override
@@ -171,7 +165,7 @@ public class NestBoxBlock extends BaseEntityBlock {
     }
 
     @Override
-    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
+    public void playerDestroy(ServerLevel level, ServerPlayer player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack destroyedWith) {
         if (!level.isClientSide() && blockEntity instanceof NestBoxBlockEntity nestBox) {
             Containers.dropContents(level, pos, nestBox);
         }

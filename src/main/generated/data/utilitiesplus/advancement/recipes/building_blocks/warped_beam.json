@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:warped_beam"
+        "recipes": "utilitiesplus:warped_beam"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:feeding_trough"
+        "recipes": "utilitiesplus:feeding_trough"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

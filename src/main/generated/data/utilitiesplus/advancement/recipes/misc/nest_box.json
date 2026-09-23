@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:nest_box"
+        "recipes": "utilitiesplus:nest_box"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

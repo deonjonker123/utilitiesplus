@@ -13,11 +13,9 @@ public class BarrelScreen extends AbstractContainerScreen<BarrelMenu> {
     private static final Identifier GUI_TEXTURE =
             Identifier.fromNamespaceAndPath("utilitiesplus", "textures/gui/barrel_gui.png");
 
-    // Virtual slot position (relative to GUI origin)
     private static final int VIRTUAL_SLOT_X = 79;
     private static final int VIRTUAL_SLOT_Y = 39;
 
-    // Count text position (relative to GUI origin)
     private static final int COUNT_TEXT_X = 63;
     private static final int COUNT_TEXT_Y = 65;
     private static final int COUNT_TEXT_WIDTH = 50;

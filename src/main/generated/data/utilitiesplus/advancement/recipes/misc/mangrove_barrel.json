@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "utilitiesplus:mangrove_barrel"
+        "recipes": "utilitiesplus:mangrove_barrel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
